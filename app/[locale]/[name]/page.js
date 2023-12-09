@@ -1,4 +1,4 @@
-import initTranslations from '../i18n';
+import initTranslations from '../../i18n';
 import ExampleClientComponent from '@/components/ExampleClientComponent';
 import LanguageChanger from '@/components/LanguageChanger';
 import TranslationsProvider from '@/components/TranslationsProvider';
@@ -14,7 +14,7 @@ export default async function Home({ params: { locale } }) {
       locale={locale}
       resources={resources}>
       <main>
-        <h1>{t('mainscrtextleft')}</h1>
+        <h1>{t('main')}</h1>
         <ExampleClientComponent />
         <LanguageChanger />
       </main>

@@ -3,11 +3,12 @@ import Header from '@/components/Header/Header';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import '../../styles/global.css'
 import Main from '@/components/Main/Main';
+import Footer from '@/components/Footer/Footer';
 
 const i18nNamespaces = ['common'];
 
 export default async function Home({ params: { locale } }) {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
     <TranslationsProvider
@@ -17,7 +18,9 @@ export default async function Home({ params: { locale } }) {
       <main>
         <Header />
         <Main />
+        <Footer />
       </main>
     </TranslationsProvider>
   );
 }
+

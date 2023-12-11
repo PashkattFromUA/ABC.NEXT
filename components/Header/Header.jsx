@@ -13,6 +13,9 @@ const Header = () => {
     const currentLocale = i18n.language;
     const currentPathname = usePathname();
     let flagsrc = '/images/flagen.svg';
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     if (currentLocale === "uk") {
         flagsrc = '/images/flaguk.svg';
@@ -26,29 +29,24 @@ const Header = () => {
         document.querySelector(section).scrollIntoView({ behavior: "smooth" });
     };
 
-    const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [windowWidth, setWindowWidth] = useState(0);
-    console.log(windowWidth)
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setWindowWidth(window.innerWidth);
-            window.addEventListener('resize', () => {
-                setWindowWidth(window.innerWidth);
-            });
-
-            return () => {
-                window.removeEventListener('resize', () => {
-                    setWindowWidth(window.innerWidth);
-                });
-            };
-        }
-    }, []);
-
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
+
+    useEffect(() => {
+
+        const handleResize = () => {
+          setWindowWidth(window.innerWidth);
+        };
+    
+        setWindowWidth(window.innerWidth);
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
 
     return (
         <section>

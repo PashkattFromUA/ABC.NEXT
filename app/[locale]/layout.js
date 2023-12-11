@@ -16,6 +16,9 @@ export function generateStaticParams() {
 export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} dir={dir(locale)}>
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+        rel="stylesheet" />
       <body className={inter.className}>{children}</body>
     </html>
   );

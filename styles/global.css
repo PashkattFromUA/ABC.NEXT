@@ -5,6 +5,10 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
     background-image: url("/images/starback.svg");
     background-repeat: no-repeat;
+    overflow-x: hidden;
+    align-items: center;
 }

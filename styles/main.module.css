@@ -1,0 +1,202 @@
+.main {
+    width: 1240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.text {
+    width: 511px;
+    text-align: left;
+    margin: 0;
+}
+
+.mainright {
+    margin: 122px 0 175px 0;
+}
+
+.main h1 {
+    width: 583px;
+    text-align: left;
+    background: linear-gradient(90deg,
+            #84585d 4.66%,
+            #6f7691 28.89%,
+            #100 53.34%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 122px 0 175px 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 83px;
+    letter-spacing: 0.15px;
+}
+
+.mainbuttons {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.mainbuttons .button1 {
+    display: flex;
+    gap: 16px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #000;
+    border-style: none;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    transition: all 0.6s;
+}
+
+.mainbuttons .button1:hover {
+    background: #282828;
+    transition: all 0.6s;
+}
+
+.mainbuttons .button2 {
+    color: #000;
+    font-family: "Dm Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 133.333% */
+    letter-spacing: 0.15px;
+    text-decoration: none;
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
+.main p {
+    color: #656565;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+}
+
+@media (max-width: 1439px) {
+    .main {
+        width: calc(100vw - 100px);
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 96px;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 175px;
+    }
+
+    .main h1 {
+        width: auto;
+        background: linear-gradient(90deg,
+                #84585d 4.66%,
+                #6f7691 28.89%,
+                #100 53.34%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "DM Sans", sans-serif;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 0;
+    }
+
+    .main p {
+        width: auto;
+    }
+
+    .mainright {
+        margin: 0;
+    }
+
+    .text {
+        width: auto;
+    }
+}
+
+@media (max-width: 1047px) {
+    .main {
+        width: calc(100vw - 60px);
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 92px;
+        margin-bottom: 134px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .mainbuttons {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 663px) {
+    .main {
+        width: calc(100vw - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 48px;
+        margin-bottom: 70px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .main h1 {
+        font-size: 27px;
+    }
+
+    .main p {
+        font-size: 14px;
+    }
+
+    .mainbuttons {
+        display: grid;
+        gap: 12px;
+        place-items: center;
+    }
+
+    .mainbuttons .button1 {
+        justify-content: center;
+        width: calc(100vw - 20px);
+        color: #FFF;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+    }
+
+    .mainbuttons .button2 {
+        width: max-content;
+        color: #000;
+        font-family: 'DM Sans';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+    }
+}

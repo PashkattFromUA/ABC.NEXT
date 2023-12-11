@@ -2,6 +2,7 @@ import initTranslations from '../i18n';
 import Header from '@/components/Header/Header';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import '../../styles/global.css'
+import Main from '@/components/Main/Main';
 
 const i18nNamespaces = ['common'];
 
@@ -15,6 +16,7 @@ export default async function Home({ params: { locale } }) {
       resources={resources}>
       <main>
         <Header />
+        <Main />
       </main>
     </TranslationsProvider>
   );

@@ -4,9 +4,11 @@ import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import styles from '@/styles/footer.module.css'
 
-const Footer = () => {
+const Footer = (props) => {
 
     const { t } = useTranslation();
+    const buttonLabels = props.data.data;
+    console.log(buttonLabels)
 
     return (
         <section className={styles.footer}>
@@ -55,18 +57,18 @@ const Footer = () => {
                             </Link>
                         </div>
                     </div>
-                    {/* <div className="footer2">
+                    <div className={styles.footer2}>
                         <h3>{t('categories')}</h3>
-                        <div className="foot2but">
+                        <div className={styles.foot2but}>
                             {buttonLabels.map((buttonlabel) => (
                                 <span key={buttonlabel.id}>
-                                    <Link href={`/category/${buttonlabel.id}/${buttonlabel.name}`}>
+                                    <Link href={`/${buttonlabel.name}`}>
                                         {buttonlabel.name}
                                     </Link>
                                 </span>
                             ))}
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <hr />

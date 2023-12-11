@@ -1,0 +1,221 @@
+.topmenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+}
+
+.topmenu button {
+    border-radius: 8px;
+    background: #000;
+    padding: 12px 24px;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    transition: all 0.6s;
+}
+
+.topmenu a {
+    height: 28px;
+}
+
+.topmenu button:hover {
+    background: #282828;
+    transition: all 0.6s;
+}
+.navbarl {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nonactivepage {
+    color: #656565;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    border-bottom: 2px solid;
+    border-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: all 0.6s;
+    text-decoration: none;
+}
+
+.navbarl a:hover {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    cursor: pointer;
+    transition: all 0.6s;
+    text-decoration: none;
+}
+
+.activepage {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    border-bottom: 2px solid;
+    border-color: #000;
+    cursor: pointer;
+    padding-bottom: 2px;
+    transition: all 0.6s;
+    padding: 0;
+    text-decoration: none;
+}
+
+.headbuttons {
+    list-style-type: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.localisator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.navbarr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.shevron {
+    transition: all 0.6s ease-out;
+    rotate: -180deg;
+}
+
+.pactive {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    cursor: pointer;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+.pnonactive {
+    color: #656565;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    cursor: pointer;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+.shevron path {
+    fill: #656565;
+}
+
+.localisator:hover svg path {
+    fill: #000;
+}
+
+.shevronopen {
+    transition: all 0.6s ease-in;
+}
+
+.shevronopen path {
+    fill: #000;
+}
+
+@media (max-width: 1439px) {
+    .topmenu {
+        padding: 0;
+        margin: 10px 50px 0 50px;
+        width: calc(100vw - 100px);
+    }
+}
+
+@media (max-width: 1047px) {
+    .topmenu {
+        padding: 0;
+        margin: 10px 30px 0 30px;
+        width: calc(100vw - 60px);
+    }
+}
+
+@media (max-width: 745px) {
+    .topmenu {
+        width: 100vw;
+        margin: 0;
+        padding: 16px 10px;
+    }
+
+    .topmenu a {
+        height: 32px;
+    }
+
+    .menumobileexpanded {
+        width: 100vw;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+        background: #fff;
+        border-radius: 0px 0px 14px 14px;
+        padding-bottom: 125px;
+    }
+
+    .menutop {
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 1px 0px 0px #e4e4e4;
+        padding: 16px 10px;
+    }
+
+    .menutop a{
+        height: 32px; 
+    }
+
+    .mobileheadbuttons {
+        list-style: none;
+        width: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobileheadbuttons li {
+        box-shadow: 0px 1px 0px 0px #e4e4e4;
+        padding: 16px 10px;
+    }
+
+    .menumobileexpanded button {
+        border-radius: 8px;
+        background: #000;
+        width: calc(100vw - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 12px 24px;
+        border-style: none;
+        color: #fff;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.15px;
+        margin-top: 16px;
+    }
+}

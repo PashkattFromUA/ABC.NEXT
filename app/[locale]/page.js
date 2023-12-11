@@ -1,7 +1,7 @@
 import initTranslations from '../i18n';
-import ExampleClientComponent from '@/components/ExampleClientComponent';
-import LanguageChanger from '@/components/LanguageChanger';
+import Header from '@/components/Header/Header';
 import TranslationsProvider from '@/components/TranslationsProvider';
+import '../../styles/global.css'
 
 const i18nNamespaces = ['common'];
 
@@ -14,9 +14,7 @@ export default async function Home({ params: { locale } }) {
       locale={locale}
       resources={resources}>
       <main>
-        <h1>{t('mainscrtextleft')}</h1>
-        <ExampleClientComponent />
-        <LanguageChanger />
+        <Header />
       </main>
     </TranslationsProvider>
   );

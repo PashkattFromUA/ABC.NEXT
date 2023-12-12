@@ -8,7 +8,7 @@ const Footer = (props) => {
 
     const { t } = useTranslation();
     const buttonLabels = props.data.data;
-    console.log(buttonLabels)
+    const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
 
     return (
         <section className={styles.footer}>
@@ -60,7 +60,7 @@ const Footer = (props) => {
                     <div className={styles.footer2}>
                         <h3>{t('categories')}</h3>
                         <div className={styles.foot2but}>
-                            {buttonLabels.map((buttonlabel) => (
+                            {sortedCategories.map((buttonlabel) => (
                                 <span key={buttonlabel.id}>
                                     <Link href={`/${buttonlabel.name}`}>
                                         {buttonlabel.name}

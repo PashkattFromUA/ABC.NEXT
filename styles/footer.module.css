@@ -193,7 +193,7 @@
 
 @media (max-width: 663px) {
     .footer {
-        width: calc(100vw - 20px);
+        width: 100vw;
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -249,7 +249,7 @@
     }
 
     .foot2but {
-        width: calc(100vw - 20px);
+        width: 100vw;
         column-gap: 16px;
     }
 

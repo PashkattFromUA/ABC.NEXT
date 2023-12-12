@@ -4,10 +4,11 @@ import TranslationsProvider from '@/components/TranslationsProvider';
 import '../../styles/global.css'
 import Main from '@/components/Main/Main';
 import Footer from '@/components/Footer/Footer';
+import FAQ from '@/components/FAQ/FAQ';
 
 const i18nNamespaces = ['common'];
 
-async function getData(locale) {
+async function getLabels(locale) {
 
   const headers = {
     'App-Locale': `${locale}`
@@ -24,7 +25,7 @@ async function getData(locale) {
 
 export default async function Home({ params: { locale } }) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
-  const data = await getData(locale)
+  const labels = await getLabels(locale)
   
 
   return (
@@ -35,9 +36,9 @@ export default async function Home({ params: { locale } }) {
       <main>
         <Header />
         <Main />
-        <Footer data={data} />
+        <FAQ />
+        <Footer data={labels} />
       </main>
     </TranslationsProvider>
   );
 }
-

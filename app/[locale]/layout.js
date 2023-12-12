@@ -1,8 +1,8 @@
-import { Inter } from 'next/font/google';
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
+import { DM_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const dmsans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Alhamdulillah',
@@ -16,7 +16,12 @@ export function generateStaticParams() {
 export default function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale} dir={dir(locale)}>
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+      </head>
+      <body className={dmsans.className}>{children}</body>
     </html>
   );
 }

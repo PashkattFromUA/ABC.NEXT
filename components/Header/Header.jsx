@@ -65,22 +65,22 @@ const Header = () => {
                                 />
                             </div>
                             <ul className={styles.mobileheadbuttons}>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` ? styles.pactive : styles.pnonactive} >
+                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.pactive : styles.pnonactive} >
                                     <li>
                                         <span>{t("main")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.pactive : styles.pnonactive}>
                                     <li>
                                         <span>{t("aggregator")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.pactive : styles.pnonactive}>
                                     <li>
                                         <span >{t("forpartners")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.pactive : styles.pnonactive}>
                                     <li>
                                         <span>FAQ</span>
                                     </li>
@@ -133,22 +133,22 @@ const Header = () => {
                         </Link>
                         <ul className={styles.headbuttons}>
                             <li>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` ? styles.activepage : styles.nonactivepage }>
+                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage }>
                                     {t("main")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` ? styles.activepage : styles.nonactivepage} >
+                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} >
                                     {t("aggregator")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` ? styles.activepage : styles.nonactivepage} >
+                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} >
                                     {t("forpartners")}
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` ? styles.activepage : styles.nonactivepage} >
+                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} >
                                     FAQ
                                 </Link>
                             </li>

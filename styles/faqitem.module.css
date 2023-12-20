@@ -11,16 +11,18 @@
 }
 
 .container {
-  max-height: 2px;
+  height: 2px;
   overflow: hidden;
   box-shadow: 0px 1px 0px 0px #e4e4e4;
   margin-bottom: 2px;
+  transition: all 1s ease-in;
 }
 
 .containeropen {
-  max-height: 200px;
   box-shadow: 0px 1px 0px 0px #e4e4e4;
   margin-bottom: 2px;
+  transition: all 1s ease-in;
+  height: auto;
 }
 
 .FAQblock h3 {

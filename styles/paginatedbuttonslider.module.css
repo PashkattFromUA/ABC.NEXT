@@ -1,11 +1,16 @@
 .carouselinscrollcontainer {
+  width: auto;
   display: flex;
   flex-direction: column;
 }
 
+.paginationblock{
+  width: auto;
+}
+
 .scrollingcontainer {
   overflow-x: hidden;
-  width: 1070px;
+  width: 1068px;
   height: 44px;
   display: flex;
   scroll-behavior: smooth;
@@ -13,6 +18,7 @@
 
 .agrsliderblock {
   display: flex;
+  width: auto;
 }
 
 .buttoncontainer {

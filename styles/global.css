@@ -10,10 +10,16 @@ a{
 }
 
 body{
-    display: flex;
-    flex-direction: column;
+    width: 1440px;
     background-image: url("/images/starback.svg");
     background-repeat: no-repeat;
     overflow-x: hidden;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1439px){
+    body{
+        width: 100vw;
+    }
 }

@@ -1,6 +1,6 @@
 .card1 {
-  height: 218px;
-  width: 328px;
+  height: auto;
+  width: auto;
   padding: 24px;
   border-radius: 20px;
   background: #f8f8f8;
@@ -16,6 +16,7 @@
 }
 
 .cardtop {
+  width: auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -28,7 +29,7 @@
 }
 
 .cardname {
-  width: 193px;
+  width: auto;
   height: 28px;
   overflow: hidden;
   color: #1e1e21;
@@ -41,7 +42,7 @@
 }
 
 .cardplace {
-  width: 193px;
+  width: auto;
   height: 20px;
   overflow: hidden;
   color: #656565;
@@ -145,7 +146,7 @@
 @media (max-width: 663px) {
   .card1 {
     padding: 10px;
-    width: calc(100vw - 60px);
+    width: auto;
     display: grid;
     gap: 16px;
   }

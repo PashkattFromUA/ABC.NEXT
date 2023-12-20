@@ -3,11 +3,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginatedbuttonslider.module.css'
+import PaginatedCardlist from '@/components/Paginatedagregator/Paginatedcardlist'
 
-const CarouselInScrollContainer = (props) => {
-  const { t,i18n } = useTranslation();
-  const currentLocale = i18n.language;
+const PaginatedButtonsSlider = (props) => {
+  const { t } = useTranslation();
   const buttonLabels = props.data.data;
+  const cards = props.cards;
 
   const containerRef = useRef(null);
   const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
@@ -28,7 +29,7 @@ const CarouselInScrollContainer = (props) => {
 
 
   return (
-    <div>
+    <div className={styles.paginationblock}>
       {/* <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId  1]} /> */}
       <div className={styles.carouselinscrollcontainer}>
         <div className={styles.agrsliderblock}>
@@ -51,10 +52,10 @@ const CarouselInScrollContainer = (props) => {
             </svg>
           </div>
         </div>
-        {/* <PaginatedCardlist buttonnnid={buttid} resetpage={{p:1}} /> */}
+        <PaginatedCardlist cards={cards} />
       </div>
     </div>
   );
 };
 
-export default CarouselInScrollContainer;
+export default PaginatedButtonsSlider;

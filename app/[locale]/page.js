@@ -7,6 +7,7 @@ import Footer from '@/components/Footer/Footer';
 import FAQ from '@/components/FAQ/FAQ';
 import Paginatedbuttonslider from '@/components/Paginatedagregator/Paginatedbuttonslider'
 import Paginatedcardlist from '@/components/Paginatedagregator/Paginatedcardlist'
+import Agregatormain from '@/components/Agregatormain/Agregatormain';
 
 const i18nNamespaces = ['common'];
 
@@ -53,8 +54,7 @@ export default async function Home({ params: { locale } }) {
       <main>
         <Header />
         <Main />
-        <Paginatedbuttonslider data={labels} />
-        <Paginatedcardlist cards={cards} />
+        <Agregatormain data={labels} cards={cards} />
         <FAQ />
         <Footer data={labels} />
       </main>

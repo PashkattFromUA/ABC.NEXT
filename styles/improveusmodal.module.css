@@ -1,0 +1,224 @@
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalblock {
+  width: 536px;
+  padding: 32px;
+  border-radius: 32px;
+  background: #fff;
+}
+
+.closebutt {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+
+.closebutt h3 {
+  color: #212025;
+  font-family: "DM Sans", sans-serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  margin: 0;
+}
+
+.modalcontent {
+  width: auto;
+}
+
+.modalcontent h4 {
+  color: #656565;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.15px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.modalnameemail {
+  display: flex;
+  gap: 16px;
+  width: auto;
+}
+
+.modalname {
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  color: #656565;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 50%;
+}
+
+.modalemail {
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  color: #656565;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 50%;
+}
+
+.modalcontent textarea {
+  width: 100%;
+  height: 72px;
+  padding: 20px 16px 8px 16px;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4;
+  color: #656565;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 16px;
+}
+
+.modalformbot {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+}
+
+.modalformbot h4 {
+  width: max-content;
+}
+
+.modalformbutt {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  border-style: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  width: max-content;
+  transition: all 0.6s;
+}
+
+.modalformbutt:hover {
+  background: #282828;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.closebutt svg:hover circle {
+  fill: #e8e8e8;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.closebutt svg:hover path {
+  cursor: pointer;
+  transition: all 0.6s;
+}
+
+.closebutt svg circle {
+  transition: all 0.6s;
+}
+
+.closebutt svg path {
+  transition: all 0.6s;
+}
+
+@media (max-width: 663px) {
+  .modalblock {
+    width: calc(100vw - 40px);
+    padding: 16px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 16px;
+  }
+
+  .modalcontent {
+    width: auto;
+  }
+
+  .closebutt {
+    width: auto;
+  }
+
+  .modalcontent p {
+    color: #a0a0a0;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: auto;
+  }
+
+  .closebutt h3 {
+    font-size: 18px;
+  }
+
+  .modalnameemail {
+    display: grid;
+    gap: 8px;
+    width: calc(100vw - 38px);
+  }
+
+  .modalname {
+    width: calc(100vw - 74px);
+  }
+
+  .modalemail {
+    width: calc(100vw - 74px);
+  }
+
+  .modalcontent textarea {
+    width: calc(100vw - 74px);
+    padding: 20px 16px 8px 16px;
+  }
+
+  .modalformbot {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    place-items: center;
+    width: calc(100vw - 40px);
+    gap: 8px;
+  }
+
+  .modalformbutt {
+    width: calc(100vw - 40px);
+  }
+
+  .modalformbot p {
+    color: #656565;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+}

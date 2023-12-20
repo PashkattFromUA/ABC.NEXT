@@ -5,9 +5,8 @@ import '../../styles/global.css'
 import Main from '@/components/Main/Main';
 import Footer from '@/components/Footer/Footer';
 import FAQ from '@/components/FAQ/FAQ';
-import Paginatedbuttonslider from '@/components/Paginatedagregator/Paginatedbuttonslider'
-import Paginatedcardlist from '@/components/Paginatedagregator/Paginatedcardlist'
 import Agregatormain from '@/components/Agregatormain/Agregatormain';
+import Improveus from '@/components/Improveus/Improveus';
 
 const i18nNamespaces = ['common'];
 
@@ -55,6 +54,7 @@ export default async function Home({ params: { locale } }) {
         <Header />
         <Main />
         <Agregatormain data={labels} cards={cards} />
+        <Improveus />
         <FAQ />
         <Footer data={labels} />
       </main>

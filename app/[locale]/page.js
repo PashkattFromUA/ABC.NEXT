@@ -1,12 +1,13 @@
 import initTranslations from '../i18n';
 import Header from '@/components/Header/Header';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import '../../styles/global.css'
+import '@/styles/global.css'
 import Main from '@/components/Main/Main';
 import Footer from '@/components/Footer/Footer';
 import FAQ from '@/components/FAQ/FAQ';
 import Agregatormain from '@/components/Agregatormain/Agregatormain';
 import Improveus from '@/components/Improveus/Improveus';
+import Form from '@/components/Form/Form';
 
 const i18nNamespaces = ['common'];
 
@@ -56,6 +57,7 @@ export default async function Home({ params: { locale } }) {
         <Agregatormain data={labels} cards={cards} />
         <Improveus />
         <FAQ />
+        <Form />
         <Footer data={labels} />
       </main>
     </TranslationsProvider>

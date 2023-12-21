@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginatedbuttonslider.module.css'
 import PaginatedCardlist from '@/components/Paginatedagregator/Paginatedcardlist'
+import Blocktitle from '@/components/Blocktitle/Blocktitle'
 
 const PaginatedButtonsSlider = (props) => {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ const PaginatedButtonsSlider = (props) => {
 
   return (
     <div className={styles.paginationblock}>
-      {/* <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId  1]} /> */}
+      <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId - 1]} />
       <div className={styles.carouselinscrollcontainer}>
         <div className={styles.agrsliderblock}>
           <div className={styles.scrollingcontainer} ref={containerRef}>

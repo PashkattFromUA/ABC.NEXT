@@ -8,6 +8,7 @@ import FAQ from '@/components/FAQ/FAQ';
 import Agregatormain from '@/components/Agregatormain/Agregatormain';
 import Improveus from '@/components/Improveus/Improveus';
 import Form from '@/components/Form/Form';
+import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 
 const i18nNamespaces = ['common'];
 
@@ -59,6 +60,7 @@ export default async function Home({ params: { locale } }) {
         <FAQ />
         <Form />
         <Footer data={labels} />
+        <ScrollToTopButt />
       </main>
     </TranslationsProvider>
   );

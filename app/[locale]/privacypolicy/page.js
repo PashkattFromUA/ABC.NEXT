@@ -3,6 +3,7 @@ import Header from "@/components/Header/Header";
 import initTranslations from '../../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import '@/styles/global.css'
+import ScrollToTopButt from "@/components/Scrolltotopbutt/Scrolltotopbutt";
 
 export const metadata = {
     title: 'Privacy policy',
@@ -23,6 +24,7 @@ export default async function PrivacypolicyPage({ params: { locale } }) {
                 <Header />
                 PrivacypolicyPage
                 <Form />
+                <ScrollToTopButt />
             </main>
         </TranslationsProvider>
     );

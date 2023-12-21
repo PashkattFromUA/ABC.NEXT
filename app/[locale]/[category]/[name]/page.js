@@ -3,6 +3,7 @@ import initTranslations from '../../../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import Form from '@/components/Form/Form';
 import '@/styles/global.css'
+import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 
 const i18nNamespaces = ['common'];
 
@@ -21,6 +22,7 @@ export default async function Home({ params }) {
         <Header />
         {name}
         <Form />
+        <ScrollToTopButt />
       </main>
     </TranslationsProvider>
   );

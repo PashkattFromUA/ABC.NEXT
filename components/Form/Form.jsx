@@ -2,7 +2,7 @@
 
 import React,{useState} from 'react'
 import styles from '@/styles/form.module.css'
-// import Blocktitle from '../../Universal/Blocktitle/Blocktitle'
+import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 
@@ -53,7 +53,7 @@ const Form = () => {
   return (
     <div className={styles.form} >
         <div className={styles.formblock} id="form">
-          {/* <Blocktitle name={t('forpartners')} title={t('offertext')} /> */}
+          <Blocktitle name={t('forpartners')} title={t('offertext')} />
           <div className={styles.nameemail}>
           <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} />
           <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" />

@@ -3,6 +3,7 @@ import Header from "@/components/Header/Header";
 import initTranslations from '../../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
 import '@/styles/global.css'
+import ScrollToTopButt from "@/components/Scrolltotopbutt/Scrolltotopbutt";
 
 export const metadata = {
     title: 'Terms of Use',
@@ -23,6 +24,7 @@ export default async function TermsofusePage({ params: { locale } }) {
                 <Header />
                 TermsofusePage
                 <Form />
+                <ScrollToTopButt />
             </main>
         </TranslationsProvider>
     );

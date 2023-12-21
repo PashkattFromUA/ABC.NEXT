@@ -44,7 +44,7 @@ async function getCards(locale) {
 
 export default async function Home({ params: { locale } }) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
-  const labels = await getLabels(locale)
+  const labels = await getLabels(locale);
   const cards = await getCards(locale);
 
   return (

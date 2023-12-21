@@ -29,7 +29,7 @@ const Agrcard = (props) => {
         {props.card.short_description}
       </p>
       <div className={styles.cardbottom}>
-          <Link href={`/${props.card.name}`} state={`${id}`}><button>{t('moreinfo')}</button></Link>
+          <Link href={`/category/${props.card.name}`} state={`${id}`}><button>{t('moreinfo')}</button></Link>
         <div className={styles.svgscards}>
           <a href={props.card.link} target="_blank" rel="noreferrer"><svg
             width="40"

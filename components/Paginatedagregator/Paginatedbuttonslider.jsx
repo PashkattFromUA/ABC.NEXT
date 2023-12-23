@@ -9,10 +9,13 @@ import Blocktitle from '@/components/Blocktitle/Blocktitle'
 const PaginatedButtonsSlider = (props) => {
   const { t } = useTranslation();
   const buttonLabels = props.data.data;
-  const cards = props.cards;
+  const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
+  console.log(sortedCategories)
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
+  console.log(selectedCategoryId)
+  const cards = sortedCategories[selectedCategoryId - 1].items;
 
   const containerRef = useRef(null);
-  const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
   const catname = sortedCategories.map(item => item.name);
 
   const buttonWidth = 150;
@@ -20,9 +23,8 @@ const PaginatedButtonsSlider = (props) => {
     const currentScroll = containerRef.current.scrollLeft;
     containerRef.current.scrollLeft = currentScroll + scrollAmount;
   };
-  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
 
-  const [buttid, setId] = useState(null);
+  const [buttid, setId] = useState(0);
   const handleButtonClick = (buttonId) => {
     setId(buttonId);
     setSelectedCategoryId(buttonId);

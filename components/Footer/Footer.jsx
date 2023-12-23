@@ -62,7 +62,7 @@ const Footer = (props) => {
                         <div className={styles.foot2but}>
                             {sortedCategories.map((buttonlabel) => (
                                 <span key={buttonlabel.id}>
-                                    <Link href={`/${buttonlabel.name}`}>
+                                    <Link href={`/${buttonlabel.slug}`}>
                                         {buttonlabel.name}
                                     </Link>
                                 </span>

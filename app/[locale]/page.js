@@ -12,28 +12,13 @@ import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 
 const i18nNamespaces = ['common'];
 
-async function getLabels(locale) {
+async function getLabels(lang) {
+  const url = 'https://api.abcrypto.io/api/categories';
+  const headers = new Headers({
+    'App-Locale': lang,
+  });
 
-  const headers = {
-    'App-Locale': `${locale}`
-  };
-
-  const res = await fetch('https://api.abcrypto.io/api/categories', { headers });
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
-
-async function getCards(locale) {
-
-  const headers = {
-    'App-Locale': `${locale}`
-  };
-
-  const res = await fetch(`https://api.abcrypto.io/api/categories/1/items/all`, { headers });
+  const res = await fetch(url, { headers });
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');
@@ -42,10 +27,10 @@ async function getCards(locale) {
   return res.json();
 }
 
-export default async function Home({ params: { locale } }) {
+
+export default async function Home({ params: { locale }  }) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
   const labels = await getLabels(locale);
-  const cards = await getCards(locale);
 
   return (
     <TranslationsProvider
@@ -55,7 +40,7 @@ export default async function Home({ params: { locale } }) {
       <main>
         <Header />
         <Main />
-        <Agregatormain data={labels} cards={cards} />
+        <Agregatormain data={labels} />
         <Improveus />
         <FAQ />
         <Form />

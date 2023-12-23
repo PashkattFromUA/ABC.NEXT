@@ -6,7 +6,7 @@ import styles from '@/styles/paginatedcardlist.module.css'
 import PaginationButtons from "./Paginationbuttons";
 
 const Cardlist = (props) => {
-  const cards = props.cards.data;
+  const cards = props.cards;
   const cardsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastCard = currentPage * cardsPerPage;

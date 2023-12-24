@@ -5,6 +5,7 @@ import Agrcard from '@/components/Agrcard/Agrcard';
 import styles from '@/styles/cardlist.module.css'
 
 const Cardlist = (props) => {
+    console.log(props.cardsArray)
     const cards = props.cardsArray;
     const sortedCards = cards.slice().sort((a, b) => a.id - b.id);
     const catslug = props.catslug;

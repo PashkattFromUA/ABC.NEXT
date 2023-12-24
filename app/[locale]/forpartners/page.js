@@ -13,16 +13,16 @@ export const metadata = {
 
 const i18nNamespaces = ['common'];
 
-async function getLabels(locale) {
-
-    const headers = {
-        'App-Locale': `${locale}`
-    };
+async function getLabels(lang) {
+    const url = 'https://api.abcrypto.io/api/categories';
+    const headers = new Headers({
+      'App-Locale': lang,
+    });
   
-    const res = await fetch('https://api.abcrypto.io/api/categories', { headers });
+    const res = await fetch(url, { headers });
   
     if (!res.ok) {
-        throw new Error('Failed to fetch data');
+      throw new Error('Failed to fetch data');
     }
   
     return res.json();

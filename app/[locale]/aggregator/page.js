@@ -6,6 +6,7 @@ import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import Screensblock from '@/components/Screensblock/Screensblock';
 import '@/styles/global.css'
 import Footer from '@/components/Footer/Footer';
+import Agregator from '@/components/Agregator/Agregator';
 
 const i18nNamespaces = ['common'];
 
@@ -13,16 +14,16 @@ export const metadata = {
   title: 'Aggregator',
 };
 
-async function getLabels(locale) {
+async function getLabels(lang) {
+  const url = 'https://api.abcrypto.io/api/categories';
+  const headers = new Headers({
+    'App-Locale': lang,
+  });
 
-  const headers = {
-      'App-Locale': `${locale}`
-  };
-
-  const res = await fetch('https://api.abcrypto.io/api/categories', { headers });
+  const res = await fetch(url, { headers });
 
   if (!res.ok) {
-      throw new Error('Failed to fetch data');
+    throw new Error('Failed to fetch data');
   }
 
   return res.json();
@@ -41,6 +42,7 @@ export default async function Home({ params: { locale } }) {
       <main>
         <Header />
         <Screensblock name={t('sbnameap')} title={t('sbtitleap')} />
+        <Agregator data={labels} />
         <Form />
         <Footer data={labels} />
         <ScrollToTopButt />

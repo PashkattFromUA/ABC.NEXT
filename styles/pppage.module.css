@@ -1,0 +1,218 @@
+.pptext {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 66px;
+}
+
+.pptextleft {
+    width: 525px;
+}
+
+.pptextleft h2 {
+    color: #000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 63px;
+    letter-spacing: 0.15px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.pptextleft p {
+    color: #656565;
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+}
+
+.pptextright {
+    width: 610px;
+}
+
+.pptextright h4 {
+    color: #212025;
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.pptextright p {
+    color: #656565;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-bottom: 16px;
+}
+
+.pptextright h5 {
+    color: #212025;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.pptextright li {
+    color: #656565;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+@media (max-width: 1439px) {
+    .pptext {
+        width: calc(100vw - 100px);
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 66px;
+        gap: 32px;
+    }
+
+    .pptextleft {
+        width: 40%;
+    }
+
+    .pptextright {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1047px) {
+    .pptext {
+        width: calc(100vw - 60px);
+        padding-left: 30px;
+        padding-right: 30px;
+        flex-direction: column;
+    }
+
+    .pptextleft {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        width: calc(100vw - 76px);
+        align-items: start;
+        gap: 16px;
+    }
+
+    .pptextleft h2 {
+        color: #000;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 0;
+    }
+
+    .pptextleft p {
+        color: #656565;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        width: auto;
+        letter-spacing: 0.15px;
+        height: max-content;
+    }
+
+    .pptextright {
+        width: auto;
+    }
+}
+
+@media (max-width: 663px) {
+    .pptext {
+        width: calc(100vw - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+        flex-direction: column;
+    }
+
+    .pptextleft {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .pptextleft h2 {
+        color: #000;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 0;
+    }
+
+    .pptextleft p {
+        color: #656565;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        /* 150% */
+        letter-spacing: 0.15px;
+        height: max-content;
+    }
+
+    .pptextright {
+        width: auto;
+    }
+
+    .pptextright h4 {
+        color: #212025;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+    }
+
+    .pptextright p {
+        color: #656565;
+        font-family: 'DM Sans';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.15px;
+    }
+
+    .pptextright li {
+        color: #656565;
+        font-family: 'DM Sans';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.15px;
+    }
+}

@@ -24,9 +24,7 @@ const PaginatedButtonsSlider = (props) => {
     containerRef.current.scrollLeft = currentScroll + scrollAmount;
   };
 
-  const [buttid, setId] = useState(0);
   const handleButtonClick = (buttonId) => {
-    setId(buttonId);
     setSelectedCategoryId(buttonId);
   };
 
@@ -55,7 +53,7 @@ const PaginatedButtonsSlider = (props) => {
             </svg>
           </div>
         </div>
-        <PaginatedCardlist cards={cards} />
+        <PaginatedCardlist cards={cards} resetpage={1} catslug={sortedCategories[selectedCategoryId - 1].slug} />
       </div>
     </div>
   );

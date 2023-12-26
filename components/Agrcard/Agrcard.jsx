@@ -7,6 +7,7 @@ import styles from '@/styles/agrcard.module.css'
 
 const Agrcard = (props) => {
 
+  const catslug = props.catslug;
   const id = props.card.id;
   const { t } = useTranslation();
 
@@ -29,7 +30,7 @@ const Agrcard = (props) => {
         {props.card.short_description}
       </p>
       <div className={styles.cardbottom}>
-          <Link href={`/category/${props.card.slug}`} state={`${id}`}><button>{t('moreinfo')}</button></Link>
+          <Link href={`/${catslug}/${props.card.slug}`} state={`${id}`}><button>{t('moreinfo')}</button></Link>
         <div className={styles.svgscards}>
           <a href={props.card.link} target="_blank" rel="noreferrer"><svg
             width="40"

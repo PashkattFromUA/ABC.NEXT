@@ -9,22 +9,22 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
   const { t } = useTranslation();
 
   const renderPageNumbers = () => {
-      const pageNumbers = [];
-      const buttonsToShow = 4;
-      const startIndex = Math.max(1, currentPage - Math.floor(buttonsToShow / 2));
-      const endIndex = Math.min(totalPages, startIndex + buttonsToShow - 1);
-  
-      for (let i = startIndex; i <= endIndex; i++) {
-        pageNumbers.push(
-          <button
-            key={i}
-            onClick={() => onPageChange(i)}
-            className={currentPage === i ? styles.pagesactive : styles.pages}
-          >
-            {i}
-          </button>
-        );
-      }
+    const pageNumbers = [];
+    const buttonsToShow = 4;
+    const startIndex = Math.max(1, currentPage - Math.floor(buttonsToShow / 2));
+    const endIndex = Math.min(totalPages, startIndex + buttonsToShow - 1);
+
+    for (let i = startIndex; i <= endIndex; i++) {
+      pageNumbers.push(
+        <button
+          key={i}
+          onClick={() => onPageChange(i)}
+          className={currentPage === i ? styles.pagesactive : styles.pages}
+        >
+          {i}
+        </button>
+      );
+    }
 
     return pageNumbers;
   };

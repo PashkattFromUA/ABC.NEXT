@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Cardlist from './Cardlist';
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import styles from '@/styles/paginatedbuttonslider.module.css'
@@ -8,31 +8,29 @@ import styles from '@/styles/paginatedbuttonslider.module.css'
 const CarouselInScrollContainer = (props) => {
     const containerRef = useRef(null);
     const buttonLabels = props.data.data;
-    console.log(buttonLabels)
     const buttonWidth = 150;
     const handleScroll = (scrollAmount) => {
         const currentScroll = containerRef.current.scrollLeft;
         containerRef.current.scrollLeft = currentScroll + scrollAmount;
     };
     const [selectedCategoryId, setSelectedCategoryId] = useState(1);
-    const [selectedname, setSelectedName] = useState("Exchanges");
     const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
+    const catname = sortedCategories.map(item => item.name);
 
-    const handleButtonClick = (buttonId, buttonName) => {
+    const handleButtonClick = (buttonId) => {
         setSelectedCategoryId(buttonId);
-        setSelectedName(buttonName);
     };
 
 
     return (
         <div>
-            <Blocktitle name="Agregator" title={selectedname} />
+            <Blocktitle name="Agregator" title={catname[selectedCategoryId - 1]} />
             <div className={styles.carouselinscrollcontainer}>
                 <div className={styles.agrsliderblock}>
                     <div className={styles.scrollingcontainer} ref={containerRef}>
                         <div className={styles.buttoncontainer}>
                             {sortedCategories.map((buttonlabel) => (
-                                <button key={buttonlabel.id} onClick={() => handleButtonClick(buttonlabel.id, buttonlabel.name)} className={buttonlabel.id === selectedCategoryId ? styles.activebutton : styles.nonactivebutton}
+                                <button key={buttonlabel.id} onClick={() => handleButtonClick(buttonlabel.id)} className={buttonlabel.id === selectedCategoryId ? styles.activebutton : styles.nonactivebutton}
                                 >{buttonlabel.name}</button>
                             ))}
                         </div>

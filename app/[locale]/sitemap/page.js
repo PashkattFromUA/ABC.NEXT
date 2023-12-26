@@ -6,6 +6,8 @@ import '@/styles/global.css'
 import ScrollToTopButt from "@/components/Scrolltotopbutt/Scrolltotopbutt";
 import Screensblock from "@/components/Screensblock/Screensblock";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
+import Sitemapblock from "@/components/Sitemapblock/Sitemapblock";
 
 export const metadata = {
     title: 'For partners',
@@ -14,7 +16,7 @@ export const metadata = {
 const i18nNamespaces = ['common'];
 
 async function getLabels(lang) {
-    const url = 'https://api.abcrypto.io/api/sitemap';
+    const url = 'https://api.abcrypto.io/api/categories';
     const headers = new Headers({
         'App-Locale': lang,
     });
@@ -33,22 +35,6 @@ export default async function ForPartnersPage({ params: { locale } }) {
     const { t, resources } = await initTranslations(locale, i18nNamespaces);
     const labels = await getLabels(locale);
 
-    const resultObject = {};
-
-    labels.data.forEach(item => {
-        const itemType = item.type;
-        if (!resultObject[itemType]) {
-            resultObject[itemType] = [];
-        }
-        resultObject[itemType].push(item.data);
-    });
-
-    const categoryData = resultObject['category'] || [];
-    const itemData = resultObject['item'] || [];
-    
-    // Используем данные
-    console.log('Category Data:', categoryData);
-    console.log('Item Data:', itemData);
 
     return (
         <TranslationsProvider
@@ -58,8 +44,9 @@ export default async function ForPartnersPage({ params: { locale } }) {
             <main>
                 <Header />
                 <Screensblock name={t('sitemap')} title={t('sitemap')} />
+                <Sitemapblock data={labels.data} />
                 <Form />
-                <Footer data={categoryData} />
+                <Footer data={labels.data} />
                 <ScrollToTopButt />
             </main>
         </TranslationsProvider>

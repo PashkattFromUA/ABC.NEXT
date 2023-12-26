@@ -44,7 +44,7 @@ export default async function Home({ params: { locale }  }) {
         <Improveus />
         <FAQ />
         <Form />
-        <Footer data={labels} />
+        <Footer data={labels.data} />
         <ScrollToTopButt />
       </main>
     </TranslationsProvider>

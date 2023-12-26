@@ -62,7 +62,7 @@ export default async function Home({ params }) {
         <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
         <SEO data={seodata} />
         <Form />
-        <Footer data={labels} />
+        <Footer data={labels.data} />
         <ScrollToTopButt />
       </main>
     </TranslationsProvider>

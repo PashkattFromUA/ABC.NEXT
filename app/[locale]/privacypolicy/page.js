@@ -83,7 +83,7 @@ export default async function PrivacypolicyPage({ params: { locale } }) {
                     </div>
                 </div>
                 <Form />
-                <Footer data={labels} />
+                <Footer data={labels.data} />
                 <ScrollToTopButt />
             </main>
         </TranslationsProvider>

@@ -68,7 +68,7 @@ export default async function Home({ params }) {
         </div>
         </div>
         <Form />
-        <Footer data={labels} />
+        <Footer data={labels.data} />
         <ScrollToTopButt />
       </main>
     </TranslationsProvider>

@@ -42,7 +42,7 @@ export default async function ForPartnersPage({ params: { locale } }) {
                 <Header />
                 <Screensblock name={t('sbnamefpp')} title={t('sbtitlefpp')} />
                 <Form />
-                <Footer data={labels} />
+                <Footer data={labels.data} />
                 <ScrollToTopButt />
             </main>
         </TranslationsProvider>

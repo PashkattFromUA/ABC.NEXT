@@ -44,7 +44,7 @@ export default async function Home({ params: { locale } }) {
         <Screensblock name={t('sbnameap')} title={t('sbtitleap')} />
         <Agregator data={labels} />
         <Form />
-        <Footer data={labels} />
+        <Footer data={labels.data} />
         <ScrollToTopButt />
       </main>
     </TranslationsProvider>

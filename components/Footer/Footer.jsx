@@ -7,7 +7,7 @@ import styles from '@/styles/footer.module.css'
 const Footer = (props) => {
 
     const { t } = useTranslation();
-    const buttonLabels = props.data.data;
+    const buttonLabels = props.data;
     const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
 
     return (

@@ -1,0 +1,127 @@
+.seoblock {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 50px;
+    margin-top: 165px;
+    margin-bottom: 0;
+}
+
+.seobot h2 {
+    color: #212025;
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin: 24px 0;
+}
+
+.seobot p {
+    padding-bottom: 16px;
+    color: #656565;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 170%;
+    /* 27.2px */
+}
+
+.seoblock h2 {
+    color: #212025;
+    font-family: "DM Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.seoblock p {
+    color: #656565;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    padding-bottom: 16px;
+}
+
+@media (max-width: 1439px) {
+    .seoblock {
+        width: calc(100vw - 100px);
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 1047px) {
+    .seoblock {
+        width: calc(100vw - 60px);
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 95px;
+    }
+
+    .seobot {
+        padding-bottom: 16px;
+    }
+
+    .seoblock h2 {
+        color: #212025;
+        font-family: "DM Sans", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .seoblock p {
+        color: #656565;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        padding-bottom: 16px;
+    }
+}
+
+@media (max-width: 663px) {
+    .seoblock {
+        width: calc(100vw - 20px);
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 70px;
+    }
+
+    .seoblock h2 {
+        color: #212025;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 16px 0;
+    }
+
+    .seoblock p {
+        color: #656565;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        padding-bottom: 0;
+    }
+}

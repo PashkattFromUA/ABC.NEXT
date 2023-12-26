@@ -8,13 +8,29 @@ import Blocktitle from '@/components/Blocktitle/Blocktitle';
 import Screensblock from '@/components/Screensblock/Screensblock';
 import Cardlist from '@/components/Agregator/Cardlist';
 import styles from '@/styles/catpage.module.css'
+import Footer from '@/components/Footer/Footer';
 
 const i18nNamespaces = ['common'];
 
-async function getLabels(props) {
+async function getCards(props) {
   const url = `https://api.abcrypto.io/api/categories/${props.catslug}/items/all`;
   const headers = new Headers({
     'App-Locale': props.lang,
+  });
+
+  const res = await fetch(url, { headers });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+async function getLabels(lang) {
+  const url = 'https://api.abcrypto.io/api/categories';
+  const headers = new Headers({
+    'App-Locale': lang,
   });
 
   const res = await fetch(url, { headers });
@@ -31,7 +47,9 @@ export default async function Home({ params }) {
   const locale = params.locale;
   const catslug = params.category;
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
-  const cards = await getLabels({lang:locale,catslug: catslug});
+  const cards = await getCards({lang:locale,catslug: catslug});
+
+  const labels = await getLabels(locale);
 
   return (
     <TranslationsProvider
@@ -50,6 +68,7 @@ export default async function Home({ params }) {
         </div>
         </div>
         <Form />
+        <Footer data={labels} />
         <ScrollToTopButt />
       </main>
     </TranslationsProvider>

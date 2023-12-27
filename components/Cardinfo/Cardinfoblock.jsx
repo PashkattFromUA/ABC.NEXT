@@ -232,7 +232,7 @@ const Cardinfo = (props) => {
             <div className={styles.cpright}>
               <div className={styles.cprighttop}>
                 <div className={styles.cprighttopleft}>
-                  <h2>{cardinfo.name}</h2>
+                  <h1>{cardinfo.name}</h1>
                   <p>{cardinfo.place}</p>
                 </div>
                 <div className={styles.cprighttopright}>

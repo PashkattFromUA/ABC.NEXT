@@ -10,9 +10,7 @@ const PaginatedButtonsSlider = (props) => {
   const { t } = useTranslation();
   const buttonLabels = props.data.data;
   const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
-  console.log(sortedCategories)
   const [selectedCategoryId, setSelectedCategoryId] = useState(1);
-  console.log(selectedCategoryId)
   const cards = sortedCategories[selectedCategoryId - 1].items;
 
   const containerRef = useRef(null);

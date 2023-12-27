@@ -7,6 +7,9 @@ import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import SEO from '@/components/Cardinfo/Seoblock';
 import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
 import Footer from '@/components/Footer/Footer';
+import Cardlist from '@/components/Agregator/Cardlist';
+import Blocktitle from '@/components/Blocktitle/Blocktitle';
+import styles from '@/styles/cardpage.module.css'
 
 const i18nNamespaces = ['common'];
 
@@ -40,6 +43,21 @@ async function getLabels(lang) {
   return res.json();
 }
 
+async function getCards(props) {
+  const url = `https://api.abcrypto.io/api/categories/${props.catslug}/items/all`;
+  const headers = new Headers({
+    'App-Locale': props.lang,
+  });
+
+  const res = await fetch(url, { headers });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
 export default async function Home({ params }) {
 
   const locale = params.locale;
@@ -49,6 +67,8 @@ export default async function Home({ params }) {
   const seodata = cardinfo.data.seo;
   const carddes = cardinfo.data.description;
   const cardfeat = cardinfo.data.features;
+  const catinfo = cardinfo.data.category;
+  const cards = await getCards({lang:locale,catslug: catinfo.slug});
 
   const labels = await getLabels(locale);
 
@@ -61,6 +81,12 @@ export default async function Home({ params }) {
         <Header />
         <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
         <SEO data={seodata} />
+        <div className={styles.cardsbg}>
+          <div className={styles.cardsblock}>
+            <Blocktitle name="More in" title={catinfo.name} />
+            <Cardlist cardsArray={cards.data} />
+          </div>
+        </div>
         <Form />
         <Footer data={labels.data} />
         <ScrollToTopButt />

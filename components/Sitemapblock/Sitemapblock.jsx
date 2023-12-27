@@ -19,9 +19,9 @@ const Sitemapblock = (props) => {
                     <div key={buttonlabel.id}>
                         <Link href={`/${buttonlabel.slug}`} className={styles.categorylink}>
                             {buttonlabel.name}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7085 5.02398H2.9204C2.23291 5.02398 1.675 5.58189 1.675 6.26937V17.0875C1.675 17.775 2.23291 18.3329 2.9204 18.3329H13.7635C14.451 18.3329 15.0089 17.775 15.0089 17.0875V8.35725H16.6751V17.5021C16.6751 18.8804 15.556 19.9995 14.1772 19.9999H2.50665C1.12793 19.9999 0.00878906 18.8804 0.00878906 17.5021V5.8548C0.00878906 4.47608 1.12793 3.35693 2.50665 3.35693H11.7085V5.02398Z" fill="black" />
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.0002 7.21652H18.3315V2.84952L6.70927 14.4714L5.5293 13.2914L17.152 1.66872H12.7837V0H19.9994L20.0002 0.000416826V7.21652Z" fill="black" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.78165 4.26787H2.19054C1.67493 4.26787 1.2565 4.68629 1.2565 5.20191V13.3155C1.2565 13.8311 1.67493 14.2495 2.19054 14.2495H10.3229C10.8385 14.2495 11.2569 13.8311 11.2569 13.3155V6.76781H12.5066V13.6264C12.5066 14.6601 11.6672 15.4995 10.6332 15.4998H1.88023C0.846193 15.4998 0.00683594 14.6601 0.00683594 13.6264V4.89098C0.00683594 3.85694 0.846193 3.01758 1.88023 3.01758H8.78165V4.26787Z" fill="black" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0007 5.91239H13.7491V2.63714L5.03244 11.3535L4.14746 10.4685L12.8645 1.75154H9.58829V0.5H15L15.0007 0.500313V5.91239Z" fill="black" />
                             </svg>
                         </Link>
                         {buttonlabel.items && buttonlabel.items.length > 0 && (

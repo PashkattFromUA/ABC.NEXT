@@ -11,6 +11,8 @@
     width: 1240px;
     margin-bottom: 30px;
     gap: 60px;
+    box-shadow: 0px 1px 0px 0px #e4e4e4;
+    padding-bottom: 24px;
 }
 
 .footerleft h2 {

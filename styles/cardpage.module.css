@@ -1,0 +1,21 @@
+.cardsbg {
+    width: 100vw;
+    padding-top: 100px;
+    background: linear-gradient(0deg, #fff 5.49%, rgba(255, 255, 255, 0) 100%),
+        linear-gradient(125deg,
+            #f99277 0%,
+            #cf9aba 23.67%,
+            #b2a1de 45.42%,
+            #abbdf2 71.83%,
+            #e9f9fd 100%);
+    border-radius: 64px 0 0 0;
+}
+
+.cardsblock {
+    background-color: #fff;
+    padding: 40px;
+    width: 1240px;
+    border-radius: 30px 30px 0 0;
+    margin-left: 100px;
+    margin-right: 100px;
+}

@@ -35,6 +35,9 @@ const Footer = (props) => {
                             <Link href="/forpartners">
                                 <p>{t('forpartners')}</p>
                             </Link>
+                            <Link href="/sitemap">
+                                <p>Sitemap</p>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.footer3}>
@@ -71,7 +74,6 @@ const Footer = (props) => {
                     </div>
                 </div>
             </div>
-            <hr />
             <div className={styles.footerbot}>
                 <h2>{t('copyright')}</h2>
                 <div className={styles.footerbotr}>

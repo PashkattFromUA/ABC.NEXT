@@ -1,12 +1,8 @@
-import Header from '@/components/Header/Header';
 import initTranslations from '../../../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import Form from '@/components/Form/Form';
 import '@/styles/global.css'
-import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import SEO from '@/components/Cardinfo/Seoblock';
 import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
-import Footer from '@/components/Footer/Footer';
 import Cardlist from '@/components/Agregator/Cardlist';
 import Blocktitle from '@/components/Blocktitle/Blocktitle';
 import styles from '@/styles/cardpage.module.css'
@@ -78,7 +74,6 @@ export default async function Home({ params }) {
       locale={locale}
       resources={resources}>
       <main>
-        <Header />
         <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
         <SEO data={seodata} />
         <div className={styles.cardsbg}>
@@ -87,9 +82,6 @@ export default async function Home({ params }) {
             <Cardlist cardsArray={cards.data} />
           </div>
         </div>
-        <Form />
-        <Footer data={labels.data} />
-        <ScrollToTopButt />
       </main>
     </TranslationsProvider>
   );

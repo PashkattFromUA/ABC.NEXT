@@ -1,10 +1,4 @@
-import Form from "@/components/Form/Form";
-import Header from "@/components/Header/Header";
 import initTranslations from '../../i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
-import '@/styles/global.css'
-import ScrollToTopButt from "@/components/Scrolltotopbutt/Scrolltotopbutt";
-import Footer from "@/components/Footer/Footer";
 import styles from '@/styles/pppage.module.css'
 
 export const metadata = {
@@ -13,33 +7,12 @@ export const metadata = {
 
 const i18nNamespaces = ['common'];
 
-async function getLabels(lang) {
-    const url = 'https://api.abcrypto.io/api/categories';
-    const headers = new Headers({
-      'App-Locale': lang,
-    });
-  
-    const res = await fetch(url, { headers });
-  
-    if (!res.ok) {
-      throw new Error('Failed to fetch data');
-    }
-  
-    return res.json();
-  }
-
 export default async function PrivacypolicyPage({ params: { locale } }) {
 
-    const { t, resources } = await initTranslations(locale, i18nNamespaces);
-    const labels = await getLabels(locale);
+    const { t } = await initTranslations(locale, i18nNamespaces);
 
     return (
-        <TranslationsProvider
-            namespaces={i18nNamespaces}
-            locale={locale}
-            resources={resources}>
             <main>
-                <Header />
                 <div className={styles.pptext}>
                     <div className={styles.pptextleft}>
                         <h2>{t('ppheader')}</h2>
@@ -82,10 +55,6 @@ export default async function PrivacypolicyPage({ params: { locale } }) {
                         <p>{t('pptext6')}</p>
                     </div>
                 </div>
-                <Form />
-                <Footer data={labels.data} />
-                <ScrollToTopButt />
             </main>
-        </TranslationsProvider>
     );
 }

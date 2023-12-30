@@ -6,6 +6,7 @@ import Link from "next/link";
 import Localemodal from "./Locale/Localemodal";
 import styles from '@/styles/header.module.css';
 import { usePathname } from 'next/navigation';
+import useWindowWidth from "@/hooks/useWindowDimension";
 
 const Header = () => {
 
@@ -13,7 +14,7 @@ const Header = () => {
     const currentLocale = i18n.language;
     const currentPathname = usePathname();
     let flagsrc = '/images/flagen.svg';
-    const [windowWidth, setWindowWidth] = useState(0);
+    const windowWidth = useWindowWidth();
     const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -32,21 +33,6 @@ const Header = () => {
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
-
-    useEffect(() => {
-
-        const handleResize = () => {
-          setWindowWidth(window.innerWidth);
-        };
-    
-        setWindowWidth(window.innerWidth);
-    
-        window.addEventListener('resize', handleResize);
-    
-        return () => {
-          window.removeEventListener('resize', handleResize);
-        };
-      }, []);
 
     return (
         <section>

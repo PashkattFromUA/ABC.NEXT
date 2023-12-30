@@ -1,5 +1,5 @@
 .cpblock {
-    margin-top: 60px;
+    margin-top: 16px;
     margin-left: 100px;
     margin-right: 100px;
     display: flex;
@@ -74,11 +74,11 @@
 .cprighttop {
     display: flex;
     justify-content: space-between;
-    background: #fff;
-    box-shadow: 0px 1px 0px 0px #e4e4e4;
-    padding-bottom: 16px;
-    align-items: center;
-    margin-bottom: 16px;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 48px;
 }
 
 .cprighttopleft h1 {
@@ -100,7 +100,7 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.15px;
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
 .cprighttopright p {

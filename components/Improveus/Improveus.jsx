@@ -1,9 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Improveusmodal from '@/components/Improveus/Improveusmodal/Improveusmodal';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
+import useWindowWidth from "@/hooks/useWindowDimension";
 
 const Improveus = () => {
   const { t } = useTranslation();
@@ -22,21 +23,7 @@ const Improveus = () => {
     document.querySelector(section).scrollIntoView({ behavior: "smooth" });
   };
 
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    setWindowWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const windowWidth = useWindowWidth();
 
   return (
     <section >

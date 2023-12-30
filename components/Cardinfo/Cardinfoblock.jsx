@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from '@/styles/cardinfoblock.module.css'
+import useWindowWidth from "@/hooks/useWindowDimension";
 
 const Cardinfo = (props) => {
   const cardinfo = props.cardinfo;
@@ -14,21 +15,7 @@ const Cardinfo = (props) => {
       .scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    setWindowWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const windowWidth = useWindowWidth();
 
   return (
     <section>
@@ -200,6 +187,22 @@ const Cardinfo = (props) => {
         </div>
       ) : (
         <div>
+          <div className={styles.cprighttop}>
+                <div className={styles.cprighttopleft}>
+                  <h1>{cardinfo.name} crypto service review and rating</h1>
+                  <p>{cardinfo.place}</p>
+                </div>
+                <div className={styles.cprighttopright}>
+                  <a
+                    href={cardinfo.rating_url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <p>{cardinfo.rating}</p>
+                    <img src='/images/Star.svg' alt="Star" />
+                  </a>
+                </div>
+              </div>
           <div className={styles.cpblock}>
             <div className={styles.cpleft}>
               <img src={cardinfo.image_url} alt="cardimg" />
@@ -230,22 +233,6 @@ const Cardinfo = (props) => {
               </div>
             </div>
             <div className={styles.cpright}>
-              <div className={styles.cprighttop}>
-                <div className={styles.cprighttopleft}>
-                  <h1>{cardinfo.name}</h1>
-                  <p>{cardinfo.place}</p>
-                </div>
-                <div className={styles.cprighttopright}>
-                  <a
-                    href={cardinfo.rating_url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <p>{cardinfo.rating}</p>
-                    <img src='/images/Star.svg' alt="Star" />
-                  </a>
-                </div>
-              </div>
               <div className={styles.descblock}>
                 {carddescriptions.map((carddes) => {
                   const text = carddes.paragraph;

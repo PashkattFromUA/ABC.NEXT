@@ -9,7 +9,6 @@ const Sitemapblock = (props) => {
 
     const buttonLabels = props.data;
     const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
-    console.log(sortedCategories[1].items)
 
     return (
         <div className={styles.sitemapblockbg}>

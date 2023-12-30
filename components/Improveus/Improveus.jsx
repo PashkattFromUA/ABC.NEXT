@@ -71,7 +71,7 @@ const Improveus = () => {
             </div>
           </div>
           <div className={styles.improveright}>
-            <img src='/images/impoveus.png' alt=" " />
+            <img src='/images/improveus.png' alt=" " />
           </div>
         </div>
       )}

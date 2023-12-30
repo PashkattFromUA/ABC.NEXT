@@ -1,6 +1,5 @@
 import initTranslations from '../../../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import '@/styles/global.css'
 import SEO from '@/components/Cardinfo/Seoblock';
 import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
 import Cardlist from '@/components/Agregator/Cardlist';
@@ -9,25 +8,17 @@ import styles from '@/styles/cardpage.module.css'
 
 const i18nNamespaces = ['common'];
 
+export async function generateStaticParams({ params: { category } }) {
+  const items = await fetch(`https://api.abcrypto.io/api/categories/${category}/items/all`).then((res) => res.json())
+  return items.data.map((item) => ({
+    itemname: item.slug,
+  }))
+}
+
 async function getCardinfo(props) {
   const url = `https://api.abcrypto.io/api/items/${props.slug}`;
   const headers = new Headers({
     'App-Locale': props.lang,
-  });
-
-  const res = await fetch(url, { headers });
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
-
-async function getLabels(lang) {
-  const url = 'https://api.abcrypto.io/api/categories';
-  const headers = new Headers({
-    'App-Locale': lang,
   });
 
   const res = await fetch(url, { headers });
@@ -57,7 +48,7 @@ async function getCards(props) {
 export default async function Home({ params }) {
 
   const locale = params.locale;
-  const name = params.name;
+  const name = params.itemname;
   const { resources } = await initTranslations(locale, i18nNamespaces);
   const cardinfo = await getCardinfo({lang:locale,slug: name});
   const seodata = cardinfo.data.seo;
@@ -65,8 +56,6 @@ export default async function Home({ params }) {
   const cardfeat = cardinfo.data.features;
   const catinfo = cardinfo.data.category;
   const cards = await getCards({lang:locale,catslug: catinfo.slug});
-
-  const labels = await getLabels(locale);
 
   return (
     <TranslationsProvider

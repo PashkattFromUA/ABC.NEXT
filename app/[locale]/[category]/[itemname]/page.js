@@ -5,6 +5,7 @@ import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
 import Cardlist from '@/components/Agregator/Cardlist';
 import Blocktitle from '@/components/Blocktitle/Blocktitle';
 import styles from '@/styles/cardpage.module.css'
+import { notFound } from 'next/navigation'
 
 const i18nNamespaces = ['common'];
 
@@ -23,9 +24,7 @@ async function getCardinfo(props) {
 
   const res = await fetch(url, { headers });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+  if (!res.ok) return undefined
 
   return res.json();
 }
@@ -38,9 +37,7 @@ async function getCards(props) {
 
   const res = await fetch(url, { headers });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+  if (!res.ok) return undefined
 
   return res.json();
 }
@@ -51,6 +48,10 @@ export default async function Home({ params }) {
   const name = params.itemname;
   const { resources } = await initTranslations(locale, i18nNamespaces);
   const cardinfo = await getCardinfo({lang:locale,slug: name});
+
+  if (!cardinfo) {
+    notFound()
+  }
   const seodata = cardinfo.data.seo;
   const carddes = cardinfo.data.description;
   const cardfeat = cardinfo.data.features;

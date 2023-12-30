@@ -13,12 +13,12 @@ function SEO(props) {
         const text = cardseo.text;
         const p = text.split("\n");
         return (
-          <div>
-            <h2 key={cardseo.heading}>{cardseo.heading}</h2>
-            {p.map((paragraph, index)=> {
+          <div key={cardseo.heading}>
+            <h2>{cardseo.heading}</h2>
+            {p.map((paragraph)=> {
               return (
-                <div>
-                  <p key={index}>{paragraph}</p>
+                <div key={paragraph}>
+                  <p>{paragraph}</p>
                 </div>
               )
             })}

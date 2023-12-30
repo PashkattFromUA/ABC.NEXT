@@ -60,7 +60,7 @@ const Cardinfo = (props) => {
                 <div className="cpleftbuttons">
                   <a href={cardinfo.link} target="_blank" rel="noreferrer">
                     <button className="startbrowse">
-                      Start browse{" "}
+                      Start browse
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="7"
@@ -87,12 +87,12 @@ const Cardinfo = (props) => {
                     const text = carddes.paragraph;
                     const p = text.split("\n");
                     return (
-                      <div>
-                        <h2 key={carddes.heading}>{carddes.heading}</h2>
-                        {p.map((paragraph, index) => {
+                      <div key={carddes.heading}>
+                        <h2>{carddes.heading}</h2>
+                        {p.map((paragraph) => {
                           return (
-                            <div>
-                              <p key={index}>{paragraph}</p>
+                            <div key={paragraph}>
+                              <p>{paragraph}</p>
                             </div>
                           );
                         })}
@@ -103,9 +103,9 @@ const Cardinfo = (props) => {
                 <div className="featblock">
                   {cardfeatures.map((cardfeat) => {
                     return (
-                      <div>
-                        <h2 key={cardfeat.heading}>{cardfeat.heading}</h2>
-                        <p key={cardfeat.text}>{cardfeat.text}</p>
+                      <div key={cardfeat.heading}>
+                        <h2>{cardfeat.heading}</h2>
+                        <p>{cardfeat.text}</p>
                       </div>
                     );
                   })}
@@ -140,7 +140,7 @@ const Cardinfo = (props) => {
                     <div className="cpleftbuttons">
                       <a href={cardinfo.link} target="_blank" rel="noreferrer">
                         <button className="startbrowse">
-                          Start browse{" "}
+                          Start browse
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="7"
@@ -170,12 +170,12 @@ const Cardinfo = (props) => {
                       const text = carddes.paragraph;
                       const p = text.split("\n");
                       return (
-                        <div>
-                          <h2 key={carddes.heading}>{carddes.heading}</h2>
-                          {p.map((paragraph, index) => {
+                        <div key={carddes.heading}>
+                          <h2>{carddes.heading}</h2>
+                          {p.map((paragraph) => {
                             return (
-                              <div>
-                                <p key={index}>{paragraph}</p>
+                              <div key={paragraph}>
+                                <p>{paragraph}</p>
                               </div>
                             );
                           })}
@@ -186,9 +186,9 @@ const Cardinfo = (props) => {
                   <div className="featblock">
                     {cardfeatures.map((cardfeat) => {
                       return (
-                        <div>
-                          <h2 key={cardfeat.heading}>{cardfeat.heading}</h2>
-                          <p key={cardfeat.text}>{cardfeat.text}</p>
+                        <div key={cardfeat.heading}>
+                          <h2>{cardfeat.heading}</h2>
+                          <p>{cardfeat.text}</p>
                         </div>
                       );
                     })}
@@ -251,12 +251,12 @@ const Cardinfo = (props) => {
                   const text = carddes.paragraph;
                   const p = text.split("\n");
                   return (
-                    <div>
-                      <h2 key={carddes.heading}>{carddes.heading}</h2>
-                      {p.map((paragraph, index) => {
+                    <div key={carddes.heading}>
+                      <h2>{carddes.heading}</h2>
+                      {p.map((paragraph) => {
                         return (
-                          <div>
-                            <p key={index}>{paragraph}</p>
+                          <div key={paragraph}>
+                            <p>{paragraph}</p>
                           </div>
                         );
                       })}
@@ -267,9 +267,9 @@ const Cardinfo = (props) => {
               <div className={styles.featblock}>
                 {cardfeatures.map((cardfeat) => {
                   return (
-                    <div>
-                      <h2 key={cardfeat.heading}>{cardfeat.heading}</h2>
-                      <p key={cardfeat.text}>{cardfeat.text}</p>
+                    <div key={cardfeat.heading}>
+                      <h2 >{cardfeat.heading}</h2>
+                      <p>{cardfeat.text}</p>
                     </div>
                   );
                 })}

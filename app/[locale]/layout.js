@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params: { locale } }) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
   const labels = await getCategories(locale);
   const catnames = labels.data.filter(item => item.type === 'category');
-  const catnamesArrey = catnames.map(item => ({
+  const catnamesArray = catnames.map(item => ({
     id: item.data.id,
     slug: item.data.slug,
     name: item.data.name,
@@ -62,7 +62,7 @@ export default async function RootLayout({ children, params: { locale } }) {
       <Header />
       {children}
       <Form />
-      <Footer data={catnamesArrey} />
+      <Footer data={catnamesArray} />
       <ScrollToTopButt />
       </body>
       </TranslationsProvider>

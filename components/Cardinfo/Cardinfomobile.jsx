@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react';
-import scrollTo from '@/utils/scrollTo'
+import scrollTo from '@/utils/scrollTo';
+import styles from '@/styles/cardinfomobile.module.css'
 
 const Cardinfomobile = (props) => {
 
@@ -11,29 +12,29 @@ const Cardinfomobile = (props) => {
 
     const handleButtonClick = () => {
         scrollTo("#categorycardlist");
-      };
+    };
 
     return (
-        <div>
-            <div className="cpblock">
-                <div className="cprighttop">
-                    <div className="cprighttopleft">
-                        <h2>{cardinfo.name}</h2>
-                        <p>{cardinfo.place}</p>
-                    </div>
-                    <div className="cprighttopright">
+        <main>
+            <div className={styles.cpblock}>
+                <div className={styles.cptop}>
+                    <h1>{cardinfo.name}<br />
+                        review and rating
+                    </h1>
+                    <div className={styles.rating}>
                         <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">
                             <p>{cardinfo.rating}</p>
                             <img src='/images/Star.svg' alt="Star" />
                         </a>
                     </div>
                 </div>
-                <div className="cpblocktopl">
-                    <img src={cardinfo.image_url} alt="cardicon" />
+                <div className={styles.cpmid}>
+                    <p>{cardinfo.place}</p>
                 </div>
-                <div className="cpleftbuttons">
+                <img src={cardinfo.image_url} alt="cardicon" className={styles.cardimg} />
+                <div className={styles.cpbuttons}>
                     <a href={cardinfo.link} target="_blank" rel="noreferrer">
-                        <button className="startbrowse">
+                        <button className={styles.startbrowse}>
                             Start browse
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +50,7 @@ const Cardinfomobile = (props) => {
                             </svg>
                         </button>
                     </a>
-                    <button className="similar" onClick={() => handleButtonClick()}>
+                    <button className={styles.similar} onClick={() => handleButtonClick()}>
                         Similar
                     </button>
                 </div>
@@ -82,7 +83,7 @@ const Cardinfomobile = (props) => {
                     })}
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

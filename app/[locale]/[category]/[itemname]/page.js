@@ -46,7 +46,7 @@ export default async function Home({ params }) {
 
   const locale = params.locale;
   const name = params.itemname;
-  const { resources } = await initTranslations(locale, i18nNamespaces);
+  const { t,resources } = await initTranslations(locale, i18nNamespaces);
   const cardinfo = await getCardinfo({lang:locale,slug: name});
 
   if (!cardinfo) {
@@ -67,8 +67,8 @@ export default async function Home({ params }) {
         <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
         <SEO data={seodata} />
         <div className={styles.cardsbg}>
-          <div className={styles.cardsblock}>
-            <Blocktitle name="More in" title={catinfo.name} />
+          <div className={styles.cardsblock} id="categorycardlist">
+            <Blocktitle name={t('morein')} title={catinfo.name} />
             <Cardlist cardsArray={cards.data} />
           </div>
         </div>

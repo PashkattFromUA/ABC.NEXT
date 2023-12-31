@@ -55,10 +55,10 @@ const Form = () => {
         <div className={styles.formblock} id="form">
           <Blocktitle name={t('forpartners')} title={t('offertext')} />
           <div className={styles.nameemail}>
-          <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} />
-          <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" />
+          <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} id="name" />
+          <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" />
         </div>
-        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} />
+        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} id="description" />
         <div className={styles.formbot}>
           <p>{t('thankyou')}</p>
           <button onClick={handleSubmit}>{t('getintouch')}</button>

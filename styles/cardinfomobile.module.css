@@ -104,3 +104,43 @@
     background-color: #fff;
     width: calc(100vw - 20px);
 }
+
+.descblock h2 {
+    color: #212025;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-bottom: 8px;
+}
+
+.descblock p {
+    color: #656565;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-bottom: 16px;
+}
+
+.featblock h2 {
+    color: #212025;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-bottom: 4px;
+}
+
+.featblock {
+    margin-top: 24px;
+}
+
+.featblock p {
+    color: #656565;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-bottom: 16px;
+}

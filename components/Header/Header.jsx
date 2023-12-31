@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Localemodal from "./Locale/Localemodal";
 import styles from '@/styles/header.module.css';
 import { usePathname } from 'next/navigation';
 import useWindowWidth from "@/hooks/useWindowDimension";
+import scrollTo from '@/utils/scrollTo';
 
 const Header = () => {
 
@@ -26,8 +27,9 @@ const Header = () => {
         flagsrc = '/images/flagen.svg';
     }
 
-    const scrollTo = (section) => {
-        document.querySelector(section).scrollIntoView({ behavior: "smooth" });
+    const handleButtonClick = () => {
+        scrollTo("#form");
+        setIsNavbarExpanded(false)
     };
 
     const toggleModal = () => {
@@ -51,28 +53,28 @@ const Header = () => {
                                 />
                             </div>
                             <ul className={styles.mobileheadbuttons}>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.pactive : styles.pnonactive} >
+                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)} >
                                     <li>
                                         <span>{t("main")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
                                     <li>
                                         <span>{t("aggregator")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
                                     <li>
                                         <span >{t("forpartners")}</span>
                                     </li>
                                 </Link>
-                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.pactive : styles.pnonactive}>
+                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
                                     <li>
                                         <span>FAQ</span>
                                     </li>
                                 </Link>
                             </ul>
-                            <button onClick={() => scrollTo("#form")}>Contact us</button>
+                            <button onClick={() => handleButtonClick()}>{t('contactus')}</button>
                         </div>
                     ) : (
                         <div></div>
@@ -119,7 +121,7 @@ const Header = () => {
                         </Link>
                         <ul className={styles.headbuttons}>
                             <li>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage }>
+                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage}>
                                     {t("main")}
                                 </Link>
                             </li>
@@ -157,12 +159,10 @@ const Header = () => {
                                 />
                             </svg>
                             {isModalOpen && (
-                                <>
-                                    <Localemodal isOpen={isModalOpen} />
-                                </>
+                                <Localemodal isOpen={isModalOpen} />
                             )}
                         </div>
-                        <button onClick={() => scrollTo("#form")}>{t("contactus")}</button>
+                        <button onClick={() => handleButtonClick()}>{t("contactus")}</button>
                     </div>
                 </div>
             )}

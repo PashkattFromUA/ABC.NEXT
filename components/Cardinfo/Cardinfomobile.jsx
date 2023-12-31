@@ -54,7 +54,7 @@ const Cardinfomobile = (props) => {
                         Similar
                     </button>
                 </div>
-                <div className="descblock">
+                <div className={styles.descblock}>
                     {carddescriptions.map((carddes) => {
                         const text = carddes.paragraph;
                         const p = text.split("\n");
@@ -72,7 +72,7 @@ const Cardinfomobile = (props) => {
                         );
                     })}
                 </div>
-                <div className="featblock">
+                <div className={styles.featblock}>
                     {cardfeatures.map((cardfeat) => {
                         return (
                             <div key={cardfeat.heading}>

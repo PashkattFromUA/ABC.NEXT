@@ -2,7 +2,7 @@
 
 import React from 'react'
 import scrollTo from '@/utils/scrollTo'
-import styles from '@/styles/cardinfoblock.module.css'
+import styles from '@/styles/cardinfodesktop.module.css'
 
 const Cardinfodesktop = (props) => {
 
@@ -12,22 +12,10 @@ const Cardinfodesktop = (props) => {
 
     const handleButtonClick = () => {
         scrollTo("#categorycardlist");
-      };
+    };
 
     return (
         <div>
-            <div className={styles.cprighttop}>
-                <div className={styles.cprighttopleft}>
-                    <h1>{cardinfo.name} crypto service review and rating</h1>
-                    <p>{cardinfo.place}</p>
-                </div>
-                <div className={styles.cprighttopright}>
-                    <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">
-                        <p>{cardinfo.rating}</p>
-                        <img src='/images/Star.svg' alt="Star" />
-                    </a>
-                </div>
-            </div>
             <div className={styles.cpblock}>
                 <div className={styles.cpleft}>
                     <img src={cardinfo.image_url} alt="cardimg" />
@@ -55,6 +43,18 @@ const Cardinfodesktop = (props) => {
                     </div>
                 </div>
                 <div className={styles.cpright}>
+                    <div className={styles.cprighttop}>
+                        <div className={styles.cprighttopleft}>
+                            <h1>{cardinfo.name} <br />review and rating</h1>
+                            <p>{cardinfo.place}</p>
+                        </div>
+                        <div className={styles.cprighttopright}>
+                            <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">
+                                <p>{cardinfo.rating}</p>
+                                <img src='/images/Star.svg' alt="Star" />
+                            </a>
+                        </div>
+                    </div>
                     <div className={styles.descblock}>
                         {carddescriptions.map((carddes) => {
                             const text = carddes.paragraph;

@@ -2,11 +2,17 @@ import initTranslations from '../../i18n';
 import Screensblock from "@/components/Screensblock/Screensblock";
 import Sitemapblock from "@/components/Sitemapblock/Sitemapblock";
 
-export const metadata = {
-    title: 'For partners',
-};
-
 const i18nNamespaces = ['common'];
+
+export async function generateMetadata({ params: { locale } }) {
+   
+    const { t } = await initTranslations(locale, i18nNamespaces);
+
+    return {
+      title: `${t('sitemap')} acrypto.io`,
+      description: `${t('metamain')}`
+    }
+  }
 
 async function getLabels(lang) {
     const url = 'https://api.abcrypto.io/api/categories';
@@ -28,10 +34,9 @@ export default async function ForPartnersPage({ params: { locale } }) {
     const { t } = await initTranslations(locale, i18nNamespaces);
     const labels = await getLabels(locale);
 
-
     return (
             <main>
-                <Screensblock name={t('sitemap')} title={t('sitemap')} />
+                <Screensblock name={t('sitemaptextleft')} title={t('sitemaptextright')} />
                 <Sitemapblock data={labels.data} />
             </main>
     );

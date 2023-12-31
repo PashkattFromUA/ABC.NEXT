@@ -36,7 +36,7 @@ const Footer = (props) => {
                                 <p>{t('forpartners')}</p>
                             </Link>
                             <Link href="/sitemap">
-                                <p>Sitemap</p>
+                                <p>{t('sitemap')}</p>
                             </Link>
                         </div>
                     </div>

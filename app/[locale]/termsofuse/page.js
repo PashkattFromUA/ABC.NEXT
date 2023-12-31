@@ -37,12 +37,12 @@ export default async function TermsofusePage({ params: { locale } }) {
                     <h4>{t('epheader')}</h4>
                     <p>{t('eptext1')}</p>
                     <p>{t('eptext2')}</p>
-                    <h5>{t('epheader2')}</h5>
+                    <h4>{t('epheader2')}</h4>
                     <p>{t('eptext3')}</p>
-                    <h5>{t('epheader3')}</h5>
+                    <h4>{t('epheader3')}</h4>
                     <p>{t('eptext4')}</p>
                     <p>{t('eptext5')}</p>
-                    <h5>{t('epheader4')}</h5>
+                    <h4>{t('epheader4')}</h4>
                     <p>{t('eptext6')}</p>
                 </div>
             </div>

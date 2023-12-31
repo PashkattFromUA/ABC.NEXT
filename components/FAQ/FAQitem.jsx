@@ -30,7 +30,7 @@ function FAQItem(props) {
           </svg>
         </div>
       </div>
-      <div className={isContainerOpen === true ? styles.containeropen : styles.container }>
+      <div className={`${styles.container} ${isContainerOpen ? styles.containeropen : ''}`}>
         <div className={styles.FAQtext}>
           <p>{props.text}
           </p>

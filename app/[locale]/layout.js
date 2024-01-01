@@ -55,16 +55,16 @@ export default async function RootLayout({ children, params: { locale } }) {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
       </head>
       <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
-      <body className={dmsans.className}>
-      <Header />
-      {children}
-      <Form />
-      <Footer data={catnamesArray} />
-      <ScrollToTopButt />
-      </body>
+        namespaces={i18nNamespaces}
+        locale={locale}
+        resources={resources}>
+        <body className={dmsans.className}>
+          <Header />
+          {children}
+          <Form />
+          <Footer data={catnamesArray} />
+          <ScrollToTopButt />
+        </body>
       </TranslationsProvider>
     </html>
   );

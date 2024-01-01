@@ -2,6 +2,7 @@
 
 import React from 'react'
 import scrollTo from '@/utils/scrollTo'
+import styles from '@/styles/cardinfotablet.module.css'
 
 const Cardinfotablet = (props) => {
 
@@ -11,31 +12,33 @@ const Cardinfotablet = (props) => {
 
     const handleButtonClick = () => {
         scrollTo("#categorycardlist");
-      };
+    };
 
     return (
-        <div>
-            <div className="cpblock">
-                <div className="cpblocktop">
-                    <div className="cpblocktopl">
+        <main>
+            <div className={styles.cpblock}>
+                <div className={styles.cpblocktop}>
+                    <div className={styles.cpblocktopl}>
                         <img src={cardinfo.image_url} alt="cardicon" />
                     </div>
-                    <div className="cpblocktopr">
-                        <div className="cprighttop">
-                            <div className="cprighttopleft">
-                                <h2>{cardinfo.name}</h2>
+                    <div className={styles.cpblocktopr}>
+                        <div className={styles.cprighttop}>
+                            <div className={styles.cprighttopleft}>
+                                <h1>{cardinfo.name}<br />
+                                    review and rating
+                                </h1>
                                 <p>{cardinfo.place}</p>
                             </div>
-                            <div className="cprighttopright">
+                            <div className={styles.cprighttopright}>
                                 <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">
                                     <p>{cardinfo.rating}</p>
                                     <img src='/images/Star.svg' alt="Star" />
                                 </a>
                             </div>
                         </div>
-                        <div className="cpleftbuttons">
+                        <div className={styles.cpbuttons}>
                             <a href={cardinfo.link} target="_blank" rel="noreferrer">
-                                <button className="startbrowse">
+                                <button className={styles.startbrowse}>
                                     Start browse
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -51,12 +54,12 @@ const Cardinfotablet = (props) => {
                                     </svg>
                                 </button>
                             </a>
-                            <button className="similar" onClick={() => handleButtonClick()}>Similar</button>
+                            <button className={styles.similar} onClick={() => handleButtonClick()}>Similar</button>
                         </div>
                     </div>
                 </div>
-                <div className="cardblockbot">
-                    <div className="descblock">
+                <div className={styles.cardblockbot}>
+                    <div className={styles.descblock}>
                         {carddescriptions.map((carddes) => {
                             const text = carddes.paragraph;
                             const p = text.split("\n");
@@ -74,7 +77,7 @@ const Cardinfotablet = (props) => {
                             );
                         })}
                     </div>
-                    <div className="featblock">
+                    <div className={styles.featblock}>
                         {cardfeatures.map((cardfeat) => {
                             return (
                                 <div key={cardfeat.heading}>
@@ -86,7 +89,7 @@ const Cardinfotablet = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

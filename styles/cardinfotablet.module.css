@@ -1,3 +1,63 @@
+.cpblock {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 55px;
+}
+
+.cpblocktop {
+    display: flex;
+    gap: 50px;
+}
+
+.cpblocktopl img {
+    width: 381px;
+    height: 246px;
+}
+
+.cprighttop {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 0px 0px #E4E4E4;
+    padding-bottom: 16px;
+}
+
+.cpblocktopr {
+    width: 100%;
+}
+
+.cprighttopleft h1 {
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0.15px;
+}
+
+.cprighttopleft p {
+    color: #656565;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-top: 8px;
+}
+
+.cprighttopright a {
+    display: flex;
+    gap: 4px;
+    color: #1E1E21;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.cpbuttons {
+    display: flex;
+    margin-top: 32px;
+    gap: 24px;
+}
+
 .startbrowse {
     display: flex;
     padding: 13px 24px;
@@ -15,4 +75,67 @@
     letter-spacing: 0.15px;
     border-style: none;
     transition: all 0.6s;
+}
+
+.similar {
+    display: flex;
+    padding: 12px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    color: #000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    background-color: #fff;
+    transition: all 0.6s;
+}
+
+.cardblockbot {
+    margin-top: 32px;
+}
+
+.descblock h2 {
+    color: #212025;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.descblock p {
+    color: #656565;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.featblock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 32px;
+}
+
+.featblock h2 {
+    color: #212025;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.15px;
+}
+
+.featblock p {
+    color: #656565;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.15px;
 }

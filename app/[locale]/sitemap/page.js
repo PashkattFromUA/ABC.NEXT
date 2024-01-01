@@ -36,7 +36,7 @@ export default async function ForPartnersPage({ params: { locale } }) {
 
     return (
             <main>
-                <Screensblock name={t('sitemaptextleft')} title={t('sitemaptextright')} />
+                <Screensblock name={t('sbnameap')} title={t('sbtitleap')} />
                 <Sitemapblock data={labels.data} />
             </main>
     );

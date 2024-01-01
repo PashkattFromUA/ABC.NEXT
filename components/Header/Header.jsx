@@ -38,7 +38,7 @@ const Header = () => {
 
     return (
         <section>
-            {windowWidth < 746 ? (
+            {windowWidth < 760 ? (
                 <div>
                     {isNavbarExpanded ? (
                         <div className={styles.menumobileexpanded}>

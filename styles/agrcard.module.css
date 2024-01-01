@@ -130,7 +130,7 @@
 
 @media (max-width: 1439px) {
   .card1 {
-    height: 218px;
+    height: auto;
     width: auto;
   }
 

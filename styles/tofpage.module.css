@@ -100,10 +100,7 @@
     }
 
     .toftextleft {
-        display: grid;
-        width: calc(100vw - 76px);
-        grid-template-columns: 40% 60%;
-        gap: 16px;
+        width: auto;
     }
 
     .toftextright {
@@ -130,6 +127,7 @@
         line-height: 30px;
         letter-spacing: 0.15px;
         height: max-content;
+        margin-top: 16px;
     }
 }
 
@@ -163,12 +161,13 @@
     .toftextleft p {
         color: #656565;
         font-family: "DM Sans", sans-serif;
-        font-size: 14px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         letter-spacing: 0.15px;
         height: max-content;
+        margin-top: 0;
     }
 
     .toftextright h4 {

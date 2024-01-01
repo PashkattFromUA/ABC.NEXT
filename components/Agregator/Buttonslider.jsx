@@ -4,8 +4,10 @@ import React, { useRef, useState } from 'react';
 import Cardlist from './Cardlist';
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import styles from '@/styles/paginatedbuttonslider.module.css'
+import { useTranslation } from 'react-i18next';
 
 const CarouselInScrollContainer = (props) => {
+    const {t} = useTranslation();
     const containerRef = useRef(null);
     const buttonLabels = props.data.data;
     const buttonWidth = 150;
@@ -24,7 +26,7 @@ const CarouselInScrollContainer = (props) => {
 
     return (
         <div>
-            <Blocktitle name="Agregator" title={catname[selectedCategoryId - 1]} />
+            <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId - 1]} />
             <div className={styles.carouselinscrollcontainer}>
                 <div className={styles.agrsliderblock}>
                     <div className={styles.scrollingcontainer} ref={containerRef}>

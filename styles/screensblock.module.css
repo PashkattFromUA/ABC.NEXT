@@ -82,5 +82,6 @@
 
     .screensblock p {
         font-size: 14px;
+        line-height: normal;
     }
 }

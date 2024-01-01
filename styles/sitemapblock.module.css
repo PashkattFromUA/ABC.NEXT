@@ -52,9 +52,110 @@
     gap: 16px;
     border-radius: 16px;
     background: #F8F8F8;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.15px;
+    color: #212025;
 }
 
 .cardlink img {
     width: 40px;
     height: 40px;
+}
+
+@media (max-width: 1439px) {
+    .sitemapblock{
+        width: auto;
+        border-radius: 30px 30px 0 0;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+
+@media (max-width: 1220px) {
+    .cardlinkblock {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1047px) {
+    .sitemapblock{
+        width: auto;
+        padding: 40px 20px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .sitemapblockbg{
+        padding-top: 60px;
+        border-radius: 44px 0px 0px 0px;
+    }
+
+    .categorylink {
+        font-family: "DM Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 24px 0;
+        padding: 18px 24px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 800px){
+    .cardlinkblock {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 663px){
+    .sitemapblock{
+        width: auto;
+        padding: 16px 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 16px 16px 0px 0px;
+    }
+
+    .sitemapblockbg{
+        padding-top: 40px;
+        border-radius: 24px 0px 0px 0px;
+    }
+
+    .categorylink {
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin: 16px 0;
+        padding: 12px 24px;
+        gap: 24px;
+    }
+
+    .cardlink {
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding: 12px 24px;
+        gap: 16px;
+        border-radius: 16px;
+        background: #F8F8F8;
+        font-size: 14px;
+    }
+    
+    .cardlink img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px){
+    .cardlinkblock {
+        grid-template-columns: 1fr;
+    }
 }

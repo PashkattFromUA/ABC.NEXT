@@ -1,6 +1,7 @@
 .pptext {
     display: flex;
     justify-content: space-between;
+    gap: 32px;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 66px;
@@ -34,6 +35,13 @@
 
 .pptextright {
     width: 610px;
+}
+
+.pptextright ul {
+    list-style: disc;
+    color: black;
+    padding-left: 20px;
+    margin-bottom: 16px;
 }
 
 .pptextright h4 {
@@ -91,11 +99,11 @@
     }
 
     .pptextleft {
-        width: 40%;
+        width: auto;
     }
 
     .pptextright {
-        width: 60%;
+        width: auto;
     }
 }
 
@@ -108,11 +116,7 @@
     }
 
     .pptextleft {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        width: calc(100vw - 76px);
-        align-items: start;
-        gap: 16px;
+        width: auto;
     }
 
     .pptextleft h2 {
@@ -136,18 +140,12 @@
         width: auto;
         letter-spacing: 0.15px;
         height: max-content;
+        margin-top: 16px;
     }
 
     .pptextright {
         width: auto;
     }
-
-    .pptextright ul {
-        list-style: disc;
-        color: black;
-        padding-left: 20px;
-        margin-bottom: 16px;
-      }
 }
 
 @media (max-width: 663px) {
@@ -180,12 +178,13 @@
     .pptextleft p {
         color: #656565;
         font-family: 'DM Sans', sans-serif;
-        font-size: 14px;
+        font-size: 17px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         letter-spacing: 0.15px;
         height: max-content;
+        margin-top: 0;
     }
 
     .pptextright {

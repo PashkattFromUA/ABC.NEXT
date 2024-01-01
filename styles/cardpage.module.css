@@ -32,9 +32,14 @@
 }
 
 @media (max-width: 1047px) {
+    .cardsbg{
+        padding-top: 60px;
+        border-radius: 44px 0 0 0;
+    }
+
     .cardsblock {
         background-color: #fff;
-        padding: 40px;
+        padding: 40px 20px;
         width: calc(100vw - 60px);
         border-radius: 30px 30px 0 0;
         margin-left: 30px;
@@ -52,7 +57,6 @@
         background-color: #fff;
         padding: 16px 10px;
         width: calc(100vw - 20px);
-        border-radius: 30px 30px 0 0;
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 16px 16px 0px 0px;

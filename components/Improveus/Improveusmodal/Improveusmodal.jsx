@@ -67,10 +67,10 @@ const Improveusmodal = ({ isOpen, closeModal }) => {
           </div>
           <h4>{t('improvetext')}</h4>
           <div className={styles.modalnameemail}>
-            <input value={name} onChange={el => setName(el.target.value)} className={styles.modalname} placeholder={t('name')} id="name" />
-            <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.modalemail} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" />
+            <input value={name} onChange={el => setName(el.target.value)} className={styles.modalname} placeholder={t('name')} id="name" autoComplete="name" />
+            <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.modalemail} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" autoComplete="email" />
           </div>
-          <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.modaldescription} placeholder={t('shortdescription')} id="description" />
+          <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.modaldescription} placeholder={t('shortdescription')} id="description" autoComplete="description"/>
           <div className={styles.modalformbot}>
             <h4>{t('thankyou')}</h4>
             <button onClick={handleSubmit} className={styles.modalformbutt}>{t('getintouch')}</button>

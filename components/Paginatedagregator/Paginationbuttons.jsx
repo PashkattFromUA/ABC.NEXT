@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginationbuttons.module.css'
+import useWindowWidth from "@/hooks/useWindowDimension";
 
 const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
 
@@ -29,21 +30,7 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
     return pageNumbers;
   };
 
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    setWindowWidth(window.innerWidth);
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const windowWidth = useWindowWidth();
 
   return (
     <div>

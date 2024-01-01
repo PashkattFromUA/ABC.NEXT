@@ -3,13 +3,14 @@
 import React from 'react'
 import { useTranslation } from "react-i18next";
 import styles from '@/styles/main.module.css';
+import scrollTo from '@/utils/scrollTo';
 
 const Main = () => {
 
     const { t } = useTranslation();
 
-    const scrollTo = (section) => {
-        document.querySelector(section).scrollIntoView({ behavior: "smooth" });
+    const handleButtonClick = (blockid) => {
+        scrollTo(blockid);
     };
 
     return (
@@ -20,7 +21,7 @@ const Main = () => {
                     <p>{t('mainscrtextright')}</p>
                 </div>
                 <div className={styles.mainbuttons}>
-                    <button className={styles.button1} onClick={() => scrollTo("#agregator")}>
+                    <button className={styles.button1} onClick={() => handleButtonClick("#agregator")}>
                         {t('startbrowse')}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +36,7 @@ const Main = () => {
                             />
                         </svg>
                     </button>
-                    <span className={styles.button2} onClick={() => scrollTo("#FAQ")}>
+                    <span className={styles.button2} onClick={() => handleButtonClick("#FAQ")}>
                         {t('haveaquestion')}
                     </span>
                 </div>

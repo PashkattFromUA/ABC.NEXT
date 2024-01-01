@@ -44,7 +44,9 @@ const Header = () => {
                         <div className={styles.menumobileexpanded}>
                             <div className={styles.menutop}>
                                 <Link href="/">
-                                    <img src='/images/Logo.svg' alt="ABC" />
+                                    <img src='/images/Logo.svg' alt="ABC"
+                                        onClick={() => setIsNavbarExpanded(false)}
+                                    />
                                 </Link>
                                 <img
                                     src="/images/closeburger.svg"

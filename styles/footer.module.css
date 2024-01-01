@@ -180,8 +180,12 @@
         width: auto;
     }
 
+    .footer2{
+        width: 200%;
+    }
+
     .foot2but {
-        column-gap: 60px;
+        column-gap: 16px;
     }
 
     .footerleft {

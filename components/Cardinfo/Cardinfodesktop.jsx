@@ -3,6 +3,7 @@
 import React from 'react'
 import scrollTo from '@/utils/scrollTo'
 import styles from '@/styles/cardinfodesktop.module.css'
+import Image from 'next/image'
 
 const Cardinfodesktop = (props) => {
 
@@ -18,7 +19,7 @@ const Cardinfodesktop = (props) => {
         <div>
             <div className={styles.cpblock}>
                 <div className={styles.cpleft}>
-                    <img src={cardinfo.image_url} alt="cardimg" />
+                    <Image src={cardinfo.image_url} width={511} height={325} alt="cardimg" priority={true} />
                     <div className={styles.cpleftbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>
@@ -51,7 +52,7 @@ const Cardinfodesktop = (props) => {
                         <div className={styles.cprighttopright}>
                             <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">
                                 <p>{cardinfo.rating}</p>
-                                <img src='/images/Star.svg' alt="Star" />
+                                <Image src='/images/Star.svg' width={20} height={24} alt="Star" />
                             </a>
                         </div>
                     </div>

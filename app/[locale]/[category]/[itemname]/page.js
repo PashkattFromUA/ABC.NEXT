@@ -79,7 +79,7 @@ export default async function Home({ params }) {
         <div className={styles.cardsbg}>
           <div className={styles.cardsblock} id="categorycardlist">
             <Blocktitle name={t('morein')} title={catinfo.name} />
-            <Cardlist cardsArray={cards.data} />
+            <Cardlist cardsArray={cards.data} catslug={catinfo.slug}/>
           </div>
         </div>
       </main>

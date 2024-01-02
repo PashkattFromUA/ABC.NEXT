@@ -8,6 +8,7 @@ import styles from '@/styles/header.module.css';
 import { usePathname } from 'next/navigation';
 import useWindowWidth from "@/hooks/useWindowDimension";
 import scrollTo from '@/utils/scrollTo';
+import Image from "next/image";
 
 const Header = () => {
 
@@ -44,15 +45,9 @@ const Header = () => {
                         <div className={styles.menumobileexpanded}>
                             <div className={styles.menutop}>
                                 <Link href="/">
-                                    <img src='/images/Logo.svg' alt="ABC"
-                                        onClick={() => setIsNavbarExpanded(false)}
-                                    />
+                                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" onClick={() => setIsNavbarExpanded(false)} />
                                 </Link>
-                                <img
-                                    src="/images/closeburger.svg"
-                                    alt="X"
-                                    onClick={() => setIsNavbarExpanded(false)}
-                                />
+                                <Image src="/images/closeburger.svg" alt="X" width={18} height={17} onClick={() => setIsNavbarExpanded(false)} />
                             </div>
                             <ul className={styles.mobileheadbuttons}>
                                 <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)} >
@@ -83,11 +78,11 @@ const Header = () => {
                     )}
                     <div className={styles.topmenu}>
                         <Link href="/">
-                            <img src='/images/Logo.svg' alt="ABC" />
+                            <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
                         </Link>
                         <div className={styles.navbarr}>
                             <div className={styles.localisator} onClick={toggleModal}>
-                                <img src={flagsrc} alt="flag" />
+                                <Image src={flagsrc} width={16} height={16} alt="flag" />
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="12"
@@ -107,11 +102,7 @@ const Header = () => {
                                     </>
                                 )}
                             </div>
-                            <img
-                                src="/images/hamburger.svg"
-                                alt="menu"
-                                onClick={() => setIsNavbarExpanded(true)}
-                            />
+                            <Image src="/images/hamburger.svg" width={24} height={19} alt="menu" onClick={() => setIsNavbarExpanded(true)} />
                         </div>
                     </div>
                 </div>
@@ -119,7 +110,7 @@ const Header = () => {
                 <div className={styles.topmenu}>
                     <div className={styles.navbarl}>
                         <Link href="/">
-                            <img src='/images/Logo.svg' alt="ABC" />
+                            <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
                         </Link>
                         <ul className={styles.headbuttons}>
                             <li>
@@ -146,7 +137,7 @@ const Header = () => {
                     </div>
                     <div className={styles.navbarr}>
                         <div className={styles.localisator} onClick={toggleModal}>
-                            <img src={flagsrc} alt="flag" />
+                            <Image src={flagsrc} width={16} height={16} alt="flag" />
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="12"

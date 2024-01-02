@@ -5,6 +5,7 @@ import Improveusmodal from '@/components/Improveus/Improveusmodal/Improveusmodal
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
 import useWindowWidth from "@/hooks/useWindowDimension";
+import Image from 'next/image';
 
 const Improveus = () => {
   const { t } = useTranslation();
@@ -33,7 +34,7 @@ const Improveus = () => {
           <h2>{t('improvehead')}</h2>
           <p>{t('improvetext')}</p>
           <div className={styles.improveright}>
-            <img src="/images/improveus.png" alt=" " />
+            <Image src="/images/improveus.png" width={616} height={472} loading="lazy" alt="Improveus" />
           </div>
           <div className={styles.improvebutt}>
               <button className={styles.button1} onClick={openModal}>{t('improvehead')}<svg xmlns="http://www.w3.org/2000/svg" width="7" height="8" viewBox="0 0 7 8" fill="none" >
@@ -58,7 +59,7 @@ const Improveus = () => {
             </div>
           </div>
           <div className={styles.improveright}>
-            <img src='/images/improveus.png' alt=" " />
+            <Image src="/images/improveus.png" width={616} height={472}  loading="lazy" alt="Improveus" />
           </div>
         </div>
       )}

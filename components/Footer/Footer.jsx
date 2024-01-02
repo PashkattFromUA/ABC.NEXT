@@ -3,6 +3,7 @@
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import styles from '@/styles/footer.module.css'
+import Image from 'next/image';
 
 const Footer = (props) => {
 
@@ -15,7 +16,7 @@ const Footer = (props) => {
             <div className={styles.footertop}>
                 <div className={styles.footerleft}>
                     <Link href="/">
-                        <img src='/images/Logo.svg' alt="ABC" />
+                        <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
                     </Link>
                     <h2>{t('mainscrtextright')}</h2>
                 </div>

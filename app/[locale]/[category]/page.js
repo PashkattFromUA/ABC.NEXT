@@ -1,9 +1,11 @@
+import { lazy, Suspense } from 'react';
 import initTranslations from '../../i18n';
-import Blocktitle from '@/components/Blocktitle/Blocktitle';
+const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
 import Screensblock from '@/components/Screensblock/Screensblock';
-import Cardlist from '@/components/Agregator/Cardlist';
-import styles from '@/styles/catpage.module.css'
-import { notFound } from 'next/navigation'
+const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
+import styles from '@/styles/catpage.module.css';
+import { notFound } from 'next/navigation';
+import Loading from '../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -51,16 +53,18 @@ export default async function CategoryPage({ params }) {
   });
 
   return (
-      <main>
-        <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
-        <div className={styles.cardlistbg}>
-          <div className={styles.cardlistblock} id="categorycardlist">
+    <main>
+      <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
+      <div className={styles.cardlistbg}>
+        <div className={styles.cardlistblock} id="categorycardlist">
+          <Suspense fallback={<Loading />}>
             <Blocktitle name={t('allin')} title={resultObject.name} />
             <div>
               <Cardlist cardsArray={cards.data} catslug={resultObject.slug} />
             </div>
-          </div>
+          </Suspense>
         </div>
-      </main>
+      </div>
+    </main>
   );
 }

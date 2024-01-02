@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import Form from '@/components/Form/Form';
 import Header from '@/components/Header/Header';
 import i18nConfig from '@/i18nConfig';
@@ -5,9 +6,10 @@ import { dir } from 'i18next';
 import { DM_Sans } from 'next/font/google';
 import initTranslations from '../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import Footer from '@/components/Footer/Footer';
+const Footer = lazy(() => import('@/components/Footer/Footer'));
 import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import '@/styles/global.css'
+import Loading from './loading';
 
 const dmsans = DM_Sans({ subsets: ['latin'] });
 
@@ -62,7 +64,9 @@ export default async function RootLayout({ children, params: { locale } }) {
           <Header />
           {children}
           <Form />
+          <Suspense fallback={<Loading/>}>
           <Footer data={catnamesArray} />
+          </Suspense>
           <ScrollToTopButt />
         </body>
       </TranslationsProvider>

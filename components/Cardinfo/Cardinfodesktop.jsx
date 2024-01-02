@@ -78,7 +78,7 @@ const Cardinfodesktop = (props) => {
                         {cardfeatures.map((cardfeat) => {
                             return (
                                 <div key={cardfeat.heading}>
-                                    <h2 >{cardfeat.heading}</h2>
+                                    <h2>{cardfeat.heading}</h2>
                                     <p>{cardfeat.text}</p>
                                 </div>
                             );

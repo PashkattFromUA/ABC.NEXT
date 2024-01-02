@@ -1,6 +1,8 @@
+import { lazy, Suspense } from 'react';
 import initTranslations from '../../i18n';
 import Screensblock from '@/components/Screensblock/Screensblock';
-import Agregator from '@/components/Agregator/Agregator';
+import Loading from '../loading';
+const Agregator = lazy(() => import('@/components/Agregator/Agregator'));
 
 const i18nNamespaces = ['common'];
 
@@ -29,9 +31,11 @@ export default async function Home({ params: { locale } }) {
   const labels = await getLabels(locale);
 
   return (
-      <main>
-        <Screensblock name={t('sbnameap')} title={t('sbtitleap')} />
+    <main>
+      <Screensblock name={t('sbnameap')} title={t('sbtitleap')} />
+      <Suspense fallback={<Loading />}>
         <Agregator data={labels} />
-      </main>
+      </Suspense>
+    </main>
   );
 }

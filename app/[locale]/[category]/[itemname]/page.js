@@ -1,11 +1,12 @@
+import { lazy, Suspense } from 'react';
 import initTranslations from '../../../i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
-import SEO from '@/components/Cardinfo/Seoblock';
+const SEO = lazy(() => import('@/components/Cardinfo/Seoblock'));
 import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
-import Cardlist from '@/components/Agregator/Cardlist';
-import Blocktitle from '@/components/Blocktitle/Blocktitle';
+const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
+const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
 import styles from '@/styles/cardpage.module.css'
 import { notFound } from 'next/navigation'
+import Loading from '../../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -16,10 +17,10 @@ export async function generateStaticParams({ params: { category } }) {
   }))
 }
 
-export async function generateMetadata({ params } ) {
+export async function generateMetadata({ params }) {
   const name = params.itemname;
   const product = await fetch(`https://api.abcrypto.io/api/items/${name}`).then((res) => res.json());
- 
+
   return {
     title: `${product.data.name} Crypto Service Review and Rating`,
     description: `A detailed review of the ${product.data.name} cryptocurrency Service. Description of tools and products the exchange offers to investors and pros and cons`
@@ -56,8 +57,8 @@ export default async function Home({ params }) {
 
   const locale = params.locale;
   const name = params.itemname;
-  const { t,resources } = await initTranslations(locale, i18nNamespaces);
-  const cardinfo = await getCardinfo({lang:locale,slug: name});
+  const { t } = await initTranslations(locale, i18nNamespaces);
+  const cardinfo = await getCardinfo({ lang: locale, slug: name });
 
   if (!cardinfo) {
     notFound()
@@ -66,23 +67,22 @@ export default async function Home({ params }) {
   const carddes = cardinfo.data.description;
   const cardfeat = cardinfo.data.features;
   const catinfo = cardinfo.data.category;
-  const cards = await getCards({lang:locale,catslug: catinfo.slug});
+  const cards = await getCards({ lang: locale, catslug: catinfo.slug });
 
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}>
       <main>
         <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
-        <SEO data={seodata} />
+        <Suspense fallback={<Loading />}>
+          <SEO data={seodata} />
+        </Suspense>
         <div className={styles.cardsbg}>
           <div className={styles.cardsblock} id="categorycardlist">
-            <Blocktitle name={t('morein')} title={catinfo.name} />
-            <Cardlist cardsArray={cards.data} catslug={catinfo.slug}/>
+            <Suspense fallback={<Loading />}>
+              <Blocktitle name={t('morein')} title={catinfo.name} />
+              <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
+            </Suspense>
           </div>
         </div>
       </main>
-    </TranslationsProvider>
   );
 }

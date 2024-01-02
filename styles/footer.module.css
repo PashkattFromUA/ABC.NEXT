@@ -172,16 +172,26 @@
 
     .footerright {
         display: grid;
-        grid-template-columns: 50% 50%;
-        row-gap: 32px;
+        grid-template:
+            "a b" auto
+            "c c" auto;
     }
 
     .footerleft h2 {
         width: auto;
     }
 
-    .footer2{
-        width: 200%;
+    .footer1 {
+        grid-area: a;
+    }
+
+    .footer2 {
+        grid-area: c;
+        width: 100%;
+    }
+
+    .footer3 {
+        grid-area: b;
     }
 
     .foot2but {

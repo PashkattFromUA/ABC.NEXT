@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import styles from '@/styles/paginationbuttons.module.css'
+import styles from '@/styles/paginationbuttons.module.css';
 import useWindowWidth from "@/hooks/useWindowDimension";
 
 const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {

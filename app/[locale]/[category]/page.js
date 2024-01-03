@@ -3,7 +3,6 @@ import initTranslations from '../../i18n';
 const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
 import Screensblock from '@/components/Screensblock/Screensblock';
 const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
-import styles from '@/styles/catpage.module.css';
 import { notFound } from 'next/navigation';
 import Loading from '../loading';
 
@@ -55,8 +54,8 @@ export default async function CategoryPage({ params }) {
   return (
     <main>
       <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
-      <div className={styles.cardlistbg}>
-        <div className={styles.cardlistblock} id="categorycardlist">
+      <div className="gradient">
+        <div className="block" id="categorycardlist">
           <Suspense fallback={<Loading />}>
             <Blocktitle name={t('allin')} title={resultObject.name} />
             <div>

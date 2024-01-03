@@ -4,7 +4,6 @@ const SEO = lazy(() => import('@/components/Cardinfo/Seoblock'));
 import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
 const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
 const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
-import styles from '@/styles/cardpage.module.css'
 import { notFound } from 'next/navigation'
 import Loading from '../../loading';
 
@@ -75,8 +74,8 @@ export default async function Home({ params }) {
         <Suspense fallback={<Loading />}>
           <SEO data={seodata} />
         </Suspense>
-        <div className={styles.cardsbg}>
-          <div className={styles.cardsblock} id="categorycardlist">
+        <div className="gradient">
+          <div className="block" id="categorycardlist">
             <Suspense fallback={<Loading />}>
               <Blocktitle name={t('morein')} title={catinfo.name} />
               <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />

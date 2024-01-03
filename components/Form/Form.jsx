@@ -52,7 +52,7 @@ const Form = () => {
 
   return (
     <div className="gradient" >
-      <div className={styles.formblock} id="form">
+      <div className='block' id="form">
         <Blocktitle name={t('forpartners')} title={t('offertext')} />
         <div className={styles.nameemail}>
           <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} id="name" autoComplete="name" />

@@ -6,7 +6,6 @@ import Link from "next/link";
 import Localemodal from "./Locale/Localemodal";
 import styles from '@/styles/header.module.css';
 import { usePathname } from 'next/navigation';
-import useWindowWidth from "@/hooks/useWindowDimension";
 import scrollTo from '@/utils/scrollTo';
 import Image from "next/image";
 
@@ -16,7 +15,7 @@ const Header = () => {
     const currentLocale = i18n.language;
     const currentPathname = usePathname();
     let flagsrc = '/images/flagen.svg';
-    const windowWidth = useWindowWidth();
+    let menubutt = "/images/hamburger.svg";
     const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -28,6 +27,10 @@ const Header = () => {
         flagsrc = '/images/flagen.svg';
     }
 
+    if (isNavbarExpanded === true) {
+        menubutt = "/images/closeburger.svg";
+    }
+
     const handleButtonClick = () => {
         scrollTo("#form");
         setIsNavbarExpanded(false)
@@ -37,129 +40,68 @@ const Header = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    const toggleNavbar = () => {
+        setIsNavbarExpanded(!isNavbarExpanded);
+    };
+
     return (
-        <section>
-            {windowWidth < 760 ? (
-                <div>
-                    {isNavbarExpanded ? (
-                        <div className={styles.menumobileexpanded}>
-                            <div className={styles.menutop}>
-                                <Link href="/">
-                                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" onClick={() => setIsNavbarExpanded(false)} />
-                                </Link>
-                                <Image src="/images/closeburger.svg" alt="X" width={18} height={17} onClick={() => setIsNavbarExpanded(false)} />
-                            </div>
-                            <ul className={styles.mobileheadbuttons}>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)} >
-                                    <li>
-                                        <span>{t("main")}</span>
-                                    </li>
-                                </Link>
-                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
-                                    <li>
-                                        <span>{t("aggregator")}</span>
-                                    </li>
-                                </Link>
-                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
-                                    <li>
-                                        <span >{t("forpartners")}</span>
-                                    </li>
-                                </Link>
-                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.pactive : styles.pnonactive} onClick={() => setIsNavbarExpanded(false)}>
-                                    <li>
-                                        <span>FAQ</span>
-                                    </li>
-                                </Link>
-                            </ul>
-                            <button onClick={() => handleButtonClick()}>{t('contactus')}</button>
-                        </div>
-                    ) : (
-                        <div></div>
+        <div className={styles.menu}>
+            <div className={styles.logonav}>
+                <Link href="/">
+                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" onClick={() => {setIsNavbarExpanded(false)}}/>
+                </Link>
+                <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
+                    <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
+                        <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}}>
+                            <li>
+                                {t("main")}
+                            </li>
+                        </Link>
+                        <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage}  onClick={() => {setIsNavbarExpanded(false)}}>
+                            <li>
+                                {t("aggregator")}
+                            </li>
+                        </Link>
+                        <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}} >
+                            <li>
+                                {t("forpartners")}
+                            </li>
+                        </Link>
+                        <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}} >
+                            <li>
+                                FAQ
+                            </li>
+                        </Link>
+                    </ul>
+                    <button className={isNavbarExpanded === true ? styles.contactusmobileactive : styles.contactusmobile} onClick={() => handleButtonClick()}>{t("contactus")}</button>
+                </div>
+            </div>
+            <div className={styles.headbuttonsmobile}>
+                <div className={styles.localisator} onClick={toggleModal}>
+                    <Image src={flagsrc} width={16} height={16} alt="flag" />
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="6"
+                        viewBox="0 0 12 6"
+                        fill="none"
+                        className={isModalOpen === true ? styles.shevronopen : styles.shevron}
+                    >
+                        <path
+                            d="M0.122782 5.88406C0.288174 6.03865 0.556936 6.03865 0.722328 5.88406L5.9942 0.94686L11.2764 5.88406C11.4418 6.03865 11.7106 6.03865 11.876 5.88406C12.0413 5.72947 12.0413 5.47826 11.876 5.32367L6.30431 0.115941C6.22161 0.0386462 6.11824 -5.14199e-07 6.00454 -5.2414e-07C5.90117 -5.33177e-07 5.78746 0.0386462 5.70476 0.115941L0.133119 5.32367C-0.0426101 5.47826 -0.0426101 5.72947 0.122782 5.88406Z"
+                            fill="black"
+                        />
+                    </svg>
+                    {isModalOpen && (
+                        <Localemodal isOpen={isModalOpen} />
                     )}
-                    <div className={styles.topmenu}>
-                        <Link href="/">
-                            <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
-                        </Link>
-                        <div className={styles.navbarr}>
-                            <div className={styles.localisator} onClick={toggleModal}>
-                                <Image src={flagsrc} width={16} height={16} alt="flag" />
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="12"
-                                    height="6"
-                                    viewBox="0 0 12 6"
-                                    fill="none"
-                                    className={isModalOpen === true ? styles.shevronopen : styles.shevron}
-                                >
-                                    <path
-                                        d="M0.122782 5.88406C0.288174 6.03865 0.556936 6.03865 0.722328 5.88406L5.9942 0.94686L11.2764 5.88406C11.4418 6.03865 11.7106 6.03865 11.876 5.88406C12.0413 5.72947 12.0413 5.47826 11.876 5.32367L6.30431 0.115941C6.22161 0.0386462 6.11824 -5.14199e-07 6.00454 -5.2414e-07C5.90117 -5.33177e-07 5.78746 0.0386462 5.70476 0.115941L0.133119 5.32367C-0.0426101 5.47826 -0.0426101 5.72947 0.122782 5.88406Z"
-                                        fill="black"
-                                    />
-                                </svg>
-                                {isModalOpen && (
-                                    <>
-                                        <Localemodal isOpen={isModalOpen} />
-                                    </>
-                                )}
-                            </div>
-                            <Image src="/images/hamburger.svg" width={24} height={19} alt="menu" onClick={() => setIsNavbarExpanded(true)} />
-                        </div>
-                    </div>
                 </div>
-            ) : (
-                <div className={styles.topmenu}>
-                    <div className={styles.navbarl}>
-                        <Link href="/">
-                            <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
-                        </Link>
-                        <ul className={styles.headbuttons}>
-                            <li>
-                                <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage}>
-                                    {t("main")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} >
-                                    {t("aggregator")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} >
-                                    {t("forpartners")}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} >
-                                    FAQ
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className={styles.navbarr}>
-                        <div className={styles.localisator} onClick={toggleModal}>
-                            <Image src={flagsrc} width={16} height={16} alt="flag" />
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="6"
-                                viewBox="0 0 12 6"
-                                fill="none"
-                                className={isModalOpen === true ? styles.shevronopen : styles.shevron}
-                            >
-                                <path
-                                    d="M0.122782 5.88406C0.288174 6.03865 0.556936 6.03865 0.722328 5.88406L5.9942 0.94686L11.2764 5.88406C11.4418 6.03865 11.7106 6.03865 11.876 5.88406C12.0413 5.72947 12.0413 5.47826 11.876 5.32367L6.30431 0.115941C6.22161 0.0386462 6.11824 -5.14199e-07 6.00454 -5.2414e-07C5.90117 -5.33177e-07 5.78746 0.0386462 5.70476 0.115941L0.133119 5.32367C-0.0426101 5.47826 -0.0426101 5.72947 0.122782 5.88406Z"
-                                    fill="black"
-                                />
-                            </svg>
-                            {isModalOpen && (
-                                <Localemodal isOpen={isModalOpen} />
-                            )}
-                        </div>
-                        <button onClick={() => handleButtonClick()}>{t("contactus")}</button>
-                    </div>
-                </div>
-            )}
-        </section>
+                <button className={styles.menubutton}>
+                    <Image src={menubutt} width={24} height={19} alt="menu" onClick={toggleNavbar} />
+                </button>
+                <button className={styles.contactusdescktop} onClick={() => handleButtonClick()}>{t("contactus")}</button>
+            </div>
+        </div>
     )
 }
 

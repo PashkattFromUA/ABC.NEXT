@@ -1,38 +1,31 @@
-.topmenu {
-    width: 1240px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.menu {
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 10px;
-}
-
-.topmenu button {
-    border-radius: 8px;
-    background: #000;
-    padding: 12px 24px;
-    color: #fff;
-    border-style: none;
-    cursor: pointer;
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    transition: all 0.6s;
-}
-
-.topmenu a {
-    height: 28px;
-}
-
-.topmenu button:hover {
-    background: #282828;
-    transition: all 0.6s;
-}
-.navbarl {
     display: flex;
     align-items: center;
+    background-color: transparent;
+    justify-content: space-between;
+}
+
+.logonav {
+    display: flex;
     gap: 40px;
+}
+
+.navbarl {
+    display: flex;
+}
+
+.navbuttons {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+}
+
+.navbarr {
+    display: flex;
 }
 
 .nonactivepage {
@@ -49,15 +42,8 @@
     text-decoration: none;
 }
 
-.navbarl a:hover {
+.nonactivepage:hover {
     color: #000;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.15px;
-    cursor: pointer;
-    transition: all 0.6s;
-    text-decoration: none;
 }
 
 .activepage {
@@ -75,12 +61,31 @@
     text-decoration: none;
 }
 
-.headbuttons {
-    list-style-type: none;
+.menubutton {
+    display: none;
+}
+
+.contactusmobile {
+    display: none;
+}
+
+.contactusdescktop {
     display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
+    border-radius: 8px;
+    background: #000;
+    padding: 12px 24px;
+    color: #fff;
+    border-style: none;
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    transition: all 0.6s;
+}
+
+.contactusdescktop:hover {
+    background: #282828;
+    transition: all 0.6s;
 }
 
 .localisator {
@@ -90,37 +95,9 @@
     cursor: pointer;
 }
 
-.navbarr {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 .shevron {
     transition: all 0.6s ease-out;
     rotate: -180deg;
-}
-
-.pactive {
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    letter-spacing: 0.15px;
-    cursor: pointer;
-    padding-bottom: 2px;
-    text-decoration: none;
-}
-
-.pnonactive {
-    color: #656565;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.15px;
-    cursor: pointer;
-    padding-bottom: 2px;
-    text-decoration: none;
 }
 
 .shevron path {
@@ -139,75 +116,78 @@
     fill: #000;
 }
 
-@media (max-width: 1439px) {
-    .topmenu {
-        padding: 0;
-        margin: 10px 50px 0 50px;
-        width: calc(100vw - 100px);
-    }
+.headbuttonsmobile {
+    display: flex;
+    gap: 16px;
 }
 
-@media (max-width: 1047px) {
-    .topmenu {
-        padding: 0;
-        margin: 10px 30px 0 30px;
-        width: calc(100vw - 60px);
-    }
-}
-
-@media (max-width: 745px) {
-    .topmenu {
-        width: 100vw;
+@media (max-width: 760px) {
+    .menu {
+        width: 100%;
         margin: 0;
-        padding: 16px 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        align-items: flex-start;
+        background-color: #fff;
+        padding-bottom: 8px;
+        border-radius: 0 0 16px 16px;
     }
 
-    .topmenu a {
-        height: 32px;
-    }
-
-    .menumobileexpanded {
-        width: 100vw;
-        top: 0;
-        left: 0;
+    .navbarlactive {
+        width: 100%;
+        flex-direction: column;
         position: absolute;
-        z-index: 1;
-        background: #fff;
-        border-radius: 0px 0px 14px 14px;
-        padding-bottom: 125px;
+        padding-left: 10px;
+        left: 0;
+        top: 42px;
+        background-color: #fff;
+        padding-top: 10px;
+        padding-bottom: 124px;
+        border-radius: 0 0 16px 16px;
+        transition: all 0.3s;
     }
 
-    .menutop {
-        width: 100vw;
+    .navbuttons {
+        display: none;
+    }
+
+    .navbuttonsactive {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0px 1px 0px 0px #e4e4e4;
-        padding: 16px 10px;
-    }
-
-    .menutop a{
-        height: 32px; 
-    }
-
-    .mobileheadbuttons {
+        flex-direction: column;
         list-style: none;
-        width: auto;
-        padding: 0;
-        margin: 0;
     }
 
-    .mobileheadbuttons li {
-        box-shadow: 0px 1px 0px 0px #e4e4e4;
-        padding: 16px 10px;
+    .nonactivepage {
+        width: calc(100vw - 20px);
+        border: none;
+        box-shadow: 0px 1px 0px 0px #E4E4E4;
+        padding: 16px 0;
     }
 
-    .menumobileexpanded button {
+    .activepage {
+        width: calc(100vw - 20px);
+        border: none;
+        font-weight: 600;
+        box-shadow: 0px 1px 0px 0px #E4E4E4;
+        padding: 16px 0;
+    }
+
+    .menubutton {
+        display: flex;
+        border: none;
+        background-color: transparent;
+    }
+
+    .contactusmobile {
+        display: none;
+    }
+
+    .contactusmobileactive {
+        display: flex;
         border-radius: 8px;
         background: #000;
         width: calc(100vw - 20px);
-        margin-left: 10px;
-        margin-right: 10px;
         padding: 12px 24px;
         border-style: none;
         color: #fff;
@@ -218,5 +198,10 @@
         line-height: 24px;
         letter-spacing: 0.15px;
         margin-top: 16px;
+        justify-content: center;
+    }
+
+    .contactusdescktop {
+        display: none;
     }
 }

@@ -64,8 +64,8 @@ export default async function RootLayout({ children, params: { locale } }) {
           <Header />
           {children}
           <Form />
-          <Suspense fallback={<Loading/>}>
-          <Footer data={catnamesArray} />
+          <Suspense fallback={<Loading />}>
+            <Footer data={catnamesArray} />
           </Suspense>
           <ScrollToTopButt />
         </body>

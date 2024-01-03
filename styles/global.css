@@ -23,10 +23,38 @@ body {
     margin-right: auto;
 }
 
+.gradient {
+    width: 100vw;
+    background: linear-gradient(0deg, #fff 27.31%, rgba(255, 255, 255, 0) 100%),
+        linear-gradient(125deg,
+            #f99277 0%,
+            #cf9aba 23.67%,
+            #b2a1de 45.42%,
+            #abbdf2 71.83%,
+            #e9f9fd 100%);
+    padding-top: 100px;
+    border-radius: 64px 0 0 0;
+    margin-top: 100px;
+}
+
 @media (max-width: 1439px) {
     body {
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
+    }
+}
+
+@media (max-width: 1047px) {
+    .gradient {
+        padding-top: 60px;
+        border-radius: 44px 0 0 0;
+    }
+}
+
+@media (max-width: 663px) {
+    .gradient {
+        padding-top: 40px;
+        border-radius: 24px 0px 0px 0px;
     }
 }

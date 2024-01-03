@@ -1,6 +1,6 @@
 'use client'
 
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import styles from '@/styles/form.module.css'
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
@@ -51,20 +51,20 @@ const Form = () => {
   };
 
   return (
-    <div className={styles.form} >
-        <div className={styles.formblock} id="form">
-          <Blocktitle name={t('forpartners')} title={t('offertext')} />
-          <div className={styles.nameemail}>
+    <div className="gradient" >
+      <div className={styles.formblock} id="form">
+        <Blocktitle name={t('forpartners')} title={t('offertext')} />
+        <div className={styles.nameemail}>
           <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} id="name" autoComplete="name" />
-          <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" autoComplete="email"/>
+          <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" autoComplete="email" />
         </div>
-        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} id="description" autoComplete="description"/>
+        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} id="description" autoComplete="description" />
         <div className={styles.formbot}>
           <p>{t('thankyou')}</p>
           <button onClick={handleSubmit}>{t('getintouch')}</button>
-          </div>
         </div>
       </div>
+    </div>
   )
 }
 

@@ -6,9 +6,7 @@
 }
 .blocktitle h3 {
   color: #212025;
-  font-family: "DM Sans", sans-serif;
   font-size: 26px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.15px;
@@ -17,9 +15,7 @@
 
 .blocktitle p {
   color: #a0a0a0;
-  font-family: "DM Sans", sans-serif;
   font-size: 26px;
-  font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin: 0;

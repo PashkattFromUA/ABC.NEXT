@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 import Description from './Description'
 import Features from './Features'
 
+
 const Cardinfo = (props) => {
 
     const { t } = useTranslation();
@@ -35,7 +36,7 @@ const Cardinfo = (props) => {
                             </a>
                         </div>
                     </div>
-                    <Image src={cardinfo.image_url} width={511} height={325} alt="cardimg" loading='lazy' />
+                    <Image src={cardinfo.image_url} width={511} height={325} placeholder='blur' blurDataURL={cardinfo.image_url} alt="cardimg" loading='lazy' />
                     <div className={styles.cpleftbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>

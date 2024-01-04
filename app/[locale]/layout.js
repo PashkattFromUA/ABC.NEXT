@@ -1,4 +1,3 @@
-import { Suspense, lazy } from 'react';
 import Form from '@/components/Form/Form';
 import Header from '@/components/Header/Header';
 import i18nConfig from '@/i18nConfig';
@@ -6,12 +5,12 @@ import { dir } from 'i18next';
 import { DM_Sans, Roboto } from 'next/font/google';
 import initTranslations from '../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-const Footer = lazy(() => import('@/components/Footer/Footer'));
+import Footer from '@/components/Footer/Footer';
 import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import '@/styles/global.css'
 import Loading from './loading';
 
-const roboto = Roboto({subsets: ['cyrillic'], weight: ['400','500','700'],});
+const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'], });
 const dmsans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata = {
@@ -62,9 +61,7 @@ export default async function RootLayout({ children, params: { locale } }) {
           <Header />
           {children}
           <Form />
-          <Suspense fallback={<Loading />}>
-            <Footer data={catnamesArray} />
-          </Suspense>
+          <Footer data={catnamesArray} />
           <ScrollToTopButt />
         </body>
       </TranslationsProvider>

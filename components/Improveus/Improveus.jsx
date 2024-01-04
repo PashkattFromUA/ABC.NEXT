@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Improveusmodal from '@/components/Improveus/Improveusmodal/Improveusmodal';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
+import improveusimg from '@/public/images/improveus.png'
 import Image from 'next/image';
 
 const Improveus = () => {
@@ -39,7 +40,7 @@ const Improveus = () => {
           </div>
         </div>
         <div className={styles.improveright}>
-          <Image src="/images/improveus.png" width={616} height={472} loading="lazy" alt="Improveus" />
+          <Image src={improveusimg} width={616} height={472} loading="lazy" alt="Improveus" />
         </div>
         <div className={styles.improvebuttmobile}>
             <button className={styles.button1} onClick={openModal}>{t('improvehead')}

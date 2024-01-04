@@ -175,6 +175,7 @@
         grid-template:
             "a b" auto
             "c c" auto;
+        row-gap: 16px;
     }
 
     .footerleft h2 {
@@ -204,6 +205,12 @@
 
     .footerright {
         width: 75%;
+    }
+
+    .footerbot {
+        flex-direction: column-reverse;
+        gap: 5px;
+        margin-bottom: 16px;
     }
 }
 

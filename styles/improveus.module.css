@@ -151,7 +151,7 @@
   }
 
   .improvebutt {
-    display: grid;
+    display: flex;
   }
 
   .button1 {

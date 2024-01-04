@@ -3,15 +3,7 @@
     margin-left: 100px;
     margin-right: 100px;
     width: 1240px;
-    display: flex;
-    justify-content: center;
-}
-
-.loaderbg {
-    width: 120px;
-    height: 120px;
-    border-radius: 100px;
-    background: #fff;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;

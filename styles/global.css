@@ -17,8 +17,6 @@ a {
 
 body {
     width: 1440px;
-    background-image: url("/images/starback.svg");
-    background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
 }

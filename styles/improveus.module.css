@@ -8,7 +8,6 @@
 
 .improveleft h2 {
   color: #000;
-  font-family: "DM Sans", sans-serif;
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
@@ -19,8 +18,7 @@
 
 .improveleft p {
   color: #656565;
-  font-family: "DM Sans", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
@@ -45,7 +43,6 @@
   border-style: none;
   align-items: center;
   color: #fff;
-  font-family: "DM Sans", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +59,6 @@
 
 .button2 {
   color: #000;
-  font-family: "Dm Sans", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -205,7 +201,6 @@
     width: calc(100vw - 20px);
     justify-content: center;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -215,7 +210,6 @@
 
   .button2 {
     color: #000;
-    font-family: "DM Sans", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

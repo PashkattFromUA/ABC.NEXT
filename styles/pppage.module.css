@@ -166,7 +166,6 @@
 
     .pptextleft h2 {
         color: #000;
-        font-family: 'DM Sans', sans-serif;
         font-size: 27px;
         font-style: normal;
         font-weight: 700;
@@ -177,7 +176,6 @@
 
     .pptextleft p {
         color: #656565;
-        font-family: 'DM Sans', sans-serif;
         font-size: 17px;
         font-style: normal;
         font-weight: 400;
@@ -193,7 +191,6 @@
 
     .pptextright h4 {
         color: #212025;
-        font-family: 'DM Sans', sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 700;
@@ -203,7 +200,6 @@
 
     .pptextright p {
         color: #656565;
-        font-family: 'DM Sans';
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -213,7 +209,6 @@
 
     .pptextright li {
         color: #656565;
-        font-family: 'DM Sans';
         font-size: 14px;
         font-style: normal;
         font-weight: 400;

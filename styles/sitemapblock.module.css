@@ -23,7 +23,6 @@
 .categorylink {
     display: flex;
     color: #212025;
-    font-family: "DM Sans", sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: normal;
@@ -52,7 +51,6 @@
     gap: 16px;
     border-radius: 16px;
     background: #F8F8F8;
-    font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: normal;
@@ -95,7 +93,6 @@
     }
 
     .categorylink {
-        font-family: "DM Sans", sans-serif;
         font-size: 18px;
         font-weight: 500;
         line-height: normal;
@@ -127,7 +124,6 @@
     }
 
     .categorylink {
-        font-family: "DM Sans", sans-serif;
         font-size: 14px;
         font-weight: 500;
         line-height: normal;

@@ -24,7 +24,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'DM Sans', sans-serif;
     font-size: 70px;
     font-style: normal;
     font-weight: 700;
@@ -49,7 +48,6 @@
     align-items: center;
     cursor: pointer;
     color: #fff;
-    font-family: "DM Sans", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -65,7 +63,6 @@
 
 .button2 {
     color: #000;
-    font-family: "DM Sans", sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
@@ -77,7 +74,6 @@
 
 .main p {
     color: #656565;
-    font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -106,7 +102,6 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-family: "DM Sans", sans-serif;
         font-size: 60px;
         font-style: normal;
         font-weight: 700;
@@ -175,7 +170,6 @@
         justify-content: center;
         width: calc(100vw - 20px);
         color: #FFF;
-        font-family: 'DM Sans', sans-serif;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -186,7 +180,6 @@
     .button2 {
         width: max-content;
         color: #000;
-        font-family: 'DM Sans';
         font-size: 14px;
         font-style: normal;
         font-weight: 400;

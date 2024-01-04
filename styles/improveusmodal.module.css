@@ -26,7 +26,6 @@
 
 .closebutt h3 {
   color: #212025;
-  font-family: "DM Sans", sans-serif;
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
@@ -41,7 +40,6 @@
 
 .modalcontent h4 {
   color: #656565;
-  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -62,7 +60,6 @@
   border-radius: 12px;
   border: 1px solid #e4e4e4;
   color: #656565;
-  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -75,7 +72,6 @@
   border-radius: 12px;
   border: 1px solid #e4e4e4;
   color: #656565;
-  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +86,6 @@
   border-radius: 12px;
   border: 1px solid #e4e4e4;
   color: #656565;
-  font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -116,7 +111,6 @@
   background: #000;
   color: #fff;
   border-style: none;
-  font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -170,7 +164,6 @@
 
   .modalcontent p {
     color: #a0a0a0;
-    font-family: "DM Sans", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
@@ -216,7 +209,6 @@
 
   .modalformbot p {
     color: #656565;
-    font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

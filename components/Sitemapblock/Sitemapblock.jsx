@@ -13,8 +13,8 @@ const Sitemapblock = (props) => {
     const {t} = useTranslation();
 
     return (
-        <div className={styles.sitemapblockbg}>
-            <div className={styles.sitemapblock}>
+        <div className="gradient">
+            <div className="block">
                 <Blocktitle name={t('sitemap')} />
                 {sortedCategories.map((buttonlabel) => (
                     <div key={buttonlabel.id}>

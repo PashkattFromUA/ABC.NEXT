@@ -1,10 +1,18 @@
-.cpblock {
+.main {
     margin-top: 64px;
     margin-left: 100px;
     margin-right: 100px;
-    display: flex;
     justify-content: space-between;
     gap: 40px;
+}
+
+.cpblock {
+    display: flex;
+    gap: 100px;
+}
+
+.nameplacemobile {
+    display: none;
 }
 
 .cpleftbuttons {
@@ -93,6 +101,10 @@
     margin-top: 16px;
 }
 
+.tabletbuttons {
+    display: none;
+}
+
 .cprighttopright p {
     color: #1e1e21;
     font-size: 24px;
@@ -151,11 +163,118 @@
     margin-top: 8px;
 }
 
+.descfeatadaptive {
+    display: none;
+}
+
 @media (max-width: 1439px) {
-    .cpblock {
+    .main {
         margin-top: 80px;
         margin-left: 50px;
         margin-right: 50px;
         gap: 32px;
+    }
+}
+
+@media (max-width: 1047px) {
+    .main {
+        margin-top: 60px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .cprighttopleft h1 {
+        color: #000;
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.15px;
+        margin: 0;
+    }
+
+    .cpleft img {
+        width: 381px;
+        height: 246px;
+    }
+
+    .tabletbuttons {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .startbrowse {
+        padding: 16px 24px;
+        width: 100%;
+    }
+
+    .cpblock {
+        display: flex;
+        gap: 32px;
+    }
+
+    .descfeat {
+        display: none;
+    }
+
+    .cpleftbuttons {
+        display: none;
+    }
+}
+
+@media (max-width: 663px) {
+    .main {
+        margin-top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .nameplacemobile {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .cpleft img {
+        width: calc(100vw - 20px);
+        height: auto;
+    }
+
+    .nameplacemobile img {
+        width: 20px;
+        height: 24px;
+    }
+
+    .cpleftbuttons {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .featblock {
+        display: flex;
+        margin-top: 24px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .descblock h2 {
+        color: #212025;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .descblock p {
+        color: #656565;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.15px;
+        padding-bottom: 16px;
     }
 }

@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import initTranslations from '../../../i18n';
 const SEO = lazy(() => import('@/components/Cardinfo/Seoblock'));
-import Cardinfo from '@/components/Cardinfo/Cardinfoblock';
+import Cardinfo from '@/components/Cardinfo/Cardinfo';
 const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
 const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
 import { notFound } from 'next/navigation'

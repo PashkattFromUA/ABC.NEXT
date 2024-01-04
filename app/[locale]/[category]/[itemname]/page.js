@@ -1,11 +1,9 @@
-import { lazy, Suspense } from 'react';
 import initTranslations from '../../../i18n';
-const SEO = lazy(() => import('@/components/Cardinfo/Seoblock'));
+import SEO from '@/components/Cardinfo/Seoblock';
 import Cardinfo from '@/components/Cardinfo/Cardinfo';
-const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
-const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
+import Cardlist from '@/components/Agregator/Cardlist';
+import Blocktitle from '@/components/Blocktitle/Blocktitle';
 import { notFound } from 'next/navigation'
-import Loading from '../../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -69,19 +67,15 @@ export default async function Home({ params }) {
   const cards = await getCards({ lang: locale, catslug: catinfo.slug });
 
   return (
-      <main>
-        <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
-        <Suspense fallback={<Loading />}>
-          <SEO data={seodata} />
-        </Suspense>
-        <div className="gradient">
-          <div className="block" id="categorycardlist">
-            <Suspense fallback={<Loading />}>
-              <Blocktitle name={t('morein')} title={catinfo.name} />
-              <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
-            </Suspense>
-          </div>
+    <main>
+      <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
+      <SEO data={seodata} />
+      <div className="gradient">
+        <div className="block" id="categorycardlist">
+          <Blocktitle name={t('morein')} title={catinfo.name} />
+          <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
         </div>
-      </main>
+      </div>
+    </main>
   );
 }

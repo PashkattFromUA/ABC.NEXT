@@ -83,6 +83,10 @@
   height: 472px;
 }
 
+.improvebuttmobile {
+  display: none;
+}
+
 @media (max-width: 1439px) {
   .improveus {
     width: calc(100vw - 100px);
@@ -167,6 +171,7 @@
     margin-right: 10px;
     margin-top: 92px;
     margin-bottom: 100px;
+    gap: 16px;
   }
 
   .improveright {
@@ -188,15 +193,12 @@
     width: calc(100vw - 20px);
     font-size: 14px;
     margin-top: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     line-height: normal;
   }
 
   .improvebutt {
-    width: calc(100vw - 20px);
-    place-items: center;
-    margin-top: 32px;
-    gap: 12px;
+    display: none;
   }
 
   .button1 {
@@ -219,5 +221,12 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.15px;
+  }
+
+  .improvebuttmobile {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 16px;
   }
 }

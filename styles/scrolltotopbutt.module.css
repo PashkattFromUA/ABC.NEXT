@@ -18,7 +18,6 @@
 
 .scrolltotopbuttvisible svg {
   filter: drop-shadow(-1px -3px 10px #e5e5e5);
-  border-radius: 50px;
   transition: all 0.6s;
 }
 

@@ -48,7 +48,7 @@ const Header = () => {
         <div className={styles.menu}>
             <div className={styles.logonav}>
                 <Link href="/">
-                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" loading="lazy" onClick={() => {setIsNavbarExpanded(false)}}/>
+                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => {setIsNavbarExpanded(false)}}/>
                 </Link>
                 <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>

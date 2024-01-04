@@ -112,7 +112,7 @@
   .scrollingcontainer {
     overflow-x: scroll;
     width: auto;
-    height: 44px;
+    height: max-content;
     display: flex;
     scroll-behavior: smooth;
     align-items: center;

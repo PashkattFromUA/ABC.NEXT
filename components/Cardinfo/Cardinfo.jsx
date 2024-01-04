@@ -36,7 +36,15 @@ const Cardinfo = (props) => {
                             </a>
                         </div>
                     </div>
-                    <Image src={cardinfo.image_url} width={511} height={325} placeholder='blur' blurDataURL={cardinfo.image_url} alt="cardimg" loading='lazy' />
+                    <Image
+                        src={cardinfo.image_url}
+                        width={511}
+                        height={325}
+                        placeholder="blur"
+                        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8Ww8AAl8BblCWeEoAAAAASUVORK5CYII='
+                        alt="cardimg"
+                        loading='lazy'>
+                    </Image>
                     <div className={styles.cpleftbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>

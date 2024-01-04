@@ -36,11 +36,6 @@
     color: #212025;
 }
 
-.cardlink img {
-    width: 40px;
-    height: 40px;
-}
-
 @media (max-width: 1220px) {
     .cardlinkblock {
         grid-template-columns: 1fr 1fr 1fr;

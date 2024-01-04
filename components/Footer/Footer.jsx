@@ -16,7 +16,7 @@ const Footer = (props) => {
             <div className={styles.footertop}>
                 <div className={styles.footerleft}>
                     <Link href="/">
-                        <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" />
+                        <Image src='/images/Logo.svg' width={109} height={32} loading='lazy' alt="ABC" />
                     </Link>
                     <h2>{t('mainscrtextright')}</h2>
                 </div>

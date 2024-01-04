@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styles from '@/styles/sitemapblock.module.css'
 import Blocktitle from '../Blocktitle/Blocktitle';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
 
 const Sitemapblock = (props) => {
 
@@ -29,7 +30,7 @@ const Sitemapblock = (props) => {
                             <div className={styles.cardlinkblock}>
                                 {buttonlabel.items.map((item) => (
                                     <Link href={`/${buttonlabel.slug}/${item.slug}`} key={item.id} className={styles.cardlink}>
-                                        <img src={item.icon_url} alt='icon' />
+                                        <Image src={item.icon_url} width={40} height={40} loading='lazy' alt='icon' />
                                         <span>{item.name}</span>
                                     </Link>
                                 ))}

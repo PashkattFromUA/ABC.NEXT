@@ -48,7 +48,7 @@ const Header = () => {
         <div className={styles.menu}>
             <div className={styles.logonav}>
                 <Link href="/">
-                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" onClick={() => {setIsNavbarExpanded(false)}}/>
+                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" loading="lazy" onClick={() => {setIsNavbarExpanded(false)}}/>
                 </Link>
                 <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
@@ -78,7 +78,7 @@ const Header = () => {
             </div>
             <div className={styles.headbuttonsmobile}>
                 <div className={styles.localisator} onClick={toggleModal}>
-                    <Image src={flagsrc} width={16} height={16} alt="flag" />
+                    <Image src={flagsrc} width={16} loading="lazy" height={16} alt="flag" />
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"
@@ -97,7 +97,7 @@ const Header = () => {
                     )}
                 </div>
                 <button className={styles.menubutton}>
-                    <Image src={menubutt} width={24} height={19} alt="menu" onClick={toggleNavbar} />
+                    <Image src={menubutt} width={24} height={19} loading="lazy" alt="menu" onClick={toggleNavbar} />
                 </button>
                 <button className={styles.contactusdescktop} onClick={() => handleButtonClick()}>{t("contactus")}</button>
             </div>

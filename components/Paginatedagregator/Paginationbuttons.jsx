@@ -3,7 +3,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginationbuttons.module.css';
-import useWindowWidth from "@/hooks/useWindowDimension";
 
 const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
 
@@ -30,14 +29,11 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
     return pageNumbers;
   };
 
-  const windowWidth = useWindowWidth();
-
   return (
     <div>
-      {windowWidth < 664 ? (
-        <div className={styles.mobilepagination}>
+        <div className={styles.paginationbuttons}>
           <button
-            className={styles.mobileprevious}
+            className={styles.previous}
             onClick={() => onPageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
@@ -54,13 +50,15 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
                 strokeWidth="0.5"
               />
             </svg>
+            <p>{t('previous')}</p>
           </button>
           <div className={styles.allpages}>{renderPageNumbers()}</div>
           <button
-            className={styles.mobilenext}
+            className={styles.next}
             onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
+            <p>{t('next')}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="9"
@@ -77,25 +75,6 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
             </svg>
           </button>
         </div>
-      ) : (
-        <div className={styles.paginationbuttons}>
-          <button
-            className={styles.previous}
-            onClick={() => onPageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-          >
-            {t('previous')}
-          </button>
-          <div className={styles.allpages}>{renderPageNumbers()}</div>
-          <button
-            className={styles.next}
-            onClick={() => onPageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-          >
-            {t('next')}
-          </button>
-        </div>
-      )}
     </div>
   );
 };

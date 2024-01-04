@@ -57,6 +57,11 @@
   transition: all 0.6s;
 }
 
+.previous svg path{
+  fill: #fff;
+  stroke: #fff;
+}
+
 .previous:hover {
   background: #282828;
   cursor: pointer;
@@ -65,6 +70,7 @@
 
 .previous:disabled {
   padding: 12px 32px;
+  cursor: default;
   border-radius: 8px;
   border: 1px solid #000;
   display: flex;
@@ -75,7 +81,12 @@
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-size: 16px;
-  color: grey;
+  color: #000;
+}
+
+.previous:disabled svg path {
+  fill: #000;
+  stroke: #000;
 }
 
 .next {
@@ -92,6 +103,11 @@
   font-size: 16px;
   font-style: normal;
   transition: all 0.6s;
+}
+
+.next svg path{
+  fill: #fff;
+  stroke: #fff;
 }
 
 .next:hover {
@@ -112,63 +128,15 @@
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   font-size: 16px;
-  color: grey;
+  color: #000;
+  cursor: default;
 }
 
-.mobilepagination {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  justify-content: center;
+.next:disabled svg path {
+  fill: #000;
+  stroke: #000;
 }
 
-.mobileprevious {
-  border-radius: 8px;
-  border: 1px solid #000;
-  background: #000;
-  padding: 9px 14px;
-}
-
-.mobileprevious:disabled svg path {
-  fill: #2a2b2f;
-  stroke: #2a2b2f;
-}
-
-.mobileprevious svg path {
-  fill: #fff;
-  stroke: #fff;
-}
-
-.mobilenext {
-  border-radius: 8px;
-  border: 1px solid #000;
-  background: #000;
-  padding: 9px 14px;
-}
-
-.mobilenext:disabled svg path {
-  fill: #2a2b2f;
-  stroke: #2a2b2f;
-}
-
-.mobilenext svg path {
-  fill: #fff;
-  stroke: #fff;
-}
-
-.mobileprevious:disabled {
-  border-radius: 8px;
-  border: 1px solid #000;
-  background: #fff;
-  padding: 9px 14px;
-}
-
-.mobilenext:disabled {
-  border-radius: 8px;
-  border: 1px solid #000;
-  background: #fff;
-  padding: 9px 14px;
-}
 
 @media (max-width: 663px) {
   .pages {
@@ -181,6 +149,30 @@
 
   .paginationbuttons {
     gap: 4px;
+  }
+
+  .next {
+    padding: 12px 16px;
+  }
+
+  .next:disabled {
+    padding: 12px 16px;
+  }
+
+  .previous {
+    padding: 12px 16px;
+  }
+
+  .previous:disabled {
+    padding: 12px 16px;
+  }
+
+  .previous p {
+    display: none;
+  }
+
+  .next p {
+    display: none;
   }
 
   .allpages {

@@ -4,9 +4,13 @@ import React from 'react'
 import scrollTo from '@/utils/scrollTo'
 import styles from '@/styles/cardinfo.module.css'
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
+import Description from './Description'
+import Features from './Features'
 
 const Cardinfo = (props) => {
 
+    const { t } = useTranslation();
     const cardinfo = props.cardinfo;
     const cardfeatures = props.cardfeatures;
     const carddescriptions = props.carddescriptions;
@@ -35,7 +39,7 @@ const Cardinfo = (props) => {
                     <div className={styles.cpleftbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>
-                                Start browse
+                                {t('startbrowse')}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="7"
@@ -51,7 +55,7 @@ const Cardinfo = (props) => {
                             </button>
                         </a>
                         <button className={styles.similar} onClick={() => handleButtonClick()}>
-                            Similar
+                            {t('similar')}
                         </button>
                     </div>
                 </div>
@@ -71,7 +75,7 @@ const Cardinfo = (props) => {
                     <div className={styles.tabletbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>
-                                Start browse
+                                {t('startbrowse')}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="7"
@@ -87,70 +91,18 @@ const Cardinfo = (props) => {
                             </button>
                         </a>
                         <button className={styles.similar} onClick={() => handleButtonClick()}>
-                            Similar
+                            {t('similar')}
                         </button>
                     </div>
                     <div className={styles.descfeat}>
-                        <div className={styles.descblock}>
-                            {carddescriptions.map((carddes) => {
-                                const text = carddes.paragraph;
-                                const p = text.split("\n");
-                                return (
-                                    <div key={carddes.heading}>
-                                        <h2>{carddes.heading}</h2>
-                                        {p.map((paragraph) => {
-                                            return (
-                                                <div key={paragraph}>
-                                                    <p>{paragraph}</p>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                        <div className={styles.featblock}>
-                            {cardfeatures.map((cardfeat) => {
-                                return (
-                                    <div key={cardfeat.heading}>
-                                        <h2>{cardfeat.heading}</h2>
-                                        <p>{cardfeat.text}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        <Description carddescriptions={carddescriptions} />
+                        <Features cardfeatures={cardfeatures} />
                     </div>
                 </div>
             </div>
             <div className={styles.descfeatadaptive}>
-                <div className={styles.descblock}>
-                    {carddescriptions.map((carddes) => {
-                        const text = carddes.paragraph;
-                        const p = text.split("\n");
-                        return (
-                            <div key={carddes.heading}>
-                                <h2>{carddes.heading}</h2>
-                                {p.map((paragraph) => {
-                                    return (
-                                        <div key={paragraph}>
-                                            <p>{paragraph}</p>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className={styles.featblock}>
-                    {cardfeatures.map((cardfeat) => {
-                        return (
-                            <div key={cardfeat.heading}>
-                                <h2>{cardfeat.heading}</h2>
-                                <p>{cardfeat.text}</p>
-                            </div>
-                        );
-                    })}
-                </div>
+                <Description carddescriptions={carddescriptions} />
+                <Features cardfeatures={cardfeatures} />
             </div>
         </div>
     )

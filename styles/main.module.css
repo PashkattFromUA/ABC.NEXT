@@ -5,16 +5,13 @@
     justify-content: space-between;
     margin-left: 100px;
     margin-right: 100px;
+    margin-top: 125px;
 }
 
 .text {
     width: 511px;
     text-align: left;
     margin: 0;
-}
-
-.mainright {
-    margin: 122px 0 175px 0;
 }
 
 .main h1 {
@@ -27,7 +24,6 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 122px 0 175px 0;
     font-family: 'DM Sans', sans-serif;
     font-size: 70px;
     font-style: normal;

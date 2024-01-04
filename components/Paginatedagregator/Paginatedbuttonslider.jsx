@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginatedbuttonslider.module.css'
 import PaginatedCardlist from '@/components/Paginatedagregator/Paginatedcardlist'

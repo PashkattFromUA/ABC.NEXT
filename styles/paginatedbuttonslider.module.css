@@ -4,14 +4,19 @@
   flex-direction: column;
 }
 
+.scrollingcontainer::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(255, 255, 255, 0.0);
+}
+
 .paginationblock{
   width: auto;
 }
 
 .scrollingcontainer {
-  overflow-x: hidden;
+  overflow-x: scroll;
   width: 1068px;
-  height: 44px;
+  height: max-content;
   display: flex;
   scroll-behavior: smooth;
 }
@@ -24,6 +29,7 @@
 .buttoncontainer {
   display: flex;
   gap: 16px;
+  height: max-content;
 }
 
 .nonactivebutton {
@@ -106,7 +112,7 @@
   }
 
   .scrollingcontainer {
-    overflow-x: hidden;
+    overflow-x: scroll;
     width: auto;
     height: 44px;
     display: flex;

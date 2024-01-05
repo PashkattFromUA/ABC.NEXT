@@ -10,6 +10,10 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 const ScrollToTopButt = dynamic(() => import('@/components/Scrolltotopbutt/Scrolltotopbutt'));
 import '@/styles/global.css'
 
+export function generateStaticParams() {
+  return i18nConfig.locales.map(locale => ({ locale }));
+}
+
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'], });
 const dmsans = DM_Sans({ subsets: ['latin'] });
 
@@ -31,10 +35,6 @@ async function getCategories(lang) {
   }
 
   return res.json();
-}
-
-export function generateStaticParams() {
-  return i18nConfig.locales.map(locale => ({ locale }));
 }
 
 export default async function RootLayout({ children, params: { locale } }) {

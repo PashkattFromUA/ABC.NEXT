@@ -16,7 +16,6 @@
     "next-i18n-router": "^5.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^13.5.0",
-    "react-loader-spinner": "^6.1.6"
+    "react-i18next": "^13.5.0"
   }
 }

@@ -16,7 +16,8 @@ const Agrcard = (props) => {
     <div className={styles.card1}>
       <div className={styles.cardtop}>
         <div className={styles.icontext}>
-          <Image src={props.card.icon_url} width={56} height={56} alt="icon" />
+          <Image src={props.card.icon_url} width={56} loading="lazy" height={56}  placeholder="blur"
+                        blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN8Ww8AAl8BblCWeEoAAAAASUVORK5CYII=' alt="icon" />
           <div className={styles.cardnameplace}>
             <p className={styles.cardname}>{props.card.name}</p>
             <p className={styles.cardplace}>{props.card.place}</p>

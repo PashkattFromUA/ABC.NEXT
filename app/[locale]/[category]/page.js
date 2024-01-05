@@ -1,10 +1,8 @@
-import { lazy, Suspense } from 'react';
 import initTranslations from '../../i18n';
-const Blocktitle = lazy(() => import('@/components/Blocktitle/Blocktitle'));
+import Blocktitle from '@/components/Blocktitle/Blocktitle';
 import Screensblock from '@/components/Screensblock/Screensblock';
-const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
+import Cardlist from '@/components/Agregator/Cardlist';
 import { notFound } from 'next/navigation';
-import Loading from '../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -56,12 +54,10 @@ export default async function CategoryPage({ params }) {
       <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
       <div className="gradient">
         <div className="block" id="categorycardlist">
-          <Suspense fallback={<Loading />}>
             <Blocktitle name={t('allin')} title={resultObject.name} />
             <div>
               <Cardlist cardsArray={cards.data} catslug={resultObject.slug} />
             </div>
-          </Suspense>
         </div>
       </div>
     </main>

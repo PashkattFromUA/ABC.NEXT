@@ -1,12 +1,13 @@
-import Form from '@/components/Form/Form';
-import Header from '@/components/Header/Header';
+import dynamic from 'next/dynamic';
+const Form = dynamic(() => import('@/components/Form/Form'), { ssr: false })
+const Header = dynamic(() => import('@/components/Header/Header'));
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
 import { DM_Sans, Roboto } from 'next/font/google';
 import initTranslations from '../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import Footer from '@/components/Footer/Footer';
-import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+const ScrollToTopButt = dynamic(() => import('@/components/Scrolltotopbutt/Scrolltotopbutt'));
 import '@/styles/global.css'
 
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'], });

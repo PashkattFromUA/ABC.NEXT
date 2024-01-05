@@ -1,7 +1,7 @@
 'use client'
-
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
-import Improveusmodal from '@/components/Improveus/Improveusmodal/Improveusmodal';
+const Improveusmodal = dynamic(() => import('@/components/Improveus/Improveusmodal/Improveusmodal'), { ssr: false })
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
 import improveusimg from '@/public/images/improveus.png'
@@ -50,7 +50,7 @@ const Improveus = () => {
             </button>
             <span className={styles.button2} onClick={() => scrollTo('#FAQ')}>{t('haveaquestion')}</span>
           </div>
-        <Improveusmodal isOpen={isModalOpen} closeModal={closeModal} />
+          {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal} />}
       </div>
     </section>
   )

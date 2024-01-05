@@ -8,7 +8,6 @@ import TranslationsProvider from '@/components/TranslationsProvider';
 import Footer from '@/components/Footer/Footer';
 import ScrollToTopButt from '@/components/Scrolltotopbutt/Scrolltotopbutt';
 import '@/styles/global.css'
-import Loading from './loading';
 
 const roboto = Roboto({ subsets: ['cyrillic'], weight: ['400', '500', '700'], });
 const dmsans = DM_Sans({ subsets: ['latin'] });

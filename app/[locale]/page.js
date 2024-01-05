@@ -1,9 +1,8 @@
-import { lazy, Suspense } from 'react';
+import dynamic from 'next/dynamic';
 import Main from '@/components/Main/Main';
-const FAQ = lazy(() => import('@/components/FAQ/FAQ'));
-import Agregatormain from '@/components/Agregatormain/Agregatormain';
-const Improveus = lazy(() => import('@/components/Improveus/Improveus'));
-import Loading from './loading';
+const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
+const Agregatormain = dynamic(() => import('@/components/Agregatormain/Agregatormain'));
+const Improveus = dynamic(() => import('@/components/Improveus/Improveus'), { ssr: false })
 
 async function getLabels(lang) {
   const url = 'https://api.abcrypto.io/api/categories';
@@ -28,12 +27,8 @@ export default async function Home({ params: { locale } }) {
     <main>
       <Main />
       <Agregatormain data={labels} />
-      <Suspense fallback={<Loading />}>
-        <Improveus />
-      </Suspense>
-      <Suspense fallback={<Loading />}>
-        <FAQ />
-      </Suspense>
+      <Improveus />
+      <FAQ />
     </main>
   );
 }

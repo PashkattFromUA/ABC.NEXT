@@ -48,26 +48,26 @@ const Header = () => {
         <div className={styles.menu}>
             <div className={styles.logonav}>
                 <Link href="/">
-                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => {setIsNavbarExpanded(false)}}/>
+                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => { setIsNavbarExpanded(false) }} />
                 </Link>
                 <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
-                        <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}}>
+                        <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             <li>
                                 {t("main")}
                             </li>
                         </Link>
-                        <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage}  onClick={() => {setIsNavbarExpanded(false)}}>
+                        <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             <li>
                                 {t("aggregator")}
                             </li>
                         </Link>
-                        <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}} >
+                        <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
                             <li>
                                 {t("forpartners")}
                             </li>
                         </Link>
-                        <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} onClick={() => {setIsNavbarExpanded(false)}} >
+                        <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
                             <li>
                                 FAQ
                             </li>

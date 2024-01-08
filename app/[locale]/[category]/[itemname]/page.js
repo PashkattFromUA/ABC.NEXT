@@ -15,14 +15,16 @@ export async function generateStaticParams({ params: { category } }) {
 }
 
 export async function generateMetadata({ params }) {
+  const locale = params.locale;
   const catname = params.category;
   const itemname = params.itemname;
   const mainurl = "https://abcrypto.io";
   const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
+  const { t } = await initTranslations(locale, i18nNamespaces);
 
   return {
-    title: `${product.data.name} Crypto Service Review and Rating`,
-    description: `A detailed review of the ${product.data.name} cryptocurrency Service. Description of tools and products the exchange offers to investors and pros and cons`,
+    title: `${product.data.name} ${t('titlecard')}`,
+    description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
     alternates: {
       canonical: `${mainurl}/${catname}/${itemname}`,
       languages: {

@@ -16,6 +16,7 @@
     "next": "Next",
 
     "improvehead": "Improve us",
+    "improvebutt": "Improve us",
     "improvetext": "We want to develop and you can help us with this, if you have any suggestions - let us know",
 
     "name": "Name",
@@ -63,6 +64,8 @@
     "morein": "More in",
     "browse": "Start browse",
     "similar": "Similar",
+
+    "cardpageheader": "review and rating",
 
     "ppheader": "Privacy and cookie policy",
     "ppheader2": "Information We Collect",
@@ -119,11 +122,9 @@
     "titlecategoryright": " crypto services - abcrypto.io",
     "metacategoryleft": "Read about the best crypto services in category ",
     "metacategoryright": " on abcrypto.io",
-    "titlecard": " Reviews 2023. Pros and cons, complete overview",
-    "metacard1": "Read our ",
-    "metacard2": " review to find out how to use ",
-    "metacard3": " and much more - all on this complete ",
-    "metacard4": " review.",
+    "titlecard": " Обзор и рейтинг криптосервиса",
+    "metacard1": "A detailed review of the ",
+    "metacard2": " crypto service. Description of tools and products and pros and cons.",
     "sitemap": "Sitemap",
     "sitemaptextleft": "text left",
     "sitemaptextright": "text right"

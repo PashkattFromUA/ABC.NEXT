@@ -26,7 +26,7 @@ const Cardinfo = (props) => {
                 <div className={styles.cpleft}>
                     <div className={styles.nameplacemobile}>
                         <div className={styles.cprighttopleft}>
-                            <h1>{cardinfo.name} <br />review and rating</h1>
+                            <h1>{cardinfo.name} <br />{t('cardpageheader')}</h1>
                             <p>{cardinfo.place}</p>
                         </div>
                         <div className={styles.cprighttopright}>
@@ -48,7 +48,7 @@ const Cardinfo = (props) => {
                     <div className={styles.cpleftbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>
-                                {t('startbrowse')}
+                                {t('browse')}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="7"
@@ -71,7 +71,7 @@ const Cardinfo = (props) => {
                 <div className={styles.cpright}>
                     <div className={styles.cprighttop}>
                         <div className={styles.cprighttopleft}>
-                            <h1>{cardinfo.name} <br />review and rating</h1>
+                            <h1>{cardinfo.name} <br />{t('cardpageheader')}</h1>
                             <p>{cardinfo.place}</p>
                         </div>
                         <div className={styles.cprighttopright}>
@@ -84,7 +84,7 @@ const Cardinfo = (props) => {
                     <div className={styles.tabletbuttons}>
                         <a href={cardinfo.link} target="_blank" rel="noreferrer">
                             <button className={styles.startbrowse}>
-                                {t('startbrowse')}
+                                {t('browse')}
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="7"

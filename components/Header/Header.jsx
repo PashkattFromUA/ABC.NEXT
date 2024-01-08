@@ -1,9 +1,9 @@
 'use client'
-
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
-import Localemodal from "./Locale/Localemodal";
+const Localemodal = dynamic(() => import('./Locale/Localemodal'));
 import styles from '@/styles/header.module.css';
 import { usePathname } from 'next/navigation';
 import scrollTo from '@/utils/scrollTo';

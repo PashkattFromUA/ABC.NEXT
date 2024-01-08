@@ -1,5 +1,6 @@
-import FAQ from "@/components/FAQ/FAQ";
 import initTranslations from '../../i18n';
+import dynamic from 'next/dynamic';
+const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
 
 const i18nNamespaces = ['common'];
 

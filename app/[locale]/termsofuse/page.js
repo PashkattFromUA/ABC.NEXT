@@ -1,26 +1,25 @@
 import initTranslations from '../../i18n';
 import styles from "@/styles/tofpage.module.css"
 
-export const metadata = {
-    title: 'Terms of Use',
-};
-
 const i18nNamespaces = ['common'];
 
-async function getLabels(lang) {
-    const url = 'https://api.abcrypto.io/api/categories';
-    const headers = new Headers({
-        'App-Locale': lang,
-    });
-
-    const res = await fetch(url, { headers });
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch data');
+export async function generateMetadata({ params }) {
+    const locale = params.locale;
+    const { t } = await initTranslations(locale, i18nNamespaces);
+    const mainurl = "https://abcrypto.io";
+  
+    return {
+      title: `${t('titlemain')}`,
+      description: `${t('metamain')}`,
+      alternates: {
+        canonical: `${mainurl}/termsofuse`,
+        languages: {
+          'ru': `${mainurl}/ru/termsofuse`,
+          'uk': `${mainurl}/uk/termsofuse`
+        }
+      }
     }
-
-    return res.json();
-}
+  }
 
 export default async function TermsofusePage({ params: { locale } }) {
 

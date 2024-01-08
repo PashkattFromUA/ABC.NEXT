@@ -1,5 +1,6 @@
 import initTranslations from '../../i18n';
-import Screensblock from "@/components/Screensblock/Screensblock";
+import dynamic from 'next/dynamic';
+const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
 
 const i18nNamespaces = ['common'];
 

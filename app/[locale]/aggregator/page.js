@@ -1,6 +1,8 @@
-import Agregator from '@/components/Agregator/Agregator';
+import dynamic from 'next/dynamic';
+const Agregator = dynamic(() => import('@/components/Agregator/Agregator'));
 import initTranslations from '../../i18n';
-import Screensblock from '@/components/Screensblock/Screensblock';
+const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
+
 
 const i18nNamespaces = ['common'];
 

@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import Main from '@/components/Main/Main';
+const Main = dynamic(() => import('@/components/Main/Main'));
 const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
 const Agregatormain = dynamic(() => import('@/components/Agregatormain/Agregatormain'));
 const Improveus = dynamic(() => import('@/components/Improveus/Improveus'), { ssr: false })

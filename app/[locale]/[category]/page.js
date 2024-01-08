@@ -1,7 +1,8 @@
 import initTranslations from '../../i18n';
-import Blocktitle from '@/components/Blocktitle/Blocktitle';
-import Screensblock from '@/components/Screensblock/Screensblock';
-import Cardlist from '@/components/Agregator/Cardlist';
+import dynamic from 'next/dynamic';
+const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'))
+const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
+const Cardlist = dynamic(() => import('@/components/Agregator/Cardlist'));
 import { notFound } from 'next/navigation';
 
 const i18nNamespaces = ['common'];
@@ -27,9 +28,7 @@ async function getLabels(lang) {
 
   const res = await fetch(url, { headers });
 
-  if (!res.ok) {
-    console.error('Failed to fetch data')
-  }
+  if (!res.ok) return undefined
 
   return res.json();
 }
@@ -37,15 +36,30 @@ async function getLabels(lang) {
 export async function generateMetadata({ params }) {
   const locale = params.locale;
   const catslug = params.category;
+  const mainurl = "https://abcrypto.io";
   const { t } = await initTranslations(locale, i18nNamespaces);
   const labels = await getLabels(locale);
   var resultObject = labels.data.find(function (item) {
     return item.slug === catslug;
   });
 
-  return {
-    title: `${t('titlecategoryleft')}${resultObject.name}${t('titlecategoryright')}`,
-    description: `${t('metacategoryleft')}${resultObject.name}${t('metacategoryright')}`
+  if (resultObject === undefined) {
+    return {
+      title: `Not found 404`,
+      description: `Not found 404`,
+      alternates: {
+        canonical: `${mainurl}/404`,
+        languages: {
+          'ru': `${mainurl}/ru/404`,
+          'uk': `${mainurl}/uk/404`
+        }
+      }
+    }
+  } else {
+    return {
+      title: `${t('titlecategoryleft')}${resultObject.name}${t('titlecategoryright')}`,
+      description: `${t('metacategoryleft')}${resultObject.name}${t('metacategoryright')}`
+    }
   }
 }
 
@@ -60,6 +74,9 @@ export default async function CategoryPage({ params }) {
   }
 
   const labels = await getLabels(locale);
+  if (!labels) {
+    notFound()
+  }
   var resultObject = labels.data.find(function (item) {
     return item.slug === catslug;
   });

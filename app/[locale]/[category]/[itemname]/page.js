@@ -22,14 +22,28 @@ export async function generateMetadata({ params }) {
   const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
   const { t } = await initTranslations(locale, i18nNamespaces);
 
-  return {
-    title: `${product.data.name} ${t('titlecard')}`,
-    description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
-    alternates: {
-      canonical: `${mainurl}/${catname}/${itemname}`,
-      languages: {
-        'ru': `${mainurl}/ru/${catname}/${itemname}`,
-        'uk': `${mainurl}/uk/${catname}/${itemname}`
+  if (product === undefined) {
+    return {
+      title: `Not found 404`,
+      description: `Not found 404`,
+      alternates: {
+        canonical: `${mainurl}/404`,
+        languages: {
+          'ru': `${mainurl}/ru/404`,
+          'uk': `${mainurl}/uk/404`
+        }
+      }
+    }
+  } else {
+    return {
+      title: `${product.data.name} ${t('titlecard')}`,
+      description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
+      alternates: {
+        canonical: `${mainurl}/${catname}/${itemname}`,
+        languages: {
+          'ru': `${mainurl}/ru/${catname}/${itemname}`,
+          'uk': `${mainurl}/uk/${catname}/${itemname}`
+        }
       }
     }
   }

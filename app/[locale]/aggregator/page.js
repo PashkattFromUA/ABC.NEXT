@@ -4,9 +4,23 @@ import Screensblock from '@/components/Screensblock/Screensblock';
 
 const i18nNamespaces = ['common'];
 
-export const metadata = {
-  title: 'Aggregator',
-};
+export async function generateMetadata({ params }) {
+  const locale = params.locale;
+  const { t } = await initTranslations(locale, i18nNamespaces);
+  const mainurl = "https://abcrypto.io";
+
+  return {
+    title: `${t('titlemain')}`,
+    description: `${t('metamain')}`,
+    alternates: {
+      canonical: `${mainurl}/aggregator`,
+      languages: {
+        'ru': `${mainurl}/ru/aggregator`,
+        'uk': `${mainurl}/uk/aggregator`
+      }
+    }
+  }
+}
 
 async function getLabels(lang) {
   const url = 'https://api.abcrypto.io/api/categories';

@@ -22,15 +22,16 @@ const dmsans = DM_Sans({ subsets: ['latin'] });
 export async function generateMetadata({ params }) {
   const locale = params.locale;
   const { t } = await initTranslations(locale, i18nNamespaces);
+  const mainurl = "https://abcrypto.io";
 
   return {
     title: `${t('titlemain')}`,
     description: `${t('metamain')}`,
     alternates: {
-      canonical: 'https://abcrypto.io',
+      canonical: `${mainurl}`,
       languages: {
-        'ru': 'https://abcrypto.io/ru',
-        'uk': 'https://abcrypto.io/uk',
+        'ru': `${mainurl}/ru`,
+        'uk': `${mainurl}/uk`
       }
     }
   }

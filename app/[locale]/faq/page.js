@@ -1,10 +1,27 @@
 import FAQ from "@/components/FAQ/FAQ";
+import initTranslations from '../../i18n';
 
-export const metadata = {
-    title: 'Faq',
-};
+const i18nNamespaces = ['common'];
 
-export default async function FaqPage({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+    const locale = params.locale;
+    const { t } = await initTranslations(locale, i18nNamespaces);
+    const mainurl = "https://abcrypto.io";
+  
+    return {
+      title: `${t('titlemain')}`,
+      description: `${t('metamain')}`,
+      alternates: {
+        canonical: `${mainurl}/faq`,
+        languages: {
+          'ru': `${mainurl}/ru/faq`,
+          'uk': `${mainurl}/uk/faq`
+        }
+      }
+    }
+  }
+
+export default async function FaqPage() {
 
     return (
             <main>

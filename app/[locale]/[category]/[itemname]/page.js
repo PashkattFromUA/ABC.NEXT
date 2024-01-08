@@ -15,12 +15,21 @@ export async function generateStaticParams({ params: { category } }) {
 }
 
 export async function generateMetadata({ params }) {
-  const name = params.itemname;
-  const product = await fetch(`https://api.abcrypto.io/api/items/${name}`).then((res) => res.json());
+  const catname = params.category;
+  const itemname = params.itemname;
+  const mainurl = "https://abcrypto.io";
+  const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
 
   return {
     title: `${product.data.name} Crypto Service Review and Rating`,
-    description: `A detailed review of the ${product.data.name} cryptocurrency Service. Description of tools and products the exchange offers to investors and pros and cons`
+    description: `A detailed review of the ${product.data.name} cryptocurrency Service. Description of tools and products the exchange offers to investors and pros and cons`,
+    alternates: {
+      canonical: `${mainurl}/${catname}/${itemname}`,
+      languages: {
+        'ru': `${mainurl}/ru/${catname}/${itemname}`,
+        'uk': `${mainurl}/uk/${catname}/${itemname}`
+      }
+    }
   }
 }
 

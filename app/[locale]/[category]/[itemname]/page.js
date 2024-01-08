@@ -1,8 +1,9 @@
 import initTranslations from '../../../i18n';
-import SEO from '@/components/Cardinfo/Seoblock';
-import Cardinfo from '@/components/Cardinfo/Cardinfo';
-import Cardlist from '@/components/Agregator/Cardlist';
-import Blocktitle from '@/components/Blocktitle/Blocktitle';
+import dynamic from 'next/dynamic';
+const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'));
+const SEO = dynamic(() => import('@/components/Cardinfo/Seoblock'));
+const Cardinfo = dynamic(() => import('@/components/Cardinfo/Cardinfo'));
+const Cardlist = dynamic(() => import('@/components/Agregator/Cardlist'));
 import { notFound } from 'next/navigation'
 
 const i18nNamespaces = ['common'];

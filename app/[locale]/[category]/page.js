@@ -1,6 +1,6 @@
 import initTranslations from '../../i18n';
 import dynamic from 'next/dynamic';
-const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'))
+const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'));
 const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
 const Cardlist = dynamic(() => import('@/components/Agregator/Cardlist'));
 import { notFound } from 'next/navigation';

@@ -5,7 +5,7 @@
     justify-content: space-between;
     margin-left: 100px;
     margin-right: 100px;
-    margin-top: 125px;
+    margin-top: 130px;
 }
 
 .text {
@@ -90,7 +90,6 @@
         display: flex;
         align-items: center;
         gap: 32px;
-        margin-bottom: 175px;
     }
 
     .main h1 {
@@ -129,7 +128,6 @@
         margin-left: 30px;
         margin-right: 30px;
         margin-top: 92px;
-        margin-bottom: 134px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
@@ -145,8 +143,7 @@
         width: calc(100vw - 20px);
         margin-left: 10px;
         margin-right: 10px;
-        margin-top: 48px;
-        margin-bottom: 70px;
+        margin-top: 64px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 14px;

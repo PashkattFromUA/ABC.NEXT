@@ -2,14 +2,6 @@ import '@/styles/global.css'
 import Link from 'next/link'
 import styles from '@/styles/error.module.css'
 
-export async function generateMetadata() {
-
-  return {
-    title: `Not found 404`,
-    description: `Not found 404`
-  }
-}
-
 export default async function NotFound() {
 
   return (

@@ -2,13 +2,12 @@
     margin-top: 64px;
     margin-left: 100px;
     margin-right: 100px;
-    justify-content: space-between;
-    gap: 40px;
 }
 
 .cpblock {
     display: flex;
     gap: 100px;
+    justify-content: space-between;
 }
 
 .nameplacemobile {
@@ -127,6 +126,21 @@
         margin-right: 50px;
         gap: 32px;
     }
+
+    .cpblock {
+        gap: 80px;
+    }
+}
+
+@media (max-width: 1150px){
+    .cpleft img {
+        width: 420px;
+        height: auto;
+    }
+
+    .cpblock {
+        gap: 60px;
+    }
 }
 
 @media (max-width: 1047px) {
@@ -208,12 +222,5 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
-    }
-
-    .featblock {
-        display: flex;
-        margin-top: 24px;
-        flex-direction: column;
-        gap: 16px;
     }
 }

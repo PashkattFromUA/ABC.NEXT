@@ -126,7 +126,7 @@
 
   .agrsliderblock {
     display: flex;
-    width: calc(100vw - 164px);
+    width: calc(100vw - 180px);
   }
 }
 

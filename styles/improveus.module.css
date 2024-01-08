@@ -137,29 +137,11 @@
   .improveleft p {
     font-size: 18px;
     margin-top: 18px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 }
 
-@media (max-width: 780px) {
-  .improveus {
-    align-items: center;
-  }
-
-  .improvebutt {
-    display: flex;
-  }
-
-  .button1 {
-    width: max-content;
-  }
-
-  .button2 {
-    width: max-content;
-  }
-}
-
-@media (max-width: 663px) {
+@media (max-width: 749px) {
   .improveus {
     display: grid;
     width: calc(100vw - 20px);
@@ -167,7 +149,7 @@
     margin-right: 10px;
     margin-top: 92px;
     margin-bottom: 100px;
-    gap: 16px;
+    gap: 32px;
   }
 
   .improveright {
@@ -177,20 +159,7 @@
 
   .improveright img {
     width: calc(100vw - 20px);
-    height: calc(100vw - 20px - 18%);
-  }
-
-  .improveleft h2 {
-    font-size: 24px;
-    line-height: normal;
-  }
-
-  .improveleft p {
-    width: calc(100vw - 20px);
-    font-size: 14px;
-    margin-top: 16px;
-    margin-bottom: 0;
-    line-height: 1.5;
+    height: auto;
   }
 
   .improvebutt {
@@ -221,6 +190,21 @@
     display: flex;
     flex-direction: column;
     place-items: center;
-    gap: 16px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 663px) {
+  .improveleft h2 {
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  .improveleft p {
+    width: calc(100vw - 20px);
+    font-size: 14px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    line-height: 1.5;
   }
 }

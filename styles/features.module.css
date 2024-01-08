@@ -23,3 +23,12 @@
     letter-spacing: 0.15px;
     margin-top: 8px;
 }
+
+@media (max-width: 663px) {
+    .featblock {
+        display: flex;
+        margin-top: 24px;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

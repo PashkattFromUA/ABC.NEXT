@@ -203,7 +203,7 @@
 
     .footerbot {
         flex-direction: column-reverse;
-        gap: 5px;
+        gap: 16px;
         margin-bottom: 16px;
     }
 }
@@ -218,6 +218,7 @@
     .footertop {
         flex-direction: column;
         gap: 0;
+        margin-bottom: 16px;
     }
 
     .footerleft {
@@ -273,7 +274,7 @@
 
     .footerbot {
         flex-direction: column-reverse;
-        gap: 5px;
+        gap: 16px;
         margin-bottom: 16px;
     }
 
@@ -296,6 +297,6 @@
     .footerbotr {
         display: grid;
         place-items: center;
-        gap: 5px;
+        gap: 16px;
     }
 }

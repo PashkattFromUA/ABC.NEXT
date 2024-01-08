@@ -134,7 +134,7 @@
 
 @media (max-width: 663px) {
   .card1 {
-    padding: 10px;
+    padding: 16px;
     width: auto;
     display: grid;
     gap: 16px;

@@ -45,8 +45,8 @@ export async function generateMetadata({ params }) {
 
   if (resultObject === undefined) {
     return {
-      title: `Not found 404`,
-      description: `Not found 404`,
+      title: `404: This page could not be found.`,
+      description: `404: This page could not be found.`,
       alternates: {
         canonical: `${mainurl}/404`,
         languages: {

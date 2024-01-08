@@ -23,10 +23,10 @@ export async function generateMetadata({ params }) {
   const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
   const { t } = await initTranslations(locale, i18nNamespaces);
 
-  if (product === undefined) {
+  if (product.data.name === undefined) {
     return {
-      title: `Not found 404`,
-      description: `Not found 404`,
+      title: `404: This page could not be found.`,
+      description: `404: This page could not be found.`,
       alternates: {
         canonical: `${mainurl}/404`,
         languages: {

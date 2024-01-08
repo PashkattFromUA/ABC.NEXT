@@ -3,7 +3,6 @@
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 128px;
-    margin-bottom: 138px;
     justify-content: space-between;
     gap: 32px;
     align-items: center;
@@ -53,20 +52,11 @@
     cursor: pointer;
 }
 
-.errorblock img {
-    width: 700px;
-    height: 315px;
-}
-
 @media (max-width: 1439px) {
     .errorblock {
         display: flex;
         margin-left: 50px;
         margin-right: 50px;
-        margin-top: 128px;
-        margin-bottom: 138px;
-        justify-content: space-between;
-        gap: 32px;
     }
 }
 
@@ -110,7 +100,6 @@
         margin-left: 10px;
         margin-right: 10px;
         margin-top: 72px;
-        margin-bottom: 80px;
         align-items: flex-start;
     }
 

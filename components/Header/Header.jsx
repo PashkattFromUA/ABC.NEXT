@@ -52,11 +52,11 @@ const Header = () => {
                 </Link>
                 <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
-                        <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
+                        {/* <Link href="/" className={currentPathname === `/${currentLocale}` || currentPathname === `/` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             <li>
                                 {t("main")}
                             </li>
-                        </Link>
+                        </Link> */}
                         <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             <li>
                                 {t("aggregator")}

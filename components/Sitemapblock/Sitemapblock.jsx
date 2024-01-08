@@ -16,7 +16,7 @@ const Sitemapblock = (props) => {
     return (
         <div className="gradient">
             <div className="block">
-                <Blocktitle name={t('sitemap')} />
+                <Blocktitle name={t('sitemapbutt')} />
                 {sortedCategories.map((buttonlabel) => (
                     <div key={buttonlabel.id}>
                         <Link href={`/${buttonlabel.slug}`} className={styles.categorylink}>

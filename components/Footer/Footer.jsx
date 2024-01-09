@@ -24,9 +24,6 @@ const Footer = (props) => {
                     <div className={styles.footer1}>
                         <h3>{t('navigation')}</h3>
                         <div>
-                            <Link href="/">
-                                <p>{t('main')}</p>
-                            </Link>
                             <Link href="/aggregator">
                                 <p>{t('aggregator')}</p>
                             </Link>
@@ -35,6 +32,9 @@ const Footer = (props) => {
                             </Link>
                             <Link href="/forpartners">
                                 <p>{t('forpartners')}</p>
+                            </Link>
+                            <Link href="/news">
+                                <p>{t('news')}</p>
                             </Link>
                             <Link href="/sitemap">
                                 <p>{t('sitemapbutt')}</p>

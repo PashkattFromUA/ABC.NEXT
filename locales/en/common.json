@@ -1,11 +1,11 @@
 {   
-    "main": "Main",
+    "news": "News",
     "aggregator" : "Aggregator",
     "forpartners" : "For partners",
     "contactus" : "Contact us",
 
-    "mainscrtextleft": "We are the best crypto browser in web",
-    "mainscrtextright": "Sometimes it’s so difficult to find the information or service you need, but with our help everything becomes much easier.",
+    "mainscrtextleft": "Cryptocurrency services and companies",
+    "mainscrtextright": "Read customer reviews about cryptocurrency services and companies",
     "startbrowse": "Start browse",
     "haveaquestion": "Have a question?",
 
@@ -60,6 +60,11 @@
     "sbtitleleftcp": "Here is information about the best ",
     "sbtitlerightcp": ". We hope you will find what you are looking for.",
     "allin": "All in",
+
+    "comingsoon": "Coming soon",
+    "newsblocktext": "Here very soon you will be able to read news about the crypto world. In the meantime, you can leave your email and we will notify you when it becomes available.",
+    "newsmodaltext": "Leave your email so we can notify you when news is available.",
+    "newsmodalbutt": "Leave an email",
 
     "morein": "More in",
     "browse": "Start browse",

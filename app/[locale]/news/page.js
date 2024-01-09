@@ -1,9 +1,13 @@
-import React from 'react'
+import Newsblock from "@/components/Newsblock/Newsblock"
 
 const Newspage = () => {
-  return (
-    <div>Newspage</div>
-  )
+
+
+    return (
+        <main>
+            <Newsblock />
+        </main>
+    )
 }
 
 export default Newspage

@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-const Form = dynamic(() => import('@/components/Form/Form'), { ssr: false })
+const Form = dynamic(() => import('@/components/Form/Form'));
 const Header = dynamic(() => import('@/components/Header/Header'));
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';

@@ -43,6 +43,9 @@ const Form = () => {
         data: null
       }).then(({ data }) => {
         alert(`${t('delivered')}`)
+        setName("");
+        setEmail("");
+        setText("");
         return data;
       })
     } catch (e) {

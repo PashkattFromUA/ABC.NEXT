@@ -42,6 +42,9 @@ const Improveusmodal = ({ isOpen, closeModal }) => {
         data: null
       }).then(({ data }) => {
         alert(`${t('delivered')}`)
+        setName("");
+        setEmail("");
+        closeModal();
         return data;
       })
     } catch (e) {

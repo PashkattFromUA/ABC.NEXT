@@ -42,6 +42,9 @@ const Improveusmodal = ({ isOpen, closeModal }) => {
         data: null
       }).then(({ data }) => {
         alert(`${t('delivered')}`)
+        setName("");
+        setEmail("")
+        closeModal();
         return data;
       })
     } catch (e) {
@@ -59,7 +62,7 @@ const Improveusmodal = ({ isOpen, closeModal }) => {
         <div className={styles.modalcontent}>
           <div className={styles.closebutt}>
             <h3>{t('news')}</h3>
-            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal} style={{cursor:'pointer'}}>
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal} style={{ cursor: 'pointer' }}>
               <circle cx="14.5" cy="14.5" r="14.5" fill="#F6F6F6" />
               <path d="M19.4502 9.05029L9.5507 18.9498" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M19.0957 18.5962L9.90332 9.40381" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

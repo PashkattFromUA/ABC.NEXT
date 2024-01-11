@@ -1,9 +1,11 @@
+import { Suspense, lazy } from 'react';
 import initTranslations from '../../i18n';
 import dynamic from 'next/dynamic';
 const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'));
 const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
-const Cardlist = dynamic(() => import('@/components/Agregator/Cardlist'));
+const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
 import { notFound } from 'next/navigation';
+import Loading from '../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -88,7 +90,9 @@ export default async function CategoryPage({ params }) {
         <div className="block" id="categorycardlist">
             <Blocktitle name={t('allin')} title={resultObject.name} />
             <div>
+              <Suspense fallback={<Loading />}>
               <Cardlist cardsArray={cards.data} catslug={resultObject.slug} />
+              </Suspense>
             </div>
         </div>
       </div>

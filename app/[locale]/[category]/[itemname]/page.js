@@ -1,10 +1,12 @@
 import initTranslations from '../../../i18n';
+import { Suspense, lazy } from 'react';
 import dynamic from 'next/dynamic';
 const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'));
 const SEO = dynamic(() => import('@/components/Cardinfo/Seoblock'));
 const Cardinfo = dynamic(() => import('@/components/Cardinfo/Cardinfo'));
-const Cardlist = dynamic(() => import('@/components/Agregator/Cardlist'));
-import { notFound } from 'next/navigation'
+const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
+import { notFound } from 'next/navigation';
+import Loading from '../../loading';
 
 const i18nNamespaces = ['common'];
 
@@ -99,7 +101,9 @@ export default async function Home({ params }) {
       <div className="gradient">
         <div className="block" id="categorycardlist">
           <Blocktitle name={t('morein')} title={catinfo.name} />
+          <Suspense fallback={<Loading />}>
           <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
+          </Suspense>
         </div>
       </div>
     </main>

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveusmodal.module.css'
 
-const Improveusmodal = ({ isOpen, closeModal }) => {
+const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal }) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -41,9 +41,9 @@ const Improveusmodal = ({ isOpen, closeModal }) => {
         method: "POST",
         data: null
       }).then(({ data }) => {
-        alert(`${t('delivered')}`)
         setName("");
         setEmail("");
+        openFeedbackModal(true);
         closeModal();
         return data;
       })

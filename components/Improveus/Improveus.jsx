@@ -6,9 +6,20 @@ import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
 import improveusimg from '@/public/images/improveus.png'
 import Image from 'next/image';
+import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
 
 const Improveus = () => {
   const { t } = useTranslation();
+
+  const [isFeedbackOpen, setIsFeedbackModalOpen] = useState(false);
+
+  const openFeedbackModal = () => {
+    setIsFeedbackModalOpen(true);
+  };
+
+  const closeFeedbackModal = () => {
+    setIsFeedbackModalOpen(false);
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -50,7 +61,8 @@ const Improveus = () => {
             </button>
             <span className={styles.button2} onClick={() => scrollTo('#FAQ')}>{t('haveaquestion')}</span>
           </div>
-          {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal} />}
+          {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal}  openFeedbackModal={openFeedbackModal}/>}
+          <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />
       </div>
     </section>
   )

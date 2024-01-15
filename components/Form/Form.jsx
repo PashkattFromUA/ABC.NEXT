@@ -5,6 +5,7 @@ import styles from '@/styles/form.module.css'
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
 
 const Form = () => {
 
@@ -12,6 +13,15 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [short_description, setText] = useState('');
   const { t } = useTranslation();
+  const [isFeedbackOpen, setIsFeedbackModalOpen] = useState(false);
+
+  const openFeedbackModal = () => {
+    setIsFeedbackModalOpen(true);
+  };
+
+  const closeFeedbackModal = () => {
+    setIsFeedbackModalOpen(false);
+  };
 
   const isEmailValid = (email) => {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -42,10 +52,10 @@ const Form = () => {
         method: "POST",
         data: null
       }).then(({ data }) => {
-        alert(`${t('delivered')}`)
         setName("");
         setEmail("");
         setText("");
+        openFeedbackModal();
         return data;
       })
     } catch (e) {
@@ -67,6 +77,7 @@ const Form = () => {
           <button onClick={handleSubmit}>{t('getintouch')}</button>
         </div>
       </div>
+      <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal}/>
     </div>
   )
 }

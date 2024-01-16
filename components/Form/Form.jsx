@@ -6,6 +6,7 @@ import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
+import Errormodal from '../Errormodal/Errormodal';
 
 const Form = () => {
 
@@ -14,6 +15,8 @@ const Form = () => {
   const [short_description, setText] = useState('');
   const { t } = useTranslation();
   const [isFeedbackOpen, setIsFeedbackModalOpen] = useState(false);
+  const [isErrorOpen, setIsErrorModalOpen] = useState(false);
+  const [errorText, setErrorText] = useState('');
 
   const openFeedbackModal = () => {
     setIsFeedbackModalOpen(true);
@@ -21,6 +24,14 @@ const Form = () => {
 
   const closeFeedbackModal = () => {
     setIsFeedbackModalOpen(false);
+  };
+
+  const openErrorModal = () => {
+    setIsErrorModalOpen(true);
+  };
+
+  const closeErrorModal = () => {
+    setIsErrorModalOpen(false);
   };
 
   const isEmailValid = (email) => {
@@ -31,13 +42,15 @@ const Form = () => {
   const handleSubmit = async () => {
 
     if (!name || !email || !short_description) {
-      alert(`${t('fill')}`);
-      return;
+      setErrorText('Fill in all fields')
+      openErrorModal();
+      return null
     }
 
     if (!isEmailValid(email)) {
-      alert(`${t('wrongemail')}`)
-      return;
+      setErrorText('Wrong email')
+      openErrorModal();
+      return null
     }
 
     try {
@@ -60,6 +73,9 @@ const Form = () => {
       })
     } catch (e) {
       console.log("Sending error", e)
+      setErrorText('Something went wrong')
+      openErrorModal();
+      return null
     }
   };
 
@@ -78,6 +94,7 @@ const Form = () => {
         </div>
       </div>
       <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal}/>
+      <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />
     </div>
   )
 }

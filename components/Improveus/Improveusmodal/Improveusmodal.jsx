@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveusmodal.module.css'
 
-const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal }) => {
+const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild, openErrorModal  }) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,13 +20,15 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal }) => {
   const handleSubmit = async () => {
 
     if (!name || !email || !short_description) {
-      alert(`${t('fill')}`);
-      return;
+      onDataFromChild('Fill in all fields');
+      openErrorModal();
+      return null
     }
 
     if (!isEmailValid(email)) {
-      alert(`${t('wrongemail')}`)
-      return;
+      onDataFromChild('Wrong email');
+      openErrorModal();
+      return null
     }
 
     try {
@@ -48,7 +50,9 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal }) => {
         return data;
       })
     } catch (e) {
-      console.log("Sending error", e)
+      onDataFromChild('Something went wrong');
+      openErrorModal();
+      return null
     }
   };
 

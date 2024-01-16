@@ -7,9 +7,24 @@ import styles from '@/styles/improveus.module.css'
 import improveusimg from '@/public/images/improveus.png'
 import Image from 'next/image';
 import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
+import Errormodal from '../Errormodal/Errormodal';
 
 const Improveus = () => {
   const { t } = useTranslation();
+  const [isErrorOpen, setIsErrorModalOpen] = useState(false);
+  const [errorText, setErrorText] = useState('');
+
+  const handleDataFromChild = (data) => {
+    setErrorText(data);
+  };
+
+  const openErrorModal = () => {
+    setIsErrorModalOpen(true);
+  };
+
+  const closeErrorModal = () => {
+    setIsErrorModalOpen(false);
+  };
 
   const [isFeedbackOpen, setIsFeedbackModalOpen] = useState(false);
 
@@ -61,8 +76,9 @@ const Improveus = () => {
             </button>
             <span className={styles.button2} onClick={() => scrollTo('#FAQ')}>{t('haveaquestion')}</span>
           </div>
-          {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal}  openFeedbackModal={openFeedbackModal}/>}
+          {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal}  openFeedbackModal={openFeedbackModal} onDataFromChild={handleDataFromChild} openErrorModal={openErrorModal} />}
           <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />
+          <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />
       </div>
     </section>
   )

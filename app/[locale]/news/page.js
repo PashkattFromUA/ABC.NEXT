@@ -1,6 +1,6 @@
 import Newsblock from "@/components/Newsblock/Newsblock"
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata() {
 
     const mainurl = "https://abcrypto.io";
 

@@ -134,5 +134,9 @@
     "metacard1": "A detailed review of the ",
     "metacard2": " crypto service. Description of tools and products and pros and cons.",
     "sitemap": "Sitemap - abcrypto.io",
-    "sitemapbutt": "Sitemap"
+    "sitemapbutt": "Sitemap",
+
+    "errorheader": "Something went wrong",
+    "errortext": "An error occurred while loading the page",
+    "tryagain": "Reload"
 }

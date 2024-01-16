@@ -29,6 +29,11 @@
     line-height: normal;
 }
 
+.email:not(:focus):invalid {
+    border: 1px solid #D80027;
+    color: #D80027;
+}
+
 .description {
     padding: 20px 16px;
     border-radius: 12px;

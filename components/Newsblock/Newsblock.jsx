@@ -6,8 +6,8 @@ const Newsmodal = dynamic(() => import('@/components/Newsblock/Newsmodal/Newsmod
 import styles from '@/styles/newspage.module.css'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import Feedbackmodal from '../Feedbackmodal/Feedbackmodal'
-import Errormodal from '../Errormodal/Errormodal'
+const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
 
 const Newsblock = () => {
 
@@ -50,8 +50,8 @@ const Newsblock = () => {
 
     return (
         <div>
-            <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />
-            <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />
+            {isFeedbackOpen && <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />}
+            {isErrorOpen && <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />}
             <div className={styles.newsblock}>
                 <div>
                     <h1>{t('comingsoon')}</h1>

@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
 import improveusimg from '@/public/images/improveus.png'
 import Image from 'next/image';
-import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
-import Errormodal from '../Errormodal/Errormodal';
+const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
 
 const Improveus = () => {
   const { t } = useTranslation();
@@ -77,8 +77,8 @@ const Improveus = () => {
             <span className={styles.button2} onClick={() => scrollTo('#FAQ')}>{t('haveaquestion')}</span>
           </div>
           {isModalOpen && <Improveusmodal isOpen={isModalOpen} closeModal={closeModal}  openFeedbackModal={openFeedbackModal} onDataFromChild={handleDataFromChild} openErrorModal={openErrorModal} />}
-          <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />
-          <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />
+          {isFeedbackOpen && <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />}
+          {isErrorOpen && <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />}
       </div>
     </section>
   )

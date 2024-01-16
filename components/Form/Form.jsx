@@ -4,9 +4,10 @@ import React, { useState } from 'react'
 import styles from '@/styles/form.module.css'
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
+import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
-import Feedbackmodal from '../Feedbackmodal/Feedbackmodal';
-import Errormodal from '../Errormodal/Errormodal';
+const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
 
 const Form = () => {
 
@@ -93,8 +94,8 @@ const Form = () => {
           <button onClick={handleSubmit}>{t('getintouch')}</button>
         </div>
       </div>
-      <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal}/>
-      <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />
+      {isFeedbackOpen && <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal}/>}
+      {isErrorOpen && <Errormodal isErrorOpen={isErrorOpen} closeErrorModal={closeErrorModal} text={errorText} />}
     </div>
   )
 }

@@ -3,9 +3,11 @@
 import React, { useEffect } from 'react';
 import styles from '@/styles/feedbackmodal.module.css';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const Errormodal = ({ isErrorOpen, closeErrorModal, text }) => {
 
+    const {t} = useTranslation(); 
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -25,7 +27,7 @@ const Errormodal = ({ isErrorOpen, closeErrorModal, text }) => {
                 <div className={styles.feedbackmodaltop}>
                     <div className={styles.feedbackmodaltopleft}>
                         <Image src='/images/sendingerror.svg' width={21} height={21} alt='done' />
-                        <h6>Error!</h6>
+                        <h6>{t('errortitle')}</h6>
                     </div>
                     <svg width="20" height="20" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeErrorModal}>
                         <circle cx="14.5" cy="14.5" r="14.5" fill="#F6F6F6" />

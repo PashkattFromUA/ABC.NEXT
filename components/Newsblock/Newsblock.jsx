@@ -59,7 +59,7 @@ const Newsblock = () => {
                     <button className={styles.newsbutt} onClick={openModal}>{t('newsmodalbutt')}</button>
                     {isModalOpen && <Newsmodal isOpen={isModalOpen} closeModal={closeModal} openFeedbackModal={openFeedbackModal} onDataFromChild={handleDataFromChild} openErrorModal={openErrorModal} />}
                 </div>
-                <Image src='/images/Comingsoon.svg' width={705} height={315} priority alt="error" />
+                <Image src='/images/Comingsoon.svg' width={705} height={315} priority alt="coming soon" />
             </div>
         </div>
 

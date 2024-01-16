@@ -3,8 +3,11 @@
 import React, { useEffect } from 'react';
 import styles from '@/styles/feedbackmodal.module.css';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 const Feedbackmodal = ({ isFeedbackOpen, closeFeedbackModal }) => {
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -24,7 +27,7 @@ const Feedbackmodal = ({ isFeedbackOpen, closeFeedbackModal }) => {
                 <div className={styles.feedbackmodaltop}>
                     <div className={styles.feedbackmodaltopleft}>
                         <Image src='/images/done.svg' width={21} height={21} alt='done' />
-                        <h6>Great</h6>
+                        <h6>{t('great')}</h6>
                     </div>
                     <svg width="20" height="20" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeFeedbackModal}>
                         <circle cx="14.5" cy="14.5" r="14.5" fill="#F6F6F6" />
@@ -32,7 +35,7 @@ const Feedbackmodal = ({ isFeedbackOpen, closeFeedbackModal }) => {
                         <path d="M19.0957 18.5962L9.90332 9.40381" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </div>
-                <p>Thank you for your reply, we will contact you as soon as possible!</p>
+                <p>{t('delivered')}</p>
             </div>
 
         </div>

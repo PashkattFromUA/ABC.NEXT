@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveusmodal.module.css'
 
-const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild, openErrorModal  }) => {
+const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal, onDataFromChild, openErrorModal }) => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,13 +20,13 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild,
   const handleSubmit = async () => {
 
     if (!name || !email || !short_description) {
-      onDataFromChild('Fill in all fields');
+      onDataFromChild(`${t('fill')}`);
       openErrorModal();
       return null
     }
 
     if (!isEmailValid(email)) {
-      onDataFromChild('Wrong email');
+      onDataFromChild(`${t('wrongemail')}`);
       openErrorModal();
       return null
     }
@@ -50,7 +50,7 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild,
         return data;
       })
     } catch (e) {
-      onDataFromChild('Something went wrong');
+      onDataFromChild(`${t('errorsend')}`);
       openErrorModal();
       return null
     }
@@ -66,7 +66,7 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild,
         <div className={styles.modalcontent}>
           <div className={styles.closebutt}>
             <h3>{t('improvehead')}</h3>
-            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal} style={{cursor:'pointer'}}>
+            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeModal} style={{ cursor: 'pointer' }}>
               <circle cx="14.5" cy="14.5" r="14.5" fill="#F6F6F6" />
               <path d="M19.4502 9.05029L9.5507 18.9498" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M19.0957 18.5962L9.90332 9.40381" stroke="black" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -77,7 +77,7 @@ const Improveusmodal = ({ isOpen, closeModal, openFeedbackModal,onDataFromChild,
             <input value={name} onChange={el => setName(el.target.value)} className={styles.modalname} placeholder={t('name')} id="modalname" autoComplete="name" />
             <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.modalemail} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="modalemail" autoComplete="email" />
           </div>
-          <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.modaldescription} placeholder={t('shortdescription')} id="modaldescription" autoComplete="description"/>
+          <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.modaldescription} placeholder={t('shortdescription')} id="modaldescription" autoComplete="description" />
           <div className={styles.modalformbot}>
             <h4>{t('thankyou')}</h4>
             <button onClick={handleSubmit} className={styles.modalformbutt}>{t('getintouch')}</button>

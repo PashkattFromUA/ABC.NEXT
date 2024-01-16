@@ -42,13 +42,13 @@ const Form = () => {
   const handleSubmit = async () => {
 
     if (!name || !email || !short_description) {
-      setErrorText('Fill in all fields')
+      setErrorText(`${t('fill')}`)
       openErrorModal();
       return null
     }
 
     if (!isEmailValid(email)) {
-      setErrorText('Wrong email')
+      setErrorText(`${t('wrongemail')}`)
       openErrorModal();
       return null
     }
@@ -73,7 +73,7 @@ const Form = () => {
       })
     } catch (e) {
       console.log("Sending error", e)
-      setErrorText('Something went wrong')
+      setErrorText(`${t('errorsend')}`)
       openErrorModal();
       return null
     }

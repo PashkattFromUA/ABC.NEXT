@@ -9,10 +9,10 @@ const Feedbackmodal = ({ isFeedbackOpen, closeFeedbackModal }) => {
     useEffect(() => {
         const timer = setTimeout(() => {
           closeFeedbackModal();
-        }, 20000);
+        }, 10000);
     
         return () => clearTimeout(timer);
-      }, []);
+      }, [isFeedbackOpen]);
 
     if (!isFeedbackOpen) {
         return null

@@ -8,21 +8,9 @@
     align-items: center;
 }
 
-.langrow img{
+.langrow img {
     width: 16px;
     height: 16px;
-}
-
-.langrow:hover {
-    display: flex;
-    gap: 8px;
-    width: 136px;
-    cursor: pointer;
-    padding: 10px 16px;
-    background: #f0f0f0;
-    transition: all 0.6s ease-in-out;
-    border-radius: 13px;
-    align-items: center;
 }
 
 .langrowchoosen {
@@ -50,4 +38,18 @@
     font-weight: 600;
     line-height: normal;
     margin: 4px 0;
+}
+
+@media(hover:hover) {
+    .langrow:hover {
+        display: flex;
+        gap: 8px;
+        width: 136px;
+        cursor: pointer;
+        padding: 10px 16px;
+        background: #f0f0f0;
+        transition: all 0.6s ease-in-out;
+        border-radius: 13px;
+        align-items: center;
+    }
 }

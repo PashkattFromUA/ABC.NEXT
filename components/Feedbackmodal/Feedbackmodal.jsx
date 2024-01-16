@@ -23,7 +23,7 @@ const Feedbackmodal = ({ isFeedbackOpen, closeFeedbackModal }) => {
             <div className={styles.feedbackmodal}>
                 <div className={styles.feedbackmodaltop}>
                     <div className={styles.feedbackmodaltopleft}>
-                        <Image src='./images/done.svg' width={21} height={21} alt='done' />
+                        <Image src='/images/done.svg' width={21} height={21} alt='done' />
                         <h6>Great</h6>
                     </div>
                     <svg width="20" height="20" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={closeFeedbackModal}>

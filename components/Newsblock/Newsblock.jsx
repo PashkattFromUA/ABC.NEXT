@@ -6,10 +6,21 @@ const Newsmodal = dynamic(() => import('@/components/Newsblock/Newsmodal/Newsmod
 import styles from '@/styles/newspage.module.css'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
+import Feedbackmodal from '../Feedbackmodal/Feedbackmodal'
 
 const Newsblock = () => {
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
+
+    const [isFeedbackOpen, setIsFeedbackModalOpen] = useState(false);
+
+    const openFeedbackModal = () => {
+        setIsFeedbackModalOpen(true);
+    };
+
+    const closeFeedbackModal = () => {
+        setIsFeedbackModalOpen(false);
+    };
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,15 +33,19 @@ const Newsblock = () => {
     };
 
     return (
-        <div className={styles.newsblock}>
-            <div>
-                <h1>{t('comingsoon')}</h1>
-                <p>{t('newsblocktext')}</p>
-                <button className={styles.newsbutt} onClick={openModal}>{t('newsmodalbutt')}</button>
-                {isModalOpen && <Newsmodal isOpen={isModalOpen} closeModal={closeModal} />}
+        <div>
+            <Feedbackmodal isFeedbackOpen={isFeedbackOpen} closeFeedbackModal={closeFeedbackModal} />
+            <div className={styles.newsblock}>
+                <div>
+                    <h1>{t('comingsoon')}</h1>
+                    <p>{t('newsblocktext')}</p>
+                    <button className={styles.newsbutt} onClick={openModal}>{t('newsmodalbutt')}</button>
+                    {isModalOpen && <Newsmodal isOpen={isModalOpen} closeModal={closeModal} openFeedbackModal={openFeedbackModal} />}
+                </div>
+                <Image src='/images/Comingsoon.svg' width={705} height={315} priority alt="error" />
             </div>
-            <Image src='/images/Comingsoon.svg' width={705} height={315} priority alt="error" />
         </div>
+
     )
 }
 

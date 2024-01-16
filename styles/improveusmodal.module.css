@@ -79,6 +79,11 @@
   width: 50%;
 }
 
+.modalemail:not(:focus):invalid {
+  border: 1px solid #D80027;
+  color: #D80027;
+}
+
 .modalcontent textarea {
   width: 100%;
   height: 72px;

@@ -10,6 +10,7 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 const ScrollToTopButt = dynamic(() => import('@/components/Scrolltotopbutt/Scrolltotopbutt'));
 import '@/styles/global.css'
 import HolyLoader from "holy-loader";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const i18nNamespaces = ['common'];
 
@@ -80,6 +81,7 @@ export default async function RootLayout({ children, params: { locale } }) {
           <ScrollToTopButt />
           <HolyLoader color="linear-gradient(125deg, #FC6E49 0%, #D368A9 23.67%, #825DE1 45.42%, #4F77EF 71.83%, #53C6E3 100%)" height="4px" />
         </body>
+        <GoogleAnalytics gaId="G-R7WJWEWG9V" />
       </TranslationsProvider>
     </html>
   );

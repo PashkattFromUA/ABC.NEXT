@@ -30,7 +30,7 @@ async function getLabels(lang) {
     return res.json();
 }
 
-export default async function ForPartnersPage({ params: { locale } }) {
+export default async function SitemapPage({ params: { locale } }) {
 
     const { t } = await initTranslations(locale, i18nNamespaces);
     const labels = await getLabels(locale);

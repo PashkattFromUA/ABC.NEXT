@@ -6,6 +6,7 @@
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 110px;
+    gap: 80px;
 }
 
 .text {
@@ -15,7 +16,7 @@
 }
 
 .main h1 {
-    width: 583px;
+    width: auto;
     text-align: left;
     background: linear-gradient(90deg,
             #84585d 4.66%,
@@ -51,7 +52,7 @@
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.15px;
     transition: all 0.6s;
 }
@@ -60,7 +61,7 @@
     color: #000;
     font-size: 18px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.15px;
     text-decoration: none;
     border-bottom: 2px solid;
@@ -68,12 +69,10 @@
 }
 
 .main p {
-    color: #656565;
+    color: #5d5d5d;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0.15px;
+    line-height: 1.5;
 }
 
 @media(hover:hover){

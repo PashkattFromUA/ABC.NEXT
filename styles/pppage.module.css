@@ -24,7 +24,7 @@
 }
 
 .pptextleft p {
-    color: #656565;
+    color: #5d5d5d;
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -57,7 +57,7 @@
 }
 
 .pptextright p {
-    color: #656565;
+    color: #5d5d5d;
     font-family: "DM Sans", sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -80,7 +80,7 @@
 }
 
 .pptextright li {
-    color: #656565;
+    color: #5d5d5d;
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
     font-style: normal;
@@ -131,7 +131,7 @@
     }
 
     .pptextleft p {
-        color: #656565;
+        color: #5d5d5d;
         font-family: 'DM Sans', sans-serif;
         font-size: 20px;
         font-style: normal;
@@ -175,7 +175,7 @@
     }
 
     .pptextleft p {
-        color: #656565;
+        color: #5d5d5d;
         font-size: 17px;
         font-style: normal;
         font-weight: 400;
@@ -199,7 +199,7 @@
     }
 
     .pptextright p {
-        color: #656565;
+        color: #5d5d5d;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -208,7 +208,7 @@
     }
 
     .pptextright li {
-        color: #656565;
+        color: #5d5d5d;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;

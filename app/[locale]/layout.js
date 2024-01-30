@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       url: `${mainurl}`,
       images: [
         {
-          url: 'https://i.postimg.cc/T3T479t0/logo.png',
+          url: 'https://postimg.cc/ThKZRj4F',
           width: 800,
           height: 600,
         }

@@ -50,7 +50,7 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
                 strokeWidth="0.5"
               />
             </svg>
-            <p>{t('previous')}</p>
+            {t('previous')}
           </button>
           <div className={styles.allpages}>{renderPageNumbers()}</div>
           <button
@@ -58,7 +58,7 @@ const PaginationButtons = ({ currentPage, totalPages, onPageChange }) => {
             onClick={() => onPageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            <p>{t('next')}</p>
+            {t('next')}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="9"

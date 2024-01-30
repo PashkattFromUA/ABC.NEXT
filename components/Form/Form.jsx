@@ -88,7 +88,7 @@ const Form = () => {
           <input value={name} onChange={el => setName(el.target.value)} className={styles.name} placeholder={t('name')} id="name" autoComplete="name" />
           <input value={email} onChange={ele => setEmail(ele.target.value)} className={styles.email} pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="Email" id="email" autoComplete="email" />
         </div>
-        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} id="description" autoComplete="description" />
+        <textarea value={short_description} onChange={e => setText(e.target.value)} className={styles.description} placeholder={t('shortdescription')} id="description" />
         <div className={styles.formbot}>
           <p>{t('thankyou')}</p>
           <button onClick={handleSubmit}>{t('getintouch')}</button>

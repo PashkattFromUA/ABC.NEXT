@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
       ],
       siteName: 'ABCrypto',
       type: 'website',
-    },
+    }
   }
 }
 

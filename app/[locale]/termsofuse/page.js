@@ -17,6 +17,9 @@ export async function generateMetadata({ params }) {
           'ru': `${mainurl}/ru/termsofuse`,
           'uk': `${mainurl}/uk/termsofuse`
         }
+      },
+      openGraph: {
+        url: `${mainurl}/termsofuse`
       }
     }
   }

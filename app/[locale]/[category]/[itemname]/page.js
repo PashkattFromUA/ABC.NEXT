@@ -47,6 +47,20 @@ export async function generateMetadata({ params }) {
           'ru': `${mainurl}/ru/${catname}/${itemname}`,
           'uk': `${mainurl}/uk/${catname}/${itemname}`
         }
+      },
+      openGraph: {
+        title: `${product.data.name} ${t('titlecard')}`,
+        description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
+        url: `${mainurl}/${catname}/${itemname}`,
+        images: [
+          {
+            url: `${product.data.img_url}`,
+            width: 1440,
+            height: 900,
+          }
+        ],
+        siteName: 'ABCrypto',
+        type: 'website',
       }
     }
   }

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       url: `${mainurl}`,
       images: [
         {
-          url: 'https://photos.google.com/photo/AF1QipObwqxtIK5mrMmMApUQkUdi-zNy9egikvgx3xPI',
+          url: 'https://photos.google.com/photo/AF1QipPZWnWiFmt5BfCPMd0Ek6BrZlat-J9qi9oU-t96.jpg',
           width: 1440,
           height: 900,
         }

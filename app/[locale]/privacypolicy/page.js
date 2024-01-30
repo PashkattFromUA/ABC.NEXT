@@ -6,20 +6,19 @@ const i18nNamespaces = ['common'];
 export async function generateMetadata({ params }) {
     const locale = params.locale;
     const { t } = await initTranslations(locale, i18nNamespaces);
-    const mainurl = "https://abcrypto.io";
 
     return {
         title: `${t('titlemain')}`,
         description: `${t('metamain')}`,
         alternates: {
-            canonical: `${mainurl}/privacypolicy`,
+            canonical: `/privacypolicy`,
             languages: {
-                'ru': `${mainurl}/ru/privacypolicy`,
-                'uk': `${mainurl}/uk/privacypolicy`
+                'ru': `/ru/privacypolicy`,
+                'uk': `/uk/privacypolicy`
             }
         },
         openGraph: {
-            url: `${mainurl}/privacypolicy`
+            url: `/privacypolicy`
         }
     }
 }

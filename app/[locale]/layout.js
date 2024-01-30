@@ -23,22 +23,22 @@ const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 export async function generateMetadata({ params }) {
   const locale = params.locale;
   const { t } = await initTranslations(locale, i18nNamespaces);
-  const mainurl = "https://abcrypto.io";
 
   return {
+    metadataBase: new URL('https://abcrypto.io'),
     title: `${t('titlemain')}`,
     description: `${t('metamain')}`,
     alternates: {
-      canonical: `${mainurl}`,
+      canonical: `/`,
       languages: {
-        'ru': `${mainurl}/ru`,
-        'uk': `${mainurl}/uk`
+        'ru': `/ru`,
+        'uk': `/uk`
       }
     },
     openGraph: {
       title: `${t('titlemain')}`,
       description: `${t('metamain')}`,
-      url: `${mainurl}`,
+      url: `/`,
       images: [
         {
           url: 'https://live.staticflickr.com/65535/53497732221_f122e826cf_h.jpg',

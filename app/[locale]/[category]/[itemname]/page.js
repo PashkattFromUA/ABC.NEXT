@@ -21,21 +21,18 @@ export async function generateMetadata({ params }) {
   const locale = params.locale;
   const catname = params.category;
   const itemname = params.itemname;
-  const mainurl = "https://abcrypto.io";
   const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
   const { t } = await initTranslations(locale, i18nNamespaces);
-
-  console.log(product)
 
   if (product.data.name === undefined) {
     return {
       title: `404: This page could not be found.`,
       description: `404: This page could not be found.`,
       alternates: {
-        canonical: `${mainurl}/404`,
+        canonical: `/404`,
         languages: {
-          'ru': `${mainurl}/ru/404`,
-          'uk': `${mainurl}/uk/404`
+          'ru': `/ru/404`,
+          'uk': `/uk/404`
         }
       }
     }
@@ -44,16 +41,16 @@ export async function generateMetadata({ params }) {
       title: `${product.data.name}${t('titlecard')}`,
       description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
       alternates: {
-        canonical: `${mainurl}/${catname}/${itemname}`,
+        canonical: `/${catname}/${itemname}`,
         languages: {
-          'ru': `${mainurl}/ru/${catname}/${itemname}`,
-          'uk': `${mainurl}/uk/${catname}/${itemname}`
+          'ru': `/ru/${catname}/${itemname}`,
+          'uk': `/uk/${catname}/${itemname}`
         }
       },
       openGraph: {
         title: `${product.data.name}${t('titlecard')}`,
         description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
-        url: `${mainurl}/${catname}/${itemname}`
+        url: `/${catname}/${itemname}`
       }
     }
   }

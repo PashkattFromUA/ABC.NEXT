@@ -38,7 +38,6 @@ async function getLabels(lang) {
 export async function generateMetadata({ params }) {
   const locale = params.locale;
   const catslug = params.category;
-  const mainurl = "https://abcrypto.io";
   const { t } = await initTranslations(locale, i18nNamespaces);
   const labels = await getLabels(locale);
   var resultObject = labels.data.find(function (item) {
@@ -50,10 +49,10 @@ export async function generateMetadata({ params }) {
       title: `404: This page could not be found.`,
       description: `404: This page could not be found.`,
       alternates: {
-        canonical: `${mainurl}/404`,
+        canonical: `/404`,
         languages: {
-          'ru': `${mainurl}/ru/404`,
-          'uk': `${mainurl}/uk/404`
+          'ru': `/ru/404`,
+          'uk': `/uk/404`
         }
       }
     }

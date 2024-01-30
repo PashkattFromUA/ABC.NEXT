@@ -2,18 +2,16 @@ import Newsblock from "@/components/Newsblock/Newsblock"
 
 export async function generateMetadata() {
 
-    const mainurl = "https://abcrypto.io";
-
     return {
         alternates: {
-            canonical: `${mainurl}/news`,
+            canonical: `/news`,
             languages: {
-                'ru': `${mainurl}/ru/news`,
-                'uk': `${mainurl}/uk/news`
+                'ru': `/ru/news`,
+                'uk': `/uk/news`
             }
         },
         openGraph: {
-            url: `${mainurl}/news`
+            url: `/news`
         }
     }
 }

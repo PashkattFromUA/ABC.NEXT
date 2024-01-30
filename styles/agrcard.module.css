@@ -67,13 +67,14 @@
   justify-content: space-between;
 }
 
-.cardbottom button {
+.cardbottom span {
   padding: 12px 32px;
   border-radius: 8px;
   border: 1px solid #000;
   background-color: #f8f8f8;
   color: #1e1e21;
   transition: all 0.6s;
+  font-size: 14px;
 }
 
 .carddescriprion {
@@ -97,7 +98,7 @@
 }
 
 @media(hover:hover){
-  .cardbottom button:hover {
+  .cardbottom span:hover {
     padding: 12px 32px;
     border-radius: 8px;
     border: 1px solid #000;

@@ -7,18 +7,17 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const catname = params.category;
-    const mainurl = "https://abcrypto.io";
   
     return {
       alternates: {
-        canonical: `${mainurl}/${catname}`,
+        canonical: `/${catname}`,
         languages: {
-          'ru': `${mainurl}/ru/${catname}`,
-          'uk': `${mainurl}/uk/${catname}`
+          'ru': `/ru/${catname}`,
+          'uk': `/uk/${catname}`
         }
       },
       openGraph: {
-        url: `${mainurl}/${catname}`
+        url: `/${catname}`
       }
     }
   }

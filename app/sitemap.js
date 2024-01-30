@@ -23,13 +23,10 @@ export default async function sitemap() {
             return {
                 url: `${baseURL}${prefix}/${buttonlabel.slug}`,
                 lastModified: new Date(),
-                changeFrequency: 'monthly',
-                priority: 0.8,
                 items: buttonlabel.items.map((item) => ({
                     url: `${baseURL}${prefix}/${buttonlabel.slug}/${item.slug}`,
                     lastModified: new Date(),
-                    changeFrequency: 'monthly',
-                    priority: 0.8,
+                    priority: 1,
                 })),
             };
         });
@@ -51,110 +48,98 @@ export default async function sitemap() {
         {
             url: baseURL,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/aggregator`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/forpartners`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/faq`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/news`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/sitemap`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
+        },
+        {
+            url: `${baseURL}/privacypolicy`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseURL}/termsofuse`,
+            lastModified: new Date(),
         },
         {
             url: `${baseURL}/ru`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/ru/aggregator`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/ru/forpartners`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/ru/faq`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/ru/news`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/ru/sitemap`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
+        },
+        {
+            url: `${baseURL}/ru/privacypolicy`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseURL}/ru/termsofuse`,
+            lastModified: new Date(),
         },
         {
             url: `${baseURL}/uk`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/uk/aggregator`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/uk/forpartners`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/uk/faq`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/uk/news`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
         },
         {
             url: `${baseURL}/uk/sitemap`,
             lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
+        },
+        {
+            url: `${baseURL}/uk/privacypolicy`,
+            lastModified: new Date(),
+        },
+        {
+            url: `${baseURL}/uk/termsofuse`,
+            lastModified: new Date(),
         },
         ...sitemapObjectEN,
         ...flattenedItemsEN,

@@ -42,9 +42,9 @@ export async function generateMetadata({ params }) {
       siteName: 'ABCrypto',
       images: [
         {
-          url: 'https://abcrypto.io/images/Logo.svg', 
-          width: 800,
-          height: 600,
+          url: './favicon.ico', 
+          width: 400,
+          height: 400,
         }
       ],
       type: 'website',

@@ -45,12 +45,12 @@ const Header = () => {
     };
 
     return (
-        <div className={styles.menu}>
+        <header className={styles.menu}>
             <div className={styles.logonav}>
                 <Link href="/">
                     <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => { setIsNavbarExpanded(false) }} />
                 </Link>
-                <div className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
+                <nav className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
                         <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             <li>
@@ -74,7 +74,7 @@ const Header = () => {
                         </Link>
                     </ul>
                     <button className={isNavbarExpanded === true ? styles.contactusmobileactive : styles.contactusmobile} onClick={() => handleButtonClick()}>{t("contactus")}</button>
-                </div>
+                </nav>
             </div>
             <div className={styles.headbuttonsmobile}>
                 <div className={styles.localisator} onClick={toggleModal}>
@@ -101,7 +101,7 @@ const Header = () => {
                 </button>
                 <button className={styles.contactusdescktop} onClick={() => handleButtonClick()}>{t("contactus")}</button>
             </div>
-        </div>
+        </header>
     )
 }
 

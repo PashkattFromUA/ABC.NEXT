@@ -18,7 +18,7 @@ export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
 }
 
-const inter = Inter({ subsets: ['latin','cyrillic'] });
+const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export async function generateMetadata({ params }) {
   const locale = params.locale;
@@ -34,7 +34,21 @@ export async function generateMetadata({ params }) {
         'ru': `${mainurl}/ru`,
         'uk': `${mainurl}/uk`
       }
-    }
+    },
+    openGraph: {
+      title: `${t('titlemain')}`,
+      description: `${t('metamain')}`,
+      url: `${mainurl}`,
+      siteName: 'ABCrypto',
+      images: [
+        {
+          url: 'https://abcrypto.io/images/Logo.svg', 
+          width: 800,
+          height: 600,
+        }
+      ],
+      type: 'website',
+    },
   }
 }
 

@@ -12,7 +12,7 @@ const Footer = (props) => {
     const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
 
     return (
-        <section className={styles.footer}>
+        <footer className={styles.footer}>
             <div className={styles.footertop}>
                 <div className={styles.footerleft}>
                     <Link href="/">
@@ -82,7 +82,7 @@ const Footer = (props) => {
                         <Link href="/termsofuse">{t('terms')}</Link>
                 </div>
             </div>
-        </section>
+        </footer>
     )
 }
 

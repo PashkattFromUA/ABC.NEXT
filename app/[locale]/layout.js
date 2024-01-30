@@ -39,7 +39,13 @@ export async function generateMetadata({ params }) {
       title: `${t('titlemain')}`,
       description: `${t('metamain')}`,
       url: `${mainurl}`,
-      image: 'https://i.postimg.cc/T3T479t0/logo.png',
+      images: [
+        {
+          url: 'https://i.postimg.cc/T3T479t0/logo.png',
+          width: 800,
+          height: 600,
+        }
+      ],
       siteName: 'ABCrypto',
       type: 'website',
     },

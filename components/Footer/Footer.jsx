@@ -23,7 +23,7 @@ const Footer = (props) => {
                 <div className={styles.footerright}>
                     <div className={styles.footer1}>
                         <h3>{t('navigation')}</h3>
-                        <div>
+                        <div className={styles.footerinside}>
                             <Link href="/aggregator">
                                 <p>{t('aggregator')}</p>
                             </Link>
@@ -43,7 +43,7 @@ const Footer = (props) => {
                     </div>
                     <div className={styles.footer3}>
                         <h3>{t('follow')}</h3>
-                        <div>
+                        <div className={styles.footerinside}>
                             <Link href="https://t.me/abcrypto_io" target="_blank" rel="noreferrer">
                                 <p>Telegram</p>
                             </Link>

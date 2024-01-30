@@ -17,7 +17,7 @@ export async function generateMetadata({ params: { locale } }) {
         canonical: `${mainurl}/sitemap`,
         languages: {
           'ru': `${mainurl}/ru/sitemap`,
-          'uk': `${mainurl}/uk/${catname}/sitemap`
+          'uk': `${mainurl}/uk/sitemap`
         }
       },
       openGraph: {

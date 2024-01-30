@@ -41,9 +41,9 @@ export async function generateMetadata({ params }) {
       url: `${mainurl}`,
       images: [
         {
-          url: 'https://assets-global.website-files.com/628288c5cd3e8411b90a36a4/65a0311ac060c384568fab36_OG%20Image%20new.png',
-          width: 800,
-          height: 600,
+          url: 'https://postimg.cc/qgw3QnLb',
+          width: 1440,
+          height: 900,
         }
       ],
       siteName: 'ABCrypto',

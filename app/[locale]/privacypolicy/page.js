@@ -17,6 +17,9 @@ export async function generateMetadata({ params }) {
                 'ru': `${mainurl}/ru/privacypolicy`,
                 'uk': `${mainurl}/uk/privacypolicy`
             }
+        },
+        openGraph: {
+            url: `${mainurl}/privacypolicy`
         }
     }
 }

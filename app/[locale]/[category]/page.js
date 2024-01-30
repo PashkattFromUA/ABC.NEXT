@@ -88,12 +88,12 @@ export default async function CategoryPage({ params }) {
       <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
       <div className="gradient">
         <div className="block" id="categorycardlist">
-            <Blocktitle name={t('allin')} title={resultObject.name} />
-            <div>
-              <Suspense fallback={<Loading />}>
+          <Blocktitle name={t('allin')} title={resultObject.name} />
+          <div>
+            <Suspense fallback={<Loading />}>
               <Cardlist cardsArray={cards.data} catslug={resultObject.slug} />
-              </Suspense>
-            </div>
+            </Suspense>
+          </div>
         </div>
       </div>
     </main>

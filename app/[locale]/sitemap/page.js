@@ -8,10 +8,21 @@ const i18nNamespaces = ['common'];
 export async function generateMetadata({ params: { locale } }) {
    
     const { t } = await initTranslations(locale, i18nNamespaces);
+    const mainurl = "https://abcrypto.io";
 
     return {
       title: `${t('sitemap')} acrypto.io`,
-      description: `${t('metamain')}`
+      description: `${t('metamain')}`,
+      alternates: {
+        canonical: `${mainurl}/sitemap`,
+        languages: {
+          'ru': `${mainurl}/ru/sitemap`,
+          'uk': `${mainurl}/uk/${catname}/sitemap`
+        }
+      },
+      openGraph: {
+        url: `${mainurl}/sitemap`
+      }
     }
   }
 

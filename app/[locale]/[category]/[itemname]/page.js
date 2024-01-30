@@ -53,16 +53,7 @@ export async function generateMetadata({ params }) {
       openGraph: {
         title: `${product.data.name}${t('titlecard')}`,
         description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
-        url: `${mainurl}/${catname}/${itemname}`,
-        images: [
-          {
-            url: `${product.data.image_url}`,
-            width: 1440,
-            height: 900,
-          }
-        ],
-        siteName: 'ABCrypto',
-        type: 'website'
+        url: `${mainurl}/${catname}/${itemname}`
       }
     }
   }

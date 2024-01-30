@@ -25,6 +25,8 @@ export async function generateMetadata({ params }) {
   const product = await fetch(`https://api.abcrypto.io/api/items/${itemname}`).then((res) => res.json());
   const { t } = await initTranslations(locale, i18nNamespaces);
 
+  console.log(product)
+
   if (product.data.name === undefined) {
     return {
       title: `404: This page could not be found.`,
@@ -54,7 +56,7 @@ export async function generateMetadata({ params }) {
         url: `${mainurl}/${catname}/${itemname}`,
         images: [
           {
-            url: `${product.data.img_url}`,
+            url: `${product.data.image_url}`,
             width: 1440,
             height: 900,
           }

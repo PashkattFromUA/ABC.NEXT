@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
     }
   } else {
     return {
-      title: `${product.data.name} ${t('titlecard')}`,
+      title: `${product.data.name}${t('titlecard')}`,
       description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
       alternates: {
         canonical: `${mainurl}/${catname}/${itemname}`,
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }) {
         }
       },
       openGraph: {
-        title: `${product.data.name} ${t('titlecard')}`,
+        title: `${product.data.name}${t('titlecard')}`,
         description: `${t('metacard1')}${product.data.name}${t('metacard2')}`,
         url: `${mainurl}/${catname}/${itemname}`,
         images: [
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }) {
           }
         ],
         siteName: 'ABCrypto',
-        type: 'website',
+        type: 'website'
       }
     }
   }

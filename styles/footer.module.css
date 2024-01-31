@@ -48,6 +48,12 @@
     width: max-content;
 }
 
+.footerinside{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .footertop h3 {
     color: #1e1e21;
     font-size: 20px;
@@ -164,8 +170,6 @@
     }
 
     .footerinside{
-        display: flex;
-        flex-direction: column;
         gap: 16px;
     }
 

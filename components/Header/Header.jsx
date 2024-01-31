@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 const Localemodal = dynamic(() => import('./Locale/Localemodal'));
 import styles from '@/styles/header.module.css';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import scrollTo from '@/utils/scrollTo';
 import Image from "next/image";
 
@@ -14,6 +14,7 @@ const Header = () => {
     const { i18n, t } = useTranslation();
     const currentLocale = i18n.language;
     const currentPathname = usePathname();
+    const router = useRouter();
     let flagsrc = '/images/flagen.svg';
     let menubutt = "/images/hamburger.svg";
     const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
@@ -51,28 +52,20 @@ const Header = () => {
                     <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => { setIsNavbarExpanded(false) }} />
                 </Link>
                 <nav className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
-                    <ul className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
+                    <div className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
                         <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
-                            <li>
-                                {t("aggregator")}
-                            </li>
+                            {t("aggregator")}
                         </Link>
                         <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
-                            <li>
-                                {t("forpartners")}
-                            </li>
+                            {t("forpartners")}
                         </Link>
                         <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
-                            <li>
-                                FAQ
-                            </li>
+                            FAQ
                         </Link>
                         <Link href="/news" className={currentPathname === `/${currentLocale}/news` || currentPathname === `/news` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
-                            <li>
-                                {t("news")}
-                            </li>
+                            {t("news")}
                         </Link>
-                    </ul>
+                    </div>
                     <button className={isNavbarExpanded === true ? styles.contactusmobileactive : styles.contactusmobile} onClick={() => handleButtonClick()}>{t("contactus")}</button>
                 </nav>
             </div>

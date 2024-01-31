@@ -19,9 +19,22 @@ async function getLabels(lang) {
   return res.json();
 }
 
-
 export default async function Home({ params: { locale } }) {
   const labels = await getLabels(locale);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": labels.data.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `https://abcrypto.io/${item.slug}`,
+      "item": {
+        "@type": "Category",
+        "name": item.name
+      }
+    }))
+  };
 
   return (
     <main>

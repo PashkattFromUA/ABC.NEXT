@@ -8,6 +8,13 @@
     display: flex;
     gap: 100px;
     justify-content: space-between;
+    align-content: flex-start;
+}
+
+.cpleft {
+    position: sticky;
+    height: 100%;
+    top: 40px;
 }
 
 .nameplacemobile {

@@ -38,6 +38,10 @@ export default async function Home({ params: { locale } }) {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Main />
       <Agregatormain data={labels} />
       <Improveus />

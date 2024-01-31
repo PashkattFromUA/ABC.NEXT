@@ -29,10 +29,7 @@ export default async function Home({ params: { locale } }) {
       "@type": "ListItem",
       "position": index + 1,
       "url": `https://abcrypto.io/${item.slug}`,
-      "item": {
-        "@type": "Category",
-        "name": item.name
-      }
+      "name": item.name
     }))
   };
 

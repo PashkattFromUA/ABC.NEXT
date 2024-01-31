@@ -100,22 +100,25 @@ export default async function Home({ params }) {
 
   const jsonLd = {
     "@context": "https://schema.org/",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Product",
-      "name": cardinfo.data.name,
-      "image": cardinfo.data.icon_url,
-      "description": cardinfo.data.short_description
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": cardinfo.data.rating,
-      "bestRating": "5",
-      "worstRating": "0"
+    "@type": "Product",
+    "name": cardinfo.data.name,
+    "description": cardinfo.data.short_description,
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": cardinfo.data.rating,
+        "bestRating": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": "ABCrypto"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": cardinfo.data.rating,
+      "reviewCount": 30
     }
   }
 

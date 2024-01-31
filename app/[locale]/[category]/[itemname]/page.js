@@ -112,6 +112,10 @@ export default async function Home({ params }) {
       "ratingValue": cardinfo.data.rating,
       "bestRating": "5",
       "worstRating": "0"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": cardinfo.data.rating,
     }
   }
 
@@ -127,7 +131,7 @@ export default async function Home({ params }) {
         <div className="block" id="categorycardlist">
           <Blocktitle name={t('morein')} title={catinfo.name} />
           <Suspense fallback={<Loading />}>
-          <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
+            <Cardlist cardsArray={cards.data} catslug={catinfo.slug} />
           </Suspense>
         </div>
       </div>

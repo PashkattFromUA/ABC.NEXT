@@ -98,8 +98,29 @@ export default async function Home({ params }) {
   const catinfo = cardinfo.data.category;
   const cards = await getCards({ lang: locale, catslug: catinfo.slug });
 
+  const jsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Product",
+      "name": cardinfo.data.name,
+      "image": cardinfo.data.icon_url,
+      "description": cardinfo.data.short_description
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": cardinfo.data.rating,
+      "bestRating": "5",
+      "worstRating": "0"
+    }
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Cardinfo cardinfo={cardinfo.data} cardfeatures={cardfeat} carddescriptions={carddes} />
       <SEO data={seodata} />
       <div className="gradient">

@@ -32,7 +32,9 @@ export async function generateMetadata({ params }) {
         canonical: `/404`,
         languages: {
           'ru': `/ru/404`,
-          'uk': `/uk/404`
+          'uk': `/uk/404`,
+          'x-default':'/404',
+          'en': '/404'
         }
       }
     }
@@ -44,7 +46,9 @@ export async function generateMetadata({ params }) {
         canonical: `/${catname}/${itemname}`,
         languages: {
           'ru': `/ru/${catname}/${itemname}`,
-          'uk': `/uk/${catname}/${itemname}`
+          'uk': `/uk/${catname}/${itemname}`,
+          'x-default':`/${catname}/${itemname}`,
+          'en': `/${catname}/${itemname}`
         }
       },
       openGraph: {

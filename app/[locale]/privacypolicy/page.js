@@ -14,7 +14,9 @@ export async function generateMetadata({ params }) {
             canonical: `/privacypolicy`,
             languages: {
                 'ru': `/ru/privacypolicy`,
-                'uk': `/uk/privacypolicy`
+                'uk': `/uk/privacypolicy`,
+                'x-default':'/privacypolicy',
+                'en': '/privacypolicy'
             }
         },
         openGraph: {

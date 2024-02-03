@@ -32,7 +32,9 @@ export async function generateMetadata({ params }) {
       canonical: `/`,
       languages: {
         'ru': `/ru`,
-        'uk': `/uk`
+        'uk': `/uk`,
+        'x-default':'/',
+        'en': '/'
       }
     },
     openGraph: {

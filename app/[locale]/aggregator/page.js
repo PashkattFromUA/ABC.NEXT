@@ -17,7 +17,9 @@ export async function generateMetadata({ params }) {
       canonical: `/aggregator`,
       languages: {
         'ru': `/ru/aggregator`,
-        'uk': `/uk/aggregator`
+        'uk': `/uk/aggregator`,
+        'x-default':'/aggregator',
+        'en': '/aggregator'
       }
     },
     openGraph: {

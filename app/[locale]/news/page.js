@@ -7,7 +7,9 @@ export async function generateMetadata() {
             canonical: `/news`,
             languages: {
                 'ru': `/ru/news`,
-                'uk': `/uk/news`
+                'uk': `/uk/news`,
+                'x-default':'/news',
+                'en': '/news'
             }
         },
         openGraph: {

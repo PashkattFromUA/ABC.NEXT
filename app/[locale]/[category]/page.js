@@ -59,7 +59,12 @@ export async function generateMetadata({ params }) {
   } else {
     return {
       title: `${t('titlecategoryleft')}${resultObject.name}${t('titlecategoryright')}`,
-      description: `${t('metacategoryleft')}${resultObject.name}${t('metacategoryright')}`
+      description: `${t('metacategoryleft')}${resultObject.name}${t('metacategoryright')}`,
+      openGraph: {
+        title: `${t('titlecategoryleft')}${resultObject.name}${t('titlecategoryright')}`,
+        description: `${t('metacategoryleft')}${resultObject.name}${t('metacategoryright')}`,
+        url: `/${catslug}`
+      }
     }
   }
 }
@@ -99,7 +104,7 @@ export default async function CategoryPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Screensblock name={t('sbnameap')} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
+      <Screensblock name={`${resultObject.name}${t('sbnamerightcp')}`} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
       <div className="gradient">
         <div className="block" id="categorycardlist">
           <Blocktitle name={t('allin')} title={resultObject.name} />

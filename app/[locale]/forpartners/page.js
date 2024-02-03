@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
             canonical: `/forpartners`,
             languages: {
                 'ru': `/ru/forpartners`,
-                'uk': `/uk/forpartners`,
+                'ua': `/ua/forpartners`,
                 'x-default':'/forpartners',
                 'en': '/forpartners'
             }

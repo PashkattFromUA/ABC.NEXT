@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
       canonical: `/`,
       languages: {
         'ru': `/ru`,
-        'uk': `/uk`,
+        'ua': `/ua`,
         'x-default':'/',
         'en': '/'
       }

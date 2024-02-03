@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
       canonical: `/aggregator`,
       languages: {
         'ru': `/ru/aggregator`,
-        'uk': `/uk/aggregator`,
+        'ua': `/ua/aggregator`,
         'x-default':'/aggregator',
         'en': '/aggregator'
       }

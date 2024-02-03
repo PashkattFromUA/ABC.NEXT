@@ -48,8 +48,8 @@ const Localemodal = (isOpen) => {
             <span onClick={() => changeLanguage("ru")}>
                 <Localerow src='/images/flagru.svg' lang={t("russian")} currentlang="ru" />
             </span>
-            <span onClick={() => changeLanguage("uk")}>
-                <Localerow src='/images/flaguk.svg' lang={t("ukrainian")} currentlang="uk" />
+            <span onClick={() => changeLanguage("ua")}>
+                <Localerow src='/images/flaguk.svg' lang={t("ukrainian")} currentlang="ua" />
             </span>
         </div>
     )

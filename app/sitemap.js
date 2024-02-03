@@ -38,11 +38,11 @@ export default async function sitemap() {
 
     const sitemapObjectRU = generateSitemapObject(baseURL, labels.data, 'ru');
 
-    const sitemapObjectUK = generateSitemapObject(baseURL, labels.data, 'uk');
+    const sitemapObjectua = generateSitemapObject(baseURL, labels.data, 'ua');
 
     const flattenedItemsEN = sitemapObjectEN.flatMap((label) => label.items);
     const flattenedItemsRU = sitemapObjectRU.flatMap((label) => label.items);
-    const flattenedItemsUK = sitemapObjectUK.flatMap((label) => label.items);
+    const flattenedItemsua = sitemapObjectua.flatMap((label) => label.items);
 
     return [
         {
@@ -110,42 +110,42 @@ export default async function sitemap() {
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk`,
+            url: `${baseURL}/ua`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/aggregator`,
+            url: `${baseURL}/ua/aggregator`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/forpartners`,
+            url: `${baseURL}/ua/forpartners`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/faq`,
+            url: `${baseURL}/ua/faq`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/news`,
+            url: `${baseURL}/ua/news`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/sitemap`,
+            url: `${baseURL}/ua/sitemap`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/privacypolicy`,
+            url: `${baseURL}/ua/privacypolicy`,
             lastModified: new Date(),
         },
         {
-            url: `${baseURL}/uk/termsofuse`,
+            url: `${baseURL}/ua/termsofuse`,
             lastModified: new Date(),
         },
         ...sitemapObjectEN,
         ...flattenedItemsEN,
         ...sitemapObjectRU,
         ...flattenedItemsRU,
-        ...sitemapObjectUK,
-        ...flattenedItemsUK
+        ...sitemapObjectua,
+        ...flattenedItemsua
     ]
 }

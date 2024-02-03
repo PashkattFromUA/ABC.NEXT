@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
       canonical: `/termsofuse`,
       languages: {
         'ru': `/ru/termsofuse`,
-        'uk': `/uk/termsofuse`,
+        'ua': `/ua/termsofuse`,
         'x-default': '/termsofuse',
         'en': '/termsofuse'
       }

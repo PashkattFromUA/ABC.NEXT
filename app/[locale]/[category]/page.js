@@ -52,7 +52,7 @@ export async function generateMetadata({ params }) {
         canonical: `/404`,
         languages: {
           'ru': `/ru/404`,
-          'uk': `/uk/404`,
+          'ua': `/ua/404`,
           'x-default':'/404',
           'en': '/404'
         }

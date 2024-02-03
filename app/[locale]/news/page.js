@@ -7,7 +7,7 @@ export async function generateMetadata() {
             canonical: `/news`,
             languages: {
                 'ru': `/ru/news`,
-                'uk': `/uk/news`,
+                'ua': `/ua/news`,
                 'x-default':'/news',
                 'en': '/news'
             }

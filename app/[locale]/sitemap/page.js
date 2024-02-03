@@ -16,7 +16,7 @@ export async function generateMetadata({ params: { locale } }) {
       canonical: `sitemap`,
       languages: {
         'ru': `/ru/sitemap`,
-        'uk': `/uk/sitemap`,
+        'ua': `/ua/sitemap`,
         'x-default': '/sitemap',
         'en': '/sitemap'
       }

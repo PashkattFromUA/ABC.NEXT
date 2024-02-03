@@ -20,7 +20,7 @@ const Header = () => {
     const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    if (currentLocale === "uk") {
+    if (currentLocale === "ua") {
         flagsrc = '/images/flaguk.svg';
     } else if (currentLocale === "ru") {
         flagsrc = '/images/flagru.svg';

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
         canonical: `/${catname}`,
         languages: {
           'ru': `/ru/${catname}`,
-          'uk': `/uk/${catname}`,
+          'ua': `/ua/${catname}`,
           'x-default':`/${catname}`,
           'en': `/${catname}`
         }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
         canonical: `/faq`,
         languages: {
           'ru': `/ru/faq`,
-          'uk': `/uk/faq`,
+          'ua': `/ua/faq`,
           'x-default':'/faq',
           'en': '/faq'
         }

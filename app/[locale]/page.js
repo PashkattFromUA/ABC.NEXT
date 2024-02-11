@@ -22,23 +22,8 @@ async function getLabels(lang) {
 export default async function Home({ params: { locale } }) {
   const labels = await getLabels(locale);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": labels.data.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "url": `https://abcrypto.io/${item.slug}`,
-      "name": item.name
-    }))
-  };
-
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Main />
       <Agregatormain data={labels} />
       <Improveus />

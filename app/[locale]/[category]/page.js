@@ -89,23 +89,8 @@ export default async function CategoryPage({ params }) {
     return item.slug === catslug;
   });
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": cards.data.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "url": `https://abcrypto.io/${catslug}/${item.slug}`,
-      "name": item.name
-    }))
-  };
-
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Screensblock name={`${resultObject.name}${t('sbnamerightcp')}`} title={`${t('sbtitleleftcp')}${resultObject.name}${t('sbtitlerightcp')}`} />
       <div className="gradient">
         <div className="block" id="categorycardlist">

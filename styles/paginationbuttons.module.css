@@ -160,26 +160,26 @@
 
   .next {
     padding: 12px 16px;
+    font-size: 0;
+    gap: 0;
   }
 
   .next:disabled {
     padding: 12px 16px;
+    font-size: 0;
+    gap: 0;
   }
 
   .previous {
     padding: 12px 16px;
+    font-size: 0;
+    gap: 0;
   }
 
   .previous:disabled {
     padding: 12px 16px;
-  }
-
-  .previous p {
-    display: none;
-  }
-
-  .next p {
-    display: none;
+    font-size: 0;
+    gap: 0;
   }
 
   .allpages {

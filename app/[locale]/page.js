@@ -16,7 +16,7 @@ async function getLabels(lang) {
     throw new Error('Failed to fetch data');
   }
 
-  return res.json();
+  return res.json(); 
 }
 
 export default async function Home({ params: { locale } }) {

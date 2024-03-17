@@ -8,6 +8,7 @@ import styles from '@/styles/header.module.css';
 import { usePathname, useRouter } from 'next/navigation';
 import scrollTo from '@/utils/scrollTo';
 import Image from "next/image";
+import Search from "../Search/Search";
 
 const Header = () => {
 

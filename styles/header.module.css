@@ -104,6 +104,7 @@
 .headbuttonsmobile {
     display: flex;
     gap: 16px;
+    align-items: center;
 }
 
 @media(hover:hover){
@@ -142,10 +143,14 @@
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 10px;
-        align-items: flex-start;
+        align-items: center;
         background-color: #fff;
         padding-bottom: 8px;
         border-radius: 0 0 16px 16px;
+    }
+
+    .logonav {
+        gap: 0;
     }
 
     .navbarlactive {
@@ -154,6 +159,7 @@
         position: absolute;
         padding-left: 10px;
         left: 0;
+        z-index: 2;
         top: 42px;
         background-color: #fff;
         padding-top: 10px;

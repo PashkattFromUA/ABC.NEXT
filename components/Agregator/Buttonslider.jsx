@@ -5,9 +5,10 @@ import Cardlist from './Cardlist';
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import styles from '@/styles/paginatedbuttonslider.module.css'
 import { useTranslation } from 'react-i18next';
+import Search from '../Search/Search';
 
 const CarouselInScrollContainer = (props) => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const containerRef = useRef(null);
     const buttonLabels = props.data.data;
     const buttonWidth = 150;
@@ -23,12 +24,31 @@ const CarouselInScrollContainer = (props) => {
         setSelectedCategoryId(buttonId);
     };
 
+    const [searchparams, setQuery] = useState('');
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    const openSearch = () => {
+        setIsSearchOpen(true);
+        setQuery('');
+    }
+
+    const closeSearch = () => {
+        setIsSearchOpen(false);
+        setQuery('');
+    }
+
+    const handleLinkClick = () => {
+        setQuery('');
+        setIsSearchOpen(false);
+    };
+
 
     return (
-        <div>
+        <div className={styles.paginationblock}>
             <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId - 1]} />
             <div className={styles.carouselinscrollcontainer}>
-                <div className={styles.agrsliderblock}>
+                <Search setQuery={setQuery} searchparams={searchparams} isSearchOpen={isSearchOpen} openSearch={openSearch} closeSearch={closeSearch} handleLinkClick={handleLinkClick} />
+                <div className={isSearchOpen? styles.agrsliderblocknonvisible : styles.agrsliderblockvisible}>
                     <div className={styles.scrollingcontainer} ref={containerRef}>
                         <div className={styles.buttoncontainer}>
                             {sortedCategories.map((buttonlabel) => (
@@ -48,8 +68,8 @@ const CarouselInScrollContainer = (props) => {
                         </svg>
                     </div>
                 </div>
-                {sortedCategories.length !== 0 ? <Cardlist cardsArray={sortedCategories[selectedCategoryId - 1].items} catslug={sortedCategories[selectedCategoryId - 1].slug} /> : <></>}
             </div>
+            {sortedCategories.length !== 0 ? <Cardlist cardsArray={sortedCategories[selectedCategoryId - 1].items} catslug={sortedCategories[selectedCategoryId - 1].slug} /> : <></>}
         </div>
     );
 };

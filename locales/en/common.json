@@ -139,5 +139,8 @@
 
     "errorheader": "Something went wrong",
     "errortext": "An error occurred while loading the page",
-    "tryagain": "Reload"
+    "tryagain": "Reload",
+
+    "noresult":"No results were found for your request",
+    "searchplaceholder":"Search 'Binance'"
 }

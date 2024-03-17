@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/paginatedbuttonslider.module.css'
 import PaginatedCardlist from '@/components/Paginatedagregator/Paginatedcardlist'
 import Blocktitle from '@/components/Blocktitle/Blocktitle'
+import Search from '../Search/Search';
 
 const PaginatedButtonsSlider = (props) => {
   const { t } = useTranslation();
@@ -26,12 +27,31 @@ const PaginatedButtonsSlider = (props) => {
     setSelectedCategoryId(buttonId);
   };
 
+  const [searchparams, setQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const openSearch = () => {
+    setIsSearchOpen(true);
+    setQuery('');
+  }
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    setQuery('');
+  }
+
+  const handleLinkClick = () => {
+    setQuery('');
+    setIsSearchOpen(false);
+  };
+
 
   return (
     <div className={styles.paginationblock}>
       <Blocktitle name={t('aggregator')} title={catname[selectedCategoryId - 1]} />
       <div className={styles.carouselinscrollcontainer}>
-        <div className={styles.agrsliderblock}>
+      <Search setQuery={setQuery} searchparams={searchparams} isSearchOpen={isSearchOpen} openSearch={openSearch} closeSearch={closeSearch} handleLinkClick={handleLinkClick} />
+        <div className={isSearchOpen? styles.agrsliderblocknonvisible : styles.agrsliderblockvisible}>
           <div className={styles.scrollingcontainer} ref={containerRef}>
             <div className={styles.buttoncontainer}>
               {sortedCategories.map((buttonlabel) => (
@@ -51,8 +71,8 @@ const PaginatedButtonsSlider = (props) => {
             </svg>
           </div>
         </div>
-        <PaginatedCardlist cards={cards} resetpage={1} catslug={sortedCategories[selectedCategoryId - 1].slug} />
       </div>
+      <PaginatedCardlist cards={cards} resetpage={1} catslug={sortedCategories[selectedCategoryId - 1].slug} />
     </div>
   );
 };

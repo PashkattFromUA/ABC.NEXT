@@ -1,7 +1,7 @@
 .carouselinscrollcontainer {
-  width: auto;
+  width: 1160px;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
 }
 
 .scrollingcontainer::-webkit-scrollbar {
@@ -15,15 +15,20 @@
 
 .scrollingcontainer {
   overflow-x: scroll;
-  width: 1068px;
+  width: 984px;
   height: max-content;
   display: flex;
   scroll-behavior: smooth;
 }
 
-.agrsliderblock {
+.agrsliderblockvisible {
   display: flex;
   width: auto;
+  align-items: flex-start;
+}
+
+.agrsliderblocknonvisible{
+  display: none;
 }
 
 .buttoncontainer {
@@ -108,13 +113,12 @@
 @media (max-width: 1439px) {
   .carouselinscrollcontainer {
     display: flex;
-    flex-direction: column;
-    width: auto;
+    width: calc(100vw - 180px);
   }
 
   .scrollingcontainer {
     overflow-x: scroll;
-    width: auto;
+    width: 100%;
     height: max-content;
     display: flex;
     scroll-behavior: smooth;
@@ -127,20 +131,27 @@
     align-items: center;
   }
 
-  .agrsliderblock {
+  .agrsliderblockvisible {
     display: flex;
-    width: calc(100vw - 180px);
+    width: calc(100% - 92px);
+    align-items: flex-start;
   }
 }
 
 @media (max-width: 1047px) {
-  .agrsliderblock {
+  .carouselinscrollcontainer {
+    display: flex;
     width: calc(100vw - 100px);
+  }
+
+  .agrsliderblockvisible {
+    width: calc(100vw - 192px);
   }
 }
 
 @media (max-width: 663px) {
-  .agrsliderblock {
+  .carouselinscrollcontainer {
+    display: flex;
     width: calc(100vw - 40px);
   }
 
@@ -154,5 +165,9 @@
 
   .buttoncontainer {
     gap: 5px;
+  }
+
+  .agrsliderblockvisible {
+    width: calc(100vw - 112px);;
   }
 }

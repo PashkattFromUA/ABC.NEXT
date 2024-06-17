@@ -7,15 +7,15 @@ const Description = (props) => {
 
     return (
         <div className={styles.descblock}>
-            {carddescriptions.map((carddes) => {
+            {carddescriptions.map((carddes, index) => {
                 const text = carddes.paragraph;
                 const p = text.split("\n");
                 return (
                     <div key={carddes.heading}>
-                        <h2>{carddes.heading}</h2>
-                        {p.map((paragraph) => {
+                        {index === 0 ? <h2>{carddes.heading}</h2> : <h3>{carddes.heading}</h3>}
+                        {p.map((paragraph, pIndex) => {
                             return (
-                                <div key={paragraph}>
+                                <div key={pIndex}>
                                     <p>{paragraph}</p>
                                 </div>
                             );

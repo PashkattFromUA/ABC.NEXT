@@ -10,8 +10,8 @@ const Features = (props) => {
             {cardfeatures.map((cardfeat) => {
                 return (
                     <div key={cardfeat.heading}>
-                        <h2>{cardfeat.heading}</h2>
-                        <p>{cardfeat.text}</p>
+                        <p className={styles.main}>{cardfeat.heading}</p>
+                        <p className={styles.additional}>{cardfeat.text}</p>
                     </div>
                 );
             })}

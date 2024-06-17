@@ -14,7 +14,7 @@ function SEO(props) {
         const p = text.split("\n");
         return (
           <div key={cardseo.heading}>
-            <h2>{cardseo.heading}</h2>
+            <h3>{cardseo.heading}</h3>
             {p.map((paragraph)=> {
               return (
                 <div key={paragraph}>

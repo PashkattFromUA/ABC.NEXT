@@ -70,7 +70,7 @@ export default async function RootLayout({ children, params: { locale } }) {
     id: item.data.id,
     slug: item.data.slug,
     name: item.data.name,
-  }));
+  })); 
 
 
   return (

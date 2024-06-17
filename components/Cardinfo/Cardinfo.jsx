@@ -26,7 +26,7 @@ const Cardinfo = (props) => {
                 <div className={styles.cpleft}>
                     <div className={styles.nameplacemobile}>
                         <div className={styles.cprighttopleft}>
-                            <h1>{cardinfo.name} <br />{t('cardpageheader')}</h1>
+                            <p className={styles.mobileheader}>{cardinfo.name} <br />{t('cardpageheader')}</p>
                             <p>{cardinfo.place}</p>
                         </div>
                         <div className={styles.cprighttopright}>
@@ -72,7 +72,7 @@ const Cardinfo = (props) => {
                     <div className={styles.cprighttop}>
                         <div className={styles.cprighttopleft}>
                             <h1>{cardinfo.name} <br />{t('cardpageheader')}</h1>
-                            <p>{cardinfo.place}</p>
+                            <p className={styles.cardplace}>{cardinfo.place}</p>
                         </div>
                         <div className={styles.cprighttopright}>
                             <a href={cardinfo.rating_url} target="_blank" rel="noreferrer">

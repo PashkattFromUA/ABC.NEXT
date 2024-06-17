@@ -1,5 +1,12 @@
 User-Agent: *
 Allow: /
-Disallow: /private/
+Disallow: /aggregator,
+/forpartners,
+/faq,
+/news,
+/sitemap,
+/privacypolicy.
+/termsofuse
+
 
 Sitemap: https://abcrypto.io/sitemap.xml

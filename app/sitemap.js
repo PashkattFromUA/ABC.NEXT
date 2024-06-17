@@ -49,98 +49,98 @@ export default async function sitemap() {
             url: baseURL,
             lastModified: new Date(),
         },
-        {
-            url: `${baseURL}/aggregator`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/forpartners`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/faq`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/news`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/sitemap`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/privacypolicy`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/termsofuse`,
-            lastModified: new Date(),
-        },
+        // {
+        //     url: `${baseURL}/aggregator`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/forpartners`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/faq`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/news`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/sitemap`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/privacypolicy`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/termsofuse`,
+        //     lastModified: new Date(),
+        // },
         {
             url: `${baseURL}/ru`,
             lastModified: new Date(),
         },
-        {
-            url: `${baseURL}/ru/aggregator`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/forpartners`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/faq`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/news`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/sitemap`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/privacypolicy`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ru/termsofuse`,
-            lastModified: new Date(),
-        },
+        // {
+        //     url: `${baseURL}/ru/aggregator`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/forpartners`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/faq`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/news`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/sitemap`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/privacypolicy`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ru/termsofuse`,
+        //     lastModified: new Date(),
+        // },
         {
             url: `${baseURL}/ua`,
             lastModified: new Date(),
         },
-        {
-            url: `${baseURL}/ua/aggregator`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/forpartners`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/faq`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/news`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/sitemap`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/privacypolicy`,
-            lastModified: new Date(),
-        },
-        {
-            url: `${baseURL}/ua/termsofuse`,
-            lastModified: new Date(),
-        },
+        // {
+        //     url: `${baseURL}/ua/aggregator`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/forpartners`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/faq`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/news`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/sitemap`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/privacypolicy`,
+        //     lastModified: new Date(),
+        // },
+        // {
+        //     url: `${baseURL}/ua/termsofuse`,
+        //     lastModified: new Date(),
+        // },
         ...sitemapObjectEN,
         ...flattenedItemsEN,
         ...sitemapObjectRU,

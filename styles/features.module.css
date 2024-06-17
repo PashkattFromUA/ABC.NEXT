@@ -6,7 +6,7 @@
     gap: 32px;
 }
 
-.featblock h2 {
+.main {
     color: #212025;
     font-size: 24px;
     font-weight: 700;
@@ -15,7 +15,7 @@
     margin: 0;
 }
 
-.featblock p {
+.additional {
     color: #5d5d5d;
     font-size: 16px;
     font-weight: 400;

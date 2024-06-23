@@ -10,7 +10,7 @@ async function getLabels(lang) {
     'App-Locale': lang,
   });
 
-  const res = await fetch(url, { headers });
+  const res = await fetch(url, { headers }); 
 
   if (!res.ok) {
     throw new Error('Failed to fetch data');
